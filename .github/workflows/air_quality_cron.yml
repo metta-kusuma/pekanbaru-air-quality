@@ -2,7 +2,7 @@ name: Auto Logger AQI Pekanbaru
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 # TAMBAHKAN BLOK PERMISSIONS INI
