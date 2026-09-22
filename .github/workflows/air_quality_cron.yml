@@ -2,9 +2,12 @@ name: Auto Logger AQI Pekanbaru
 
 on:
   schedule:
-    # Mengatur agar skrip berjalan otomatis setiap 1 jam sekali
-    - cron: '*/1 * * * *'
-  workflow_dispatch: # Tombol untuk menjalankan manual kapan saja
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+# TAMBAHKAN BLOK PERMISSIONS INI
+permissions:
+  contents: write
 
 jobs:
   run-logger:
