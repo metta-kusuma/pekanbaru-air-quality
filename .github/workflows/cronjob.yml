@@ -26,7 +26,7 @@ jobs:
     - name: Eksekusi Kode Scraper
       env:
         AIRLABS_API_KEY: ${{ secrets.AIRLABS_API_KEY }} # Mengambil Key aman dari Settings
-      run: python scraper.py
+      run: python flight_logger.py
 
     - name: Simpan File CSV Hasil Olahan ke GitHub
       run: |
