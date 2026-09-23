@@ -12,15 +12,15 @@ def fetch_and_save_flights():
         print("Error: AIRLABS_API_KEY tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Pekanbaru (lat_min, lon_min, lat_max, lon_max)
-    # Latitude: 0.35 s/d 0.65 | Longitude: 101.30 s/d 101.60
-    bbox = "0.35,101.30,0.65,101.60"
+    # Bounding Box Udara Jakarta & Sekitarnya (CGK & HLP)
+    # Latitude: -6.40 s/d -6.00 | Longitude: 106.50 s/d 107.00
+    bbox = "-6.40,106.50,-6.00,107.00"
     
     url = f"https://airlabs.co/api/v9/flights?bbox={bbox}&api_key={api_key}"
     
     wib = pytz.timezone('Asia/Jakarta')
     now_wib = datetime.now(wib).strftime('%Y-%m-%d %H:%M:%S')
-    csv_file = "pekanbaru_flights_log.csv"
+    csv_file = "jakarta_flights_log.csv"
 
     try:
         response = requests.get(url, timeout=15)
@@ -43,8 +43,8 @@ def fetch_and_save_flights():
                         'Altitude_m': f.get('alt', 0),
                         'Speed_kmh': f.get('speed', 0),
                         'Heading': f.get('dir', 0),
-                        'Latitude': f.get('lat', 0.5071),
-                        'Longitude': f.get('lng', 101.4478),
+                        'Latitude': f.get('lat', -6.1256),
+                        'Longitude': f.get('lng', 106.6558),
                         'Status': f.get('status', 'en-route')
                     })
             else:
@@ -60,8 +60,8 @@ def fetch_and_save_flights():
                     'Altitude_m': 0,
                     'Speed_kmh': 0,
                     'Heading': 0,
-                    'Latitude': 0.5071,
-                    'Longitude': 101.4478,
+                    'Latitude': -6.1256,
+                    'Longitude': 106.6558,
                     'Status': 'no_flights'
                 })
 
@@ -73,7 +73,7 @@ def fetch_and_save_flights():
             else:
                 df_new.to_csv(csv_file, mode='w', header=True, index=False)
 
-            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {len(flights)} data penerbangan di Pekanbaru.")
+            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {len(flights)} data penerbangan di Jakarta (CGK).")
 
         else:
             print(f"AirLabs API Error: HTTP Status Code {response.status_code}")
