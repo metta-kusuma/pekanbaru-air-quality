@@ -1,9 +1,9 @@
-name: 24/7 Pekanbaru Weather & AQI Automated Logger
+name: 24/7 Pekanbaru Weather, AQI & Flight Automated Logger
 
 on:
   schedule:
-  # Berjalan setiap menit ke-13 dan menit ke-43 (setiap ~30 menit sekali)
-  - cron: '13,43 * * * *'
+    # Backup trigger bawaan GitHub (pemicu utama tetap dari cron-job.org via workflow_dispatch)
+    - cron: '13,43 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -23,19 +23,24 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install requests pandas
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests pandas pytz FlightRadar24; fi
 
-      - name: Run Combined Logger Script
+      - name: Run Weather & AQI Logger Script
         env:
           API_KEY: ${{ secrets.API_KEY }}
           AQICN_API_KEY: ${{ secrets.AQICN_API_KEY }}
         run: |
           python logger.py
 
+      - name: Run Flight Tracker Logger Script
+        run: |
+          python flight_logger.py
+
       - name: Commit and Push Dataset Changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add .
-          git commit -m "Auto-update weather & air quality logs [skip ci]" || exit 0
+          git commit -m "Auto-update weather, air quality & flight logs [skip ci]" || exit 0
           git push
