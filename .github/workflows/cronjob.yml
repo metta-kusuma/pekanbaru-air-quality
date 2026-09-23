@@ -1,0 +1,37 @@
+name: Jalankan Scraper Penerbangan PKU
+
+on:
+  schedule:
+    - cron: '0 17 * * *' # Otomatis berjalan setiap hari jam 00:00 WIB (17:00 UTC)
+  workflow_dispatch: # Baris ini PENTING agar tombol "Run manual" muncul di GitHub
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Mengizinkan server menyimpan hasil CSV kembali ke repo Anda
+
+    steps:
+    - name: Ambil Kode dari Repositori
+      uses: actions/checkout@v4
+
+    - name: Siapkan Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Instal Pustaka Pendukung
+      run: pip install pandas requests
+
+    - name: Eksekusi Kode Scraper
+      env:
+        AIRLABS_API_KEY: ${{ secrets.AIRLABS_API_KEY }} # Mengambil Key aman dari Settings
+      run: python scraper.py
+
+    - name: Simpan File CSV Hasil Olahan ke GitHub
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "actions@github.com"
+        git add dataset_analisis_penerbangan_pku.csv
+        git commit -m "Update dataset otomatis - $(date +'%Y-%m-%d')" || exit 0
+        git push
