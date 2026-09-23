@@ -1,0 +1,2 @@
+Timestamp,Flight_IATA,Flight_ICAO,Hex_Code,Flag,Origin_IATA,Destination_IATA,Altitude_m,Speed_kmh,Heading,Latitude,Longitude,Status
+2026-09-23 21:46:16,NONE,NONE,N/A,N/A,N/A,N/A,0,0,0,0.5071,101.4478,no_flights
