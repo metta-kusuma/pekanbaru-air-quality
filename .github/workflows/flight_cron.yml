@@ -1,9 +1,6 @@
 name: 24/7 Jakarta Flight Automated Logger
 
 on:
-  schedule:
-    # Trigger bawaan GitHub (opsional, sebagai cadangan)
-    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
