@@ -3,8 +3,9 @@ import os
 import pandas as pd
 import requests
 
-# Mengambil OpenWeather API Key dari Environment Variable / GitHub Secrets
-API_KEY = os.environ.get("API_KEY")
+# Ambil API Keys dari GitHub Secrets
+OPENWEATHER_API_KEY = os.environ.get("API_KEY")
+AQICN_API_KEY = os.environ.get("AQICN_API_KEY")
 
 CITY = "Pekanbaru"
 LAT = "0.5071"
@@ -14,170 +15,147 @@ AIR_CSV = "pekanbaru_air_quality_log.csv"
 WEATHER_CSV = "pekanbaru_weather_log.csv"
 
 
-def get_aqi_category(ow_aqi_index):
-  """Mengubah Indeks OpenWeather (1-5) menjadi Label Status Bahasa Indonesia."""
-  categories = {
-      1: "Baik (Good)",
-      2: "Sedang (Fair)",
-      3: "Cukup Buruk / Moderat (Moderate)",
-      4: "Tidak Sehat (Poor)",
-      5: "Sangat Tidak Sehat (Very Poor)",
-  }
-  return categories.get(ow_aqi_index, "Tidak Diketahui")
-
-
 def calculate_us_aqi_pm25(pm25_conc):
-  """Menghitung Estimasi Total US AQI (0 - 500) berdasarkan Konsentrasi PM2.5 (ug/m3)
-
-  Sesuai Breakpoint Standar US EPA.
-  """
+  """Kalkulasi Total US AQI dari konsentrasi PM2.5 (standar US EPA)."""
   if pm25_conc is None:
     return None
-
   c = float(pm25_conc)
-
-  # Breakpoints: (C_low, C_high, I_low, I_high)
   breakpoints = [
-      (0.0, 12.0, 0, 50),  # Baik
-      (12.1, 35.4, 51, 100),  # Sedang
-      (35.5, 55.4, 101, 150),  # Tidak Sehat untuk Kelompok Sensitif
-      (55.5, 150.4, 151, 200),  # Tidak Sehat
-      (150.5, 250.4, 201, 300),  # Sangat Tidak Sehat
-      (250.5, 500.4, 301, 500),  # Berbahaya
+      (0.0, 12.0, 0, 50),
+      (12.1, 35.4, 51, 100),
+      (35.5, 55.4, 101, 150),
+      (55.5, 150.4, 151, 200),
+      (150.5, 250.4, 201, 300),
+      (250.5, 500.4, 301, 500),
   ]
-
   for c_low, c_high, i_low, i_high in breakpoints:
     if c_low <= c <= c_high:
-      aqi = ((i_high - i_low) / (c_high - c_low)) * (c - c_low) + i_low
-      return round(aqi)
-
-  if c > 500.4:
-    return 500
-  return 0
+      return round(((i_high - i_low) / (c_high - c_low)) * (c - c_low) + i_low)
+  return 500 if c > 500.4 else 0
 
 
 def get_us_aqi_status(us_aqi):
-  """Memberikan label kategori teks berdasarkan Total US AQI."""
+  """Label Kategori Status Kualitas Udara."""
   if us_aqi is None:
     return "Tidak Diketahui"
   if us_aqi <= 50:
     return "Baik (Good)"
-  elif us_aqi <= 100:
+  if us_aqi <= 100:
     return "Sedang (Moderate)"
-  elif us_aqi <= 150:
+  if us_aqi <= 150:
     return "Tidak Sehat bagi Kelompok Sensitif"
-  elif us_aqi <= 200:
+  if us_aqi <= 200:
     return "Tidak Sehat (Unhealthy)"
-  elif us_aqi <= 300:
+  if us_aqi <= 300:
     return "Sangat Tidak Sehat (Very Unhealthy)"
-  else:
-    return "Berbahaya (Hazardous)"
+  return "Berbahaya (Hazardous)"
 
 
 def fetch_and_log():
   wib_time = datetime.utcnow() + timedelta(hours=7)
   timestamp_wib = wib_time.strftime("%Y-%m-%d %H:%M:%S")
 
-  if not API_KEY:
-    print("Error: API_KEY tidak ditemukan di Environment Variables!")
-    return
+  # ==========================================
+  # 1. KUALITAS UDARA (OpenWeather + AQICN)
+  # ==========================================
+  air_record = {
+      "Timestamp": timestamp_wib,
+      "City": CITY,
+      "Latitude": LAT,
+      "Longitude": LON,
+  }
 
-  # 1. TARIK DATA KUALITAS UDARA (OpenWeather Air Pollution API)
-  air_url = f"https://api.openweathermap.org/data/2.5/air_pollution?lat={LAT}&lon={LON}&appid={API_KEY}"
+  # A. Tarik OpenWeather Air Pollution
+  if OPENWEATHER_API_KEY:
+    ow_air_url = f"https://api.openweathermap.org/data/2.5/air_pollution?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}"
+    try:
+      res_ow = requests.get(ow_air_url, timeout=10)
+      if res_ow.status_code == 200:
+        item = res_ow.json()["list"][0]
+        comp = item.get("components", {})
+        pm25 = comp.get("pm2_5")
 
-  try:
-    res_air = requests.get(air_url, timeout=10)
-    data_air = res_air.json()
+        us_aqi_calc = calculate_us_aqi_pm25(pm25)
 
-    if res_air.status_code == 200 and "list" in data_air:
-      item = data_air["list"][0]
-      main_aqi = item.get("main", {}).get("aqi")
-      comp = item.get("components", {})
+        air_record.update({
+            "OW_US_AQI_Calc": us_aqi_calc,
+            "OW_AQI_Status": get_us_aqi_status(us_aqi_calc),
+            "OW_AQI_Index": item.get("main", {}).get("aqi"),  # 1-5
+            "PM25_Conc": pm25,
+            "PM10_Conc": comp.get("pm10"),
+            "CO_Conc": comp.get("co"),
+            "NO2_Conc": comp.get("no2"),
+            "O3_Conc": comp.get("o3"),
+            "SO2_Conc": comp.get("so2"),
+            "NH3_Conc": comp.get("nh3"),
+            "NO_Conc": comp.get("no"),
+        })
+    except Exception as e:
+      print("Error OpenWeather Air Pollution:", e)
 
-      pm25 = comp.get("pm2_5")
+  # B. Tarik AQICN / WAQI (Stasiun Resmi Pekanbaru)
+  if AQICN_API_KEY:
+    aqicn_url = (
+        f"https://api.waqi.info/feed/geo:{LAT};{LON}/?token={AQICN_API_KEY}"
+    )
+    try:
+      res_aqicn = requests.get(aqicn_url, timeout=10)
+      data_aqicn = res_aqicn.json()
+      if data_aqicn.get("status") == "ok":
+        d = data_aqicn["data"]
+        station_aqi = d.get("aqi")
 
-      # Kuantifikasi & Labelisasi Tambahan
-      ow_status = get_aqi_category(main_aqi)
-      us_aqi_total = calculate_us_aqi_pm25(pm25)
-      us_status = get_us_aqi_status(us_aqi_total)
+        air_record.update({
+            "AQICN_Station_AQI": station_aqi,
+            "AQICN_Station_Status": get_us_aqi_status(station_aqi),
+            "AQICN_Station_Name": d.get("city", {}).get("name"),
+            "AQICN_Dominant_Pollutant": d.get("dominentpol"),
+        })
+    except Exception as e:
+      print("Error AQICN:", e)
 
-      air_record = {
-          "Timestamp": timestamp_wib,
-          "City": CITY,
-          "Latitude": LAT,
-          "Longitude": LON,
-          "Total_US_AQI": us_aqi_total,  # Contoh: 112 (Angka Total AQI 0-500)
-          "Air_Quality_Status": us_status,  # Contoh: "Tidak Sehat bagi Kelompok Sensitif"
-          "OW_AQI_Index": main_aqi,  # Indeks OpenWeather 1-5
-          "OW_AQI_Category": ow_status,  # Status Indeks OpenWeather
-          "PM25_Conc": pm25,  # ug/m3
-          "PM10_Conc": comp.get("pm10"),  # ug/m3
-          "CO_Conc": comp.get("co"),  # ug/m3
-          "NO2_Conc": comp.get("no2"),  # ug/m3
-          "O3_Conc": comp.get("o3"),  # ug/m3
-          "SO2_Conc": comp.get("so2"),  # ug/m3
-          "NH3_Conc": comp.get("nh3"),  # ug/m3
-          "NO_Conc": comp.get("no"),  # ug/m3
-      }
+  # Simpan Air Quality CSV
+  df_air = pd.DataFrame([air_record])
+  if os.path.exists(AIR_CSV):
+    df_air.to_csv(AIR_CSV, mode="a", header=False, index=False)
+  else:
+    df_air.to_csv(AIR_CSV, mode="w", header=True, index=False)
+  print(f"[{timestamp_wib}] Sukses mencatat dataset Kualitas Udara.")
 
-      df_air = pd.DataFrame([air_record])
-      if os.path.exists(AIR_CSV):
-        df_air.to_csv(AIR_CSV, mode="a", header=False, index=False)
-      else:
-        df_air.to_csv(AIR_CSV, mode="w", header=True, index=False)
+  # ==========================================
+  # 2. DATA CUACA (OpenWeather Weather API)
+  # ==========================================
+  if OPENWEATHER_API_KEY:
+    ow_weather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}&units=metric"
+    try:
+      res_w = requests.get(ow_weather_url, timeout=10)
+      if res_w.status_code == 200:
+        data_w = res_w.json()
+        main_w = data_w.get("main", {})
+        weather_desc = data_w.get("weather", [{}])[0]
 
-      print(
-          f"[{timestamp_wib}] Sukses mencatat AQI: {us_aqi_total} ({us_status})"
-      )
-    else:
-      print("Gagal mengambil Air Pollution API:", data_air)
+        weather_record = {
+            "Timestamp": timestamp_wib,
+            "City": CITY,
+            "Weather_Main": weather_desc.get("main"),
+            "Weather_Desc": weather_desc.get("description"),
+            "Temp_C": main_w.get("temp"),
+            "Feels_Like_C": main_w.get("feels_like"),
+            "Humidity_Pct": main_w.get("humidity"),
+            "Pressure_hPa": main_w.get("pressure"),
+            "Wind_Speed_ms": data_w.get("wind", {}).get("speed"),
+            "Clouds_Pct": data_w.get("clouds", {}).get("all"),
+            "Visibility_m": data_w.get("visibility"),
+        }
 
-  except Exception as e:
-    print("Error Air Pollution:", e)
-
-  # 2. TARIK DATA CUACA TERKINI (OpenWeather Current Weather API)
-  weather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={API_KEY}&units=metric"
-
-  try:
-    res_weather = requests.get(weather_url, timeout=10)
-    data_weather = res_weather.json()
-
-    if res_weather.status_code == 200:
-      main_w = data_weather.get("main", {})
-      weather_desc = data_weather.get("weather", [{}])[0]
-      wind_w = data_weather.get("wind", {})
-      clouds_w = data_weather.get("clouds", {})
-
-      weather_record = {
-          "Timestamp": timestamp_wib,
-          "City": CITY,
-          "Weather_Main": weather_desc.get("main"),
-          "Weather_Desc": weather_desc.get("description"),
-          "Temp_C": main_w.get("temp"),
-          "Feels_Like_C": main_w.get("feels_like"),
-          "Humidity_Pct": main_w.get("humidity"),
-          "Pressure_hPa": main_w.get("pressure"),
-          "Wind_Speed_ms": wind_w.get("speed"),
-          "Wind_Deg": wind_w.get("deg"),
-          "Clouds_Pct": clouds_w.get("all"),
-          "Visibility_m": data_weather.get("visibility"),
-      }
-
-      df_weather = pd.DataFrame([weather_record])
-      if os.path.exists(WEATHER_CSV):
-        df_weather.to_csv(WEATHER_CSV, mode="a", header=False, index=False)
-      else:
-        df_weather.to_csv(WEATHER_CSV, mode="w", header=True, index=False)
-
-      print(
-          f"[{timestamp_wib}] Sukses mencatat Weather:"
-          f" {weather_desc.get('main')}, {main_w.get('temp')}°C"
-      )
-    else:
-      print("Gagal mengambil Weather API:", data_weather)
-
-  except Exception as e:
-    print("Error Weather:", e)
+        df_weather = pd.DataFrame([weather_record])
+        if os.path.exists(WEATHER_CSV):
+          df_weather.to_csv(WEATHER_CSV, mode="a", header=False, index=False)
+        else:
+          df_weather.to_csv(WEATHER_CSV, mode="w", header=True, index=False)
+        print(f"[{timestamp_wib}] Sukses mencatat dataset Cuaca.")
+    except Exception as e:
+      print("Error OpenWeather Weather:", e)
 
 
 if __name__ == "__main__":
