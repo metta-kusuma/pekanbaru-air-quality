@@ -2,9 +2,9 @@ name: Auto Logger AQI Pekanbaru
 
 on:
   schedule:
-    # Pukul 19:00 s.d 23:00 WIB (12:00 - 16:00 UTC) setiap 30 menit
+    # Pukul 19:00 s.d 23:00 WIB (12:00 - 16:00 UTC) setiap 40 menit
     - cron: '0,40 12,13,14,15,16 * * *'
-    # Pukul 00:00 s.d 08:00 WIB (17:00 - 01:00 UTC) setiap 30 menit
+    # Pukul 00:00 s.d 08:00 WIB (17:00 - 01:00 UTC) setiap 40 menit
     - cron: '0,40 17,18,19,20,21,22,23,0,1,2 * * *'
   workflow_dispatch:
 
