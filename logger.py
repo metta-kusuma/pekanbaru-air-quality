@@ -3,9 +3,8 @@ import os
 import pandas as pd
 import requests
 
-# Mengambil API Key dari GitHub Secrets / Environment Variables
-AIRVISUAL_API_KEY = os.environ.get("AIRVISUAL_API_KEY")  # Key AirVisual
-OPENWEATHER_API_KEY = os.environ.get("API_KEY")  # Key OpenWeather
+AIRVISUAL_API_KEY = os.environ.get("API_KEY")
+OPENWEATHER_API_KEY = os.environ.get("OPENWEATHER_API_KEY")
 
 CITY = "Pekanbaru"
 STATE = "Riau"
@@ -13,45 +12,31 @@ COUNTRY = "Indonesia"
 LAT = "0.5071"
 LON = "101.4478"
 
-CSV_FILE = "pekanbaru_air_quality_log.csv"
+AIR_CSV = "pekanbaru_air_quality_log.csv"
+WEATHER_CSV = "pekanbaru_weather_log.csv"
 
 
 def fetch_and_log():
-  # 1. Tarik Data dari AirVisual (Kualitas Udara + Cuaca Dasar)
-  airvisual_url = f"https://api.airvisual.com/v2/city?city={CITY}&state={STATE}&country={COUNTRY}&key={AIRVISUAL_API_KEY}"
-
-  # 2. Tarik Data dari OpenWeather (Detail Cuaca Tambahan)
-  openweather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}&units=metric"
-
-  # Waktu WIB (UTC + 7)
   wib_time = datetime.utcnow() + timedelta(hours=7)
   timestamp_wib = wib_time.strftime("%Y-%m-%d %H:%M:%S")
 
-  record = {"Timestamp": timestamp_wib, "City": CITY}
-
-  # --- PROSES AIRVISUAL ---
+  # 1. TARIK DATA KUALITAS UDARA (AirVisual)
+  airvisual_url = f"https://api.airvisual.com/v2/city?city={CITY}&state={STATE}&country={COUNTRY}&key={AIRVISUAL_API_KEY}"
   try:
     res_av = requests.get(airvisual_url, timeout=10)
     data_av = res_av.json()
-
     if data_av.get("status") == "success":
       d = data_av["data"]
-      current = d.get("current", {})
-      pollution = current.get("pollution", {})
-      weather_av = current.get("weather", {})
+      pollution = d.get("current", {}).get("pollution", {})
 
-      record.update({
+      air_record = {
+          "Timestamp": timestamp_wib,
+          "City": CITY,
           "US_AQI": pollution.get("aqius"),
-          "Main_US_Pollutant": pollution.get("mainus"),
-          "China_AQI": pollution.get("aqicn"),
-          "Main_China_Pollutant": pollution.get("maincn"),
-          "AV_Temperature_C": weather_av.get("tp"),
-          "AV_Humidity_Pct": weather_av.get("hu"),
-          "AV_Wind_Speed_ms": weather_av.get("ws"),
-      })
+          "Main_Pollutant": pollution.get("mainus"),
+      }
 
-      # Rincian Polutan
-      pollutants_map = {
+      pollutants = {
           "p2": "PM25",
           "p1": "PM10",
           "o3": "O3",
@@ -59,47 +44,53 @@ def fetch_and_log():
           "s2": "SO2",
           "co": "CO",
       }
-      for p_key, p_name in pollutants_map.items():
+      for p_key, p_name in pollutants.items():
         p_data = pollution.get(p_key, {})
-        record[f"{p_name}_Conc"] = p_data.get("conc")
-        record[f"{p_name}_AQI_US"] = p_data.get("aqius")
+        air_record[f"{p_name}_Conc"] = p_data.get("conc")
+        air_record[f"{p_name}_AQI"] = p_data.get("aqius")
 
+      df_air = pd.DataFrame([air_record])
+      if os.path.exists(AIR_CSV):
+        df_air.to_csv(AIR_CSV, mode="a", header=False, index=False)
+      else:
+        df_air.to_csv(AIR_CSV, mode="w", header=True, index=False)
+      print("Sukses mencatat Air Quality.")
   except Exception as e:
-    print("Gagal mengambil data AirVisual:", e)
+    print("Error Air Quality:", e)
 
-  # --- PROSES OPENWEATHER (Cuaca Tambahan) ---
+  # 2. TARIK DATA CUACA TERKINI (OpenWeather)
+  ow_key = OPENWEATHER_API_KEY if OPENWEATHER_API_KEY else AIRVISUAL_API_KEY
+  openweather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={ow_key}&units=metric"
   try:
     res_ow = requests.get(openweather_url, timeout=10)
     data_ow = res_ow.json()
-
     if res_ow.status_code == 200:
       main_ow = data_ow.get("main", {})
       weather_desc = data_ow.get("weather", [{}])[0]
       wind_ow = data_ow.get("wind", {})
-      clouds_ow = data_ow.get("clouds", {})
 
-      record.update({
-          "OW_Weather_Main": weather_desc.get("main"),  # Misal: Rain, Clear, Clouds
-          "OW_Weather_Desc": weather_desc.get("description"),  # Misal: light rain
-          "OW_Temp_C": main_ow.get("temp"),
-          "OW_Feels_Like_C": main_ow.get("feels_like"),
-          "OW_Humidity_Pct": main_ow.get("humidity"),
-          "OW_Pressure_hPa": main_ow.get("pressure"),
-          "OW_Wind_Speed_ms": wind_ow.get("speed"),
-          "OW_Clouds_Pct": clouds_ow.get("all"),
-          "OW_Visibility_m": data_ow.get("visibility"),  # Jarak pandang (penting untuk kabut asap)
-      })
+      weather_record = {
+          "Timestamp": timestamp_wib,
+          "City": CITY,
+          "Weather_Main": weather_desc.get("main"),
+          "Weather_Desc": weather_desc.get("description"),
+          "Temp_C": main_ow.get("temp"),
+          "Feels_Like_C": main_ow.get("feels_like"),
+          "Humidity_Pct": main_ow.get("humidity"),
+          "Pressure_hPa": main_ow.get("pressure"),
+          "Wind_Speed_ms": wind_ow.get("speed"),
+          "Clouds_Pct": data_ow.get("clouds", {}).get("all"),
+          "Visibility_m": data_ow.get("visibility"),
+      }
+
+      df_weather = pd.DataFrame([weather_record])
+      if os.path.exists(WEATHER_CSV):
+        df_weather.to_csv(WEATHER_CSV, mode="a", header=False, index=False)
+      else:
+        df_weather.to_csv(WEATHER_CSV, mode="w", header=True, index=False)
+      print("Sukses mencatat Weather.")
   except Exception as e:
-    print("Gagal mengambil data OpenWeather:", e)
-
-  # --- SIMPAN KE CSV ---
-  df_new = pd.DataFrame([record])
-  if os.path.exists(CSV_FILE):
-    df_new.to_csv(CSV_FILE, mode="a", header=False, index=False)
-  else:
-    df_new.to_csv(CSV_FILE, mode="w", header=True, index=False)
-
-  print(f"Sukses mencatat gabungan data AQI & Cuaca pada {timestamp_wib}")
+    print("Error Weather:", e)
 
 
 if __name__ == "__main__":
