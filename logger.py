@@ -40,15 +40,15 @@ def get_us_aqi_status(us_aqi):
   if us_aqi is None:
     return "Tidak Diketahui"
   if us_aqi <= 50:
-    return "Baik (Good)"
+    return "Baik"
   if us_aqi <= 100:
-    return "Sedang (Moderate)"
+    return "Sedang"
   if us_aqi <= 150:
     return "Tidak Sehat bagi Kelompok Sensitif"
   if us_aqi <= 200:
-    return "Tidak Sehat (Unhealthy)"
+    return "Tidak Sehat"
   if us_aqi <= 300:
-    return "Sangat Tidak Sehat (Very Unhealthy)"
+    return "Sangat Tidak Sehat"
   return "Berbahaya (Hazardous)"
 
 
