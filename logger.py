@@ -1,7 +1,7 @@
 import os
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Mengambil API Key dari GitHub Secrets
 API_KEY = os.environ.get("API_KEY")
@@ -24,8 +24,12 @@ def fetch_and_log():
             pollution = current["pollution"]
             weather = current["weather"]
             
+            # Menyesuaikan waktu ke WIB (UTC + 7) agar pas dengan waktu lokal Pekanbaru
+            wib_time = datetime.utcnow() + timedelta(hours=7)
+            timestamp_wib = wib_time.strftime("%Y-%m-%d %H:%M:%S")
+            
             record = {
-                "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "Timestamp": timestamp_wib,
                 "City": d.get("city", CITY),
                 "State": d.get("state", STATE),
                 "Country": d.get("country", COUNTRY),
@@ -51,7 +55,7 @@ def fetch_and_log():
             else:
                 df_new.to_csv(CSV_FILE, mode='w', header=True, index=False)
                 
-            print(f"Sukses mencatat data AQI Pekanbaru (sampai Heat Index) pada {record['Timestamp']}")
+            print(f"Sukses mencatat data AQI Pekanbaru (WIB) pada {record['Timestamp']}")
         else:
             print("Gagal mengambil data dari API:", data)
             
