@@ -30,6 +30,7 @@ jobs:
       - name: Run Logger Script
         env:
           API_KEY: ${{ secrets.API_KEY }}
+          AIRVISUAL_API_KEY: ${{ secrets.AIRVISUAL_API_KEY }}
         run: |
           python logger.py
 
