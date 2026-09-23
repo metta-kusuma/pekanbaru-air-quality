@@ -2,3 +2,6 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-23 22:42:02,GIA503,Garuda Indonesia,8a03c6,Indonesia,N/A,-6.136,106.6015,243.84,800.0,274.32,900.0,275.1,148.5,-4.23,-832.7,68.27,Descending (Landing/Approach),0,0,0,1790178117,1790178120,N/A,OpenSky Network
 2026-09-23 22:42:02,TREK309,Other Airline,ae07d9,United States,N/A,-6.1617,106.791,6979.92,22900.0,7467.6,24500.0,851.8,459.9,5.85,1151.6,319.94,Climbing (Takeoff),0,0,0,1790178120,1790178120,N/A,OpenSky Network
 2026-09-23 22:42:02,CSN8353,Other Airline,782206,China,N/A,-6.1475,106.6313,106.68,350.0,129.54,425.0,253.5,136.9,-3.58,-704.7,68.12,Descending (Landing/Approach),0,0,0,1790178005,1790178005,N/A,OpenSky Network
+2026-09-23 22:53:30,LNI713,Other Airline,8a02e9,Indonesia,N/A,-6.1471,106.6323,91.44,300.0,144.78,475.0,279.3,150.8,-3.9,-767.7,68.2,Descending (Landing/Approach),0,0,0,1790178737,1790178737,N/A,OpenSky Network
+2026-09-23 22:53:30,JDE702,Other Airline,8a09cc,Indonesia,N/A,-5.9729,106.7612,2887.98,9475.0,3063.24,10050.0,450.9,243.5,-6.5,-1279.5,247.54,Descending (Landing/Approach),0,0,0,1790178799,1790178799,N/A,OpenSky Network
+2026-09-23 22:53:30,TGW273,Other Airline,76d254,Singapore,N/A,-5.8251,106.5299,3901.44,12800.0,4137.66,13575.0,553.8,299.0,14.96,2944.9,327.43,Climbing (Takeoff),0,0,0,1790178798,1790178798,N/A,OpenSky Network
