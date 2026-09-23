@@ -14,21 +14,33 @@ def fetch_and_log():
     url = f"https://api.airvisual.com/v2/city?city={CITY}&state={STATE}&country={COUNTRY}&key={API_KEY}"
     
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         data = response.json()
         
         if data.get("status") == "success":
-            current = data["data"]["current"]
+            d = data["data"]
+            loc = d.get("location", {}).get("coordinates", [None, None])
+            current = d["current"]
             pollution = current["pollution"]
             weather = current["weather"]
             
             record = {
                 "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "City": CITY,
+                "City": d.get("city", CITY),
+                "State": d.get("state", STATE),
+                "Country": d.get("country", COUNTRY),
+                "Latitude": loc[1] if len(loc) > 1 else None,
+                "Longitude": loc[0] if len(loc) > 0 else None,
                 "US_AQI": pollution.get("aqius"),
-                "Main_Pollutant": pollution.get("mainus"),
+                "Main_US_Pollutant": pollution.get("mainus"),
+                "China_AQI": pollution.get("aqicn"),
+                "Main_China_Pollutant": pollution.get("maincn"),
                 "Temperature_C": weather.get("tp"),
-                "Humidity_Pct": weather.get("hu")
+                "Pressure_hPa": weather.get("pr"),
+                "Humidity_Pct": weather.get("hu"),
+                "Wind_Speed_ms": weather.get("ws"),
+                "Wind_Direction_deg": weather.get("wd"),
+                "HeatIndex_C": weather.get("heatIndex")
             }
             
             df_new = pd.DataFrame([record])
@@ -39,7 +51,7 @@ def fetch_and_log():
             else:
                 df_new.to_csv(CSV_FILE, mode='w', header=True, index=False)
                 
-            print(f"Sukses mencatat data AQI Pekanbaru pada {record['Timestamp']}")
+            print(f"Sukses mencatat data AQI Pekanbaru (sampai Heat Index) pada {record['Timestamp']}")
         else:
             print("Gagal mengambil data dari API:", data)
             
