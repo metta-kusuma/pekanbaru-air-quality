@@ -13,6 +13,7 @@ LON = "101.4478"
 
 AIR_CSV = "pekanbaru_air_quality_log.csv"
 WEATHER_CSV = "pekanbaru_weather_log.csv"
+FORECAST_CSV = "pekanbaru_weather_forecast_log.csv"
 
 
 def calculate_us_aqi_pm25(pm25_conc):
@@ -55,9 +56,9 @@ def fetch_and_log():
   wib_time = datetime.utcnow() + timedelta(hours=7)
   timestamp_wib = wib_time.strftime("%Y-%m-%d %H:%M:%S")
 
-  # ==========================================
-  # 1. KUALITAS UDARA (OpenWeather + AQICN)
-  # ==========================================
+  # ==========================================================
+  # 1. KUALITAS UDARA (OpenWeather Air Pollution + AQICN)
+  # ==========================================================
   air_record = {
       "Timestamp": timestamp_wib,
       "City": CITY,
@@ -65,7 +66,7 @@ def fetch_and_log():
       "Longitude": LON,
   }
 
-  # A. Tarik OpenWeather Air Pollution
+  # A. OpenWeather Air Pollution
   if OPENWEATHER_API_KEY:
     ow_air_url = f"https://api.openweathermap.org/data/2.5/air_pollution?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}"
     try:
@@ -74,13 +75,12 @@ def fetch_and_log():
         item = res_ow.json()["list"][0]
         comp = item.get("components", {})
         pm25 = comp.get("pm2_5")
-
         us_aqi_calc = calculate_us_aqi_pm25(pm25)
 
         air_record.update({
             "OW_US_AQI_Calc": us_aqi_calc,
             "OW_AQI_Status": get_us_aqi_status(us_aqi_calc),
-            "OW_AQI_Index": item.get("main", {}).get("aqi"),  # 1-5
+            "OW_AQI_Index": item.get("main", {}).get("aqi"),
             "PM25_Conc": pm25,
             "PM10_Conc": comp.get("pm10"),
             "CO_Conc": comp.get("co"),
@@ -93,7 +93,7 @@ def fetch_and_log():
     except Exception as e:
       print("Error OpenWeather Air Pollution:", e)
 
-  # B. Tarik AQICN / WAQI (Stasiun Resmi Pekanbaru)
+  # B. AQICN / WAQI Station
   if AQICN_API_KEY:
     aqicn_url = (
         f"https://api.waqi.info/feed/geo:{LAT};{LON}/?token={AQICN_API_KEY}"
@@ -104,7 +104,6 @@ def fetch_and_log():
       if data_aqicn.get("status") == "ok":
         d = data_aqicn["data"]
         station_aqi = d.get("aqi")
-
         air_record.update({
             "AQICN_Station_AQI": station_aqi,
             "AQICN_Station_Status": get_us_aqi_status(station_aqi),
@@ -122,9 +121,9 @@ def fetch_and_log():
     df_air.to_csv(AIR_CSV, mode="w", header=True, index=False)
   print(f"[{timestamp_wib}] Sukses mencatat dataset Kualitas Udara.")
 
-  # ==========================================
-  # 2. DATA CUACA (OpenWeather Weather API)
-  # ==========================================
+  # ==========================================================
+  # 2. CUACA TERKINI (OpenWeather Current Weather API)
+  # ==========================================================
   if OPENWEATHER_API_KEY:
     ow_weather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}&units=metric"
     try:
@@ -153,9 +152,56 @@ def fetch_and_log():
           df_weather.to_csv(WEATHER_CSV, mode="a", header=False, index=False)
         else:
           df_weather.to_csv(WEATHER_CSV, mode="w", header=True, index=False)
-        print(f"[{timestamp_wib}] Sukses mencatat dataset Cuaca.")
+        print(f"[{timestamp_wib}] Sukses mencatat dataset Cuaca Terkini.")
     except Exception as e:
-      print("Error OpenWeather Weather:", e)
+      print("Error OpenWeather Current Weather:", e)
+
+    # ==========================================================
+    # 3. PREDIKSI CUACA (OpenWeather Forecast 5-Day / 3-Hour API)
+    # ==========================================================
+    ow_forecast_url = f"https://api.openweathermap.org/data/2.5/forecast?lat={LAT}&lon={LON}&appid={OPENWEATHER_API_KEY}&units=metric"
+    try:
+      res_f = requests.get(ow_forecast_url, timeout=10)
+      if res_f.status_code == 200:
+        data_f = res_f.json()
+        forecast_list = data_f.get("list", [])
+
+        forecast_rows = []
+        for item in forecast_list:
+          # Konversi UTC target forecast ke WIB
+          dt_txt_utc = item.get("dt_txt")
+          dt_utc = datetime.strptime(dt_txt_utc, "%Y-%m-%d %H:%M:%S")
+          dt_wib = (dt_utc + timedelta(hours=7)).strftime("%Y-%m-%d %H:%M:%S")
+
+          main_f = item.get("main", {})
+          w_f = item.get("weather", [{}])[0]
+
+          forecast_rows.append({
+              "Fetched_Timestamp": timestamp_wib,  # Waktu data ditarik
+              "Forecast_Target_WIB": dt_wib,  # Waktu target prediksi (WIB)
+              "City": CITY,
+              "Weather_Main": w_f.get("main"),
+              "Weather_Desc": w_f.get("description"),
+              "Temp_C": main_f.get("temp"),
+              "Feels_Like_C": main_f.get("feels_like"),
+              "Humidity_Pct": main_f.get("humidity"),
+              "Pressure_hPa": main_f.get("pressure"),
+              "Wind_Speed_ms": item.get("wind", {}).get("speed"),
+              "Pop_Rain_Prob": item.get(
+                  "pop"
+              ),  # Probabilitas Hujan (0.0 - 1.0)
+              "Clouds_Pct": item.get("clouds", {}).get("all"),
+              "Visibility_m": item.get("visibility"),
+          })
+
+        df_forecast = pd.DataFrame(forecast_rows)
+        if os.path.exists(FORECAST_CSV):
+          df_forecast.to_csv(FORECAST_CSV, mode="a", header=False, index=False)
+        else:
+          df_forecast.to_csv(FORECAST_CSV, mode="w", header=True, index=False)
+        print(f"[{timestamp_wib}] Sukses mencatat dataset Perkiraan Cuaca.")
+    except Exception as e:
+      print("Error OpenWeather Forecast:", e)
 
 
 if __name__ == "__main__":
