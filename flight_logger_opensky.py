@@ -34,13 +34,13 @@ def fetch_and_save_flights():
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Jakarta & Sekitarnya (CGK & HLP)
-    # lamin, lomin, lamax, lomax
+    # Bounding Box Setara Range Approach Radar Jakarta (CGK & HLP)
+    # Radius ~80-100 km dari Soekarno-Hatta
     params = {
-        'lamin': -6.35,
-        'lomin': 106.55,
-        'lamax': -6.00,
-        'lomax': 106.90
+        'lamin': -6.85,  # Batas Selatan: Bogor, Sukabumi Utara
+        'lomin': 105.80,  # Batas Barat: Serang, Cilegon, Selat Sunda
+        'lamax': -5.50,  # Batas Utara: Laut Jawa (Area Holding North)
+        'lomax': 107.50   # Batas Timur: Karawang, Purwakarta
     }
     
     url = "https://opensky-network.org/api/states/all"
