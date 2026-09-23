@@ -2,8 +2,8 @@ name: 24/7 Pekanbaru Weather & AQI Automated Logger
 
 on:
   schedule:
-    # Berjalan otomatis setiap 40 menit sepanjang hari (24/7)
-    - cron: '*/40 * * * *'
+  # Berjalan setiap menit ke-13 dan menit ke-43 (setiap ~30 menit sekali)
+  - cron: '13,43 * * * *'
   workflow_dispatch:
 
 permissions:
