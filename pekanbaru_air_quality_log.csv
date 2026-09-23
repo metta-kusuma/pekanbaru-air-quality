@@ -1,0 +1,2 @@
+Timestamp,City,State,Country,Latitude,Longitude,US_AQI,Main_US_Pollutant,China_AQI,Main_China_Pollutant,Temperature_C,Pressure_hPa,Humidity_Pct,Wind_Speed_ms,Wind_Direction_deg,HeatIndex_C,PM25_Conc,PM25_AQI_US,PM25_AQI_China,PM10_Conc,PM10_AQI_US,PM10_AQI_China,O3_Conc,O3_AQI_US,O3_AQI_China,NO2_Conc,NO2_AQI_US,NO2_AQI_China,SO2_Conc,SO2_AQI_US,SO2_AQI_China,CO_Conc,CO_AQI_US,CO_AQI_China
+2026-09-23 07:33:32,Pekanbaru,Riau,Indonesia,0.5070677,101.4477793,131,p2,66,p2,24,1011,93,1.11,151,24,,,,,,,,,,,,,,,,,,
