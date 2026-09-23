@@ -47,7 +47,7 @@ def fetch_and_save_flights():
     
     wib = pytz.timezone('Asia/Jakarta')
     now_wib = datetime.now(wib).strftime('%Y-%m-%d %H:%M:%S')
-    csv_file = "jakarta_flights_log.csv"
+    csv_file = "jakarta_flights_log_opensky.csv"
 
     try:
         response = requests.get(url, params=params, auth=(username, password), timeout=20)
