@@ -1,2 +1,0 @@
-Timestamp,City,State,Country,Latitude,Longitude,US_AQI,Main_US_Pollutant,China_AQI,Main_China_Pollutant,Temperature_C,Pressure_hPa,Humidity_Pct,Wind_Speed_ms,Wind_Direction_deg,HeatIndex_C
-2026-09-23 07:09:45,Pekanbaru,Riau,Indonesia,0.5070677,101.4477793,129,p2,65,p2,24,1010,99,1.11,163,24
