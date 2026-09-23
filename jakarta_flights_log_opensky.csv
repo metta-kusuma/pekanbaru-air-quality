@@ -120,3 +120,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-24 03:50:41,LNI690,Other Airline,8a0574,Indonesia,N/A,-6.1784,107.0704,4015.74,13175.0,4244.34,13925.0,685.3,370.0,13.66,2689.0,109.41,Climbing (Takeoff),0,0,0,1790196638,1790196638,N/A,OpenSky Network
 2026-09-24 03:50:41,N/A,Unknown,8a04a6,Indonesia,N/A,-6.1237,106.6889,388.62,1275.0,403.86,1325.0,325.7,175.9,5.53,1088.6,65.48,Climbing (Takeoff),0,0,0,1790196632,1790196634,N/A,OpenSky Network
 2026-09-24 04:10:29,N/A,Unknown,8a0821,Indonesia,N/A,-6.0569,106.8077,1607.82,5275.0,1790.7,5875.0,596.4,322.0,5.2,1023.6,55.37,Climbing (Takeoff),0,0,0,1790197621,1790197772,N/A,OpenSky Network
+2026-09-24 04:20:48,NONE,N/A,N/A,N/A,N/A,-6.1256,106.6558,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
