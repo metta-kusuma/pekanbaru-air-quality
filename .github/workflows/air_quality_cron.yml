@@ -1,4 +1,4 @@
-name: Auto Logger AQI Pekanbaru
+name: Auto Logger AQI & Weather Pekanbaru
 
 on:
   schedule:
@@ -37,6 +37,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add pekanbaru_air_quality_log.csv
-          git commit -m "Auto-update air quality dataset log (Night shift)" || exit 0
+          git add .
+          git commit -m "Auto-update air quality & weather dataset log (Night shift)" || exit 0
           git push
