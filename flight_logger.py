@@ -11,8 +11,11 @@ def fetch_and_save_flights():
         print("Error: AIRLABS_API_KEY tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Udara Bandara Soekarno-Hatta (CGK) & Halim (HLP)
-    bbox = "-6.35,106.55,-6.00,106.90"
+    # Bounding Box Perluas (Setara Range Approach Radar Jakarta / CGK & HLP)
+    # Format AirLabs: lat_min,lng_min,lat_max,lng_max
+    # lamin: -6.85 (Bogor/Sukabumi), lomin: 105.80 (Selat Sunda/Serang)
+    # lamax: -5.50 (Laut Jawa), lomax: 107.50 (Karawang/Purwakarta)
+    bbox = "-6.85,105.80,-5.50,107.50"
     url = f"https://airlabs.co/api/v9/flights?bbox={bbox}&api_key={api_key}"
     
     wib = pytz.timezone('Asia/Jakarta')
@@ -121,7 +124,7 @@ def fetch_and_save_flights():
                 df_new.to_csv(csv_file, mode='w', header=True, index=False)
 
             total_recorded = len(flights) if isinstance(flights, list) else 0
-            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {total_recorded} penerbangan super lengkap di Jakarta.")
+            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {total_recorded} penerbangan di wilayah radar Approach Jakarta.")
 
         else:
             print(f"AirLabs API Error: HTTP Status Code {response.status_code} - {response.text}")
