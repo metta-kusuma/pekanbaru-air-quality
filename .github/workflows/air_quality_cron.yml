@@ -30,7 +30,6 @@ jobs:
       - name: Run Logger Script
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          AIRVISUAL_API_KEY: ${{ secrets.AIRVISUAL_API_KEY }}
         run: |
           python logger.py
 
@@ -39,5 +38,5 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add .
-          git commit -m "Auto-update air quality & weather dataset log (Night shift)" || exit 0
+          git commit -m "Auto-update weather & air quality dataset log (Night shift)" || exit 0
           git push
