@@ -1,87 +1,85 @@
 import os
 import requests
 import pandas as pd
+from datetime import datetime
+import pytz
 
-# === 1. MENGAMBIL API KEY AMAN DARI GITHUB SECRETS ===
-# Jangan khawatir, sistem GitHub Actions akan otomatis mengisi ini nanti
-API_KEY = os.getenv("AIRLABS_API_KEY") 
+def fetch_and_save_flights():
+    # Mengambil API Key dari Secrets GitHub
+    api_key = os.getenv("AIRLABS_API_KEY")
+    
+    if not api_key:
+        print("Error: AIRLABS_API_KEY tidak ditemukan di environment variables.")
+        return
 
-def validasi_dan_ambil_json(url, params):
-    """Fungsi pembantu untuk menghindari error koneksi dan menangkap respons asli"""
+    # Bounding Box Pekanbaru (lat_min, lon_min, lat_max, lon_max)
+    # Latitude: 0.35 s/d 0.65 | Longitude: 101.30 s/d 101.60
+    bbox = "0.35,101.30,0.65,101.60"
+    
+    url = f"https://airlabs.co/api/v9/flights?bbox={bbox}&api_key={api_key}"
+    
+    wib = pytz.timezone('Asia/Jakarta')
+    now_wib = datetime.now(wib).strftime('%Y-%m-%d %H:%M:%S')
+    csv_file = "pekanbaru_flights_log.csv"
+
     try:
-        response = requests.get(url, params=params, timeout=20)
-        if response.status_code != 200:
-            print(f"  [Error Server] HTTP Status: {response.status_code}")
-            return None
-        return response.json()
-    except Exception as e:
-        print(f"  [Error Koneksi]: {e}")
-        return None
-
-# FUNGSI 1: Mengambil Data Jadwal Penerbangan Pekanbaru (URL SUDAH DIPERBAIKI)
-def ambil_data_jadwal(bandara="PKU"):
-    url = "https://airlabs.co"
-    frames = []
-    
-    for tipe in ["dep_iata", "arr_iata"]:
-        params = {"api_key": API_KEY, tipe: bandara}
-        data = validasi_dan_ambil_json(url, params)
+        response = requests.get(url, timeout=15)
         
-        if data and "response" in data and data["response"]:
-            frames.append(pd.DataFrame(data["response"]))
-            
-    if frames:
-        return pd.concat(frames, ignore_index=True)
-    return pd.DataFrame()
+        if response.status_code == 200:
+            result = response.json()
+            flights = result.get('response', [])
+            flight_data = []
 
-# FUNGSI 2: Mengambil Metadata Maskapai (URL SUDAH DIPERBAIKI)
-def ambil_metadata_maskapai():
-    url = "https://airlabs.co"
-    params = {"api_key": API_KEY}
-    data = validasi_dan_ambil_json(url, params)
-    
-    if data and "response" in data and data["response"]:
-        return pd.DataFrame(data["response"])
-    return pd.DataFrame()
+            if flights:
+                for f in flights:
+                    flight_data.append({
+                        'Timestamp': now_wib,
+                        'Flight_IATA': f.get('flight_iata', 'N/A'),
+                        'Flight_ICAO': f.get('flight_icao', 'N/A'),
+                        'Hex_Code': f.get('hex', 'N/A'),
+                        'Flag': f.get('flag', 'N/A'),
+                        'Origin_IATA': f.get('dep_iata', 'N/A'),
+                        'Destination_IATA': f.get('arr_iata', 'N/A'),
+                        'Altitude_m': f.get('alt', 0),
+                        'Speed_kmh': f.get('speed', 0),
+                        'Heading': f.get('dir', 0),
+                        'Latitude': f.get('lat', 0.5071),
+                        'Longitude': f.get('lng', 101.4478),
+                        'Status': f.get('status', 'en-route')
+                    })
+            else:
+                # Log status jika sedang tidak ada pesawat yang melintas
+                flight_data.append({
+                    'Timestamp': now_wib,
+                    'Flight_IATA': 'NONE',
+                    'Flight_ICAO': 'NONE',
+                    'Hex_Code': 'N/A',
+                    'Flag': 'N/A',
+                    'Origin_IATA': 'N/A',
+                    'Destination_IATA': 'N/A',
+                    'Altitude_m': 0,
+                    'Speed_kmh': 0,
+                    'Heading': 0,
+                    'Latitude': 0.5071,
+                    'Longitude': 101.4478,
+                    'Status': 'no_flights'
+                })
 
-# === EKSEKUSI PROSES ===
-if not API_KEY:
-    print("[Gagal] AIRLABS_API_KEY tidak ditemukan di GitHub Secrets!")
-    exit(1)
+            df_new = pd.DataFrame(flight_data)
 
-print("1. Menarik data jadwal aktif Pekanbaru...")
-df_jadwal = ambil_data_jadwal("PKU")
+            # Append data ke file CSV
+            if os.path.exists(csv_file):
+                df_new.to_csv(csv_file, mode='a', header=False, index=False)
+            else:
+                df_new.to_csv(csv_file, mode='w', header=True, index=False)
 
-print("\n2. Menarik data referensi maskapai global...")
-df_maskapai = ambil_metadata_maskapai()
+            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {len(flights)} data penerbangan di Pekanbaru.")
 
-# === VALIDASI AKHIR DAN PENYIMPANAN ===
-if not df_jadwal.empty:
-    print(f"\n[Sukses] Berhasil menarik {len(df_jadwal)} data jadwal penerbangan!")
-    
-    if not df_maskapai.empty:
-        # Memastikan kolom 'airline_iata' ada di kedua dataframe sebelum di-merge
-        if 'airline_iata' in df_jadwal.columns and 'airline_iata' in df_maskapai.columns:
-            df_analisis = pd.merge(df_jadwal, df_maskapai[['airline_iata', 'name']], on='airline_iata', how='left')
-            print(" -> Data jadwal sukses digabungkan dengan nama maskapai.")
         else:
-            df_analisis = df_jadwal
-    else:
-        df_analisis = df_jadwal
-        print(" -> Data maskapai kosong. Menggunakan data jadwal murni.")
-        
-    # Catatan: print(display()) dihapus karena lingkungan GitHub Actions tidak mendukung fungsi display() Colab
-    nama_file = "dataset_analisis_penerbangan_pku.csv"
-    
-    # Logika Incremental (Gabungkan data lama jika sudah ada agar data terus bertambah)
-    if os.path.exists(nama_file):
-        df_lama = pd.read_csv(nama_file)
-        # Menghapus duplikat berdasarkan nomor penerbangan dan waktu keberangkatan
-        df_total = pd.concat([df_lama, df_analisis]).drop_duplicates(subset=["flight_num", "dep_time"], keep="last")
-        df_total.to_csv(nama_file, index=False)
-        print(f"Dataset diperbarui! Total keseluruhan data saat ini: {len(df_total)} baris.")
-    else:
-        df_analisis.to_csv(nama_file, index=False)
-        print(f"File baru berhasil dibuat dengan {len(df_analisis)} baris.")
-else:
-    print("\n[Gagal] Tidak ada data yang berhasil ditarik. Silakan periksa limit API Anda.")
+            print(f"AirLabs API Error: HTTP Status Code {response.status_code}")
+
+    except Exception as e:
+        print(f"Error fetching AirLabs flight data: {e}")
+
+if __name__ == "__main__":
+    fetch_and_save_flights()
