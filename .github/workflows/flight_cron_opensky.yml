@@ -3,6 +3,10 @@ name: 24/7 Jakarta Flight Automated Logger (OpenSky)
 on:
   workflow_dispatch:
 
+concurrency:
+  group: git-push-sync-group
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
