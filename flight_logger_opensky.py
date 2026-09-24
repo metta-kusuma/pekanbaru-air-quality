@@ -192,7 +192,7 @@ def fetch_fr24_flights(now_wib):
                 status = details.get('status', {}) or {}
                 time_info = details.get('time', {}) or {}
 
-                # Konversi Waktu Unix Departure & Arrival ke WIB
+                # Konversi Waktu Unix Departure & Arrival ke WIB String (Jam:Menit WIB)
                 def parse_unix_to_wib(unix_val):
                     if unix_val and isinstance(unix_val, (int, float)) and unix_val > 0:
                         return datetime.fromtimestamp(unix_val, tz=tz_wib).strftime('%H:%M WIB')
