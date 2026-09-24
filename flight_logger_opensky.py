@@ -162,68 +162,31 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (DENGAN SLEEP JEDA ANTI-BLOCK)
+# 2. FLIGHTRADAR24 DATA FETCHING (FAST 1-REQUEST & ANTI-BLOCK)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
     csv_file = "jakarta_flights_log_fr24.csv"
-    tz_wib = pytz.timezone('Asia/Jakarta')
     flight_data = []
     
     try:
         fr_api = FlightRadar24API()
+        
+        # 1x Request langsung menangkap seluruh pesawat di Bounding Box/Radius
         bounds = fr_api.get_bounds_by_point(latitude=-6.1256, longitude=106.6558, radius=100000)
         flights = fr_api.get_flights(bounds=bounds)
 
         if isinstance(flights, list) and len(flights) > 0:
             for f in flights:
-                details = {}
-                try:
-                    res = fr_api.get_flight_details(f)
-                    if isinstance(res, dict):
-                        details = res
-                except Exception:
-                    pass
+                callsign_clean = getattr(f, 'callsign', None) or getattr(f, 'number', None) or 'N/A'
+                airline_name = get_airline_name(callsign_clean)
 
-                # PERBAIKAN UTAMA: Tambah jeda 0.3 detik antar request agar IP tidak diblokir
-                time.sleep(0.3)
-
-                airline = details.get('airline', {}) or {}
-                aircraft = details.get('aircraft', {}) or {}
-                airport = details.get('airport', {}) or {}
-                origin = airport.get('origin', {}) or {}
-                destination = airport.get('destination', {}) or {}
-                status = details.get('status', {}) or {}
-                time_info = details.get('time', {}) or {}
-
-                # Konversi Waktu Unix ke WIB String
-                def parse_unix_to_wib(unix_val):
-                    if unix_val and isinstance(unix_val, (int, float)) and unix_val > 0:
-                        return datetime.fromtimestamp(unix_val, tz=tz_wib).strftime('%H:%M WIB')
-                    return 'N/A'
-
-                sched_dep = parse_unix_to_wib(time_info.get('scheduled', {}).get('departure'))
-                act_dep = parse_unix_to_wib(time_info.get('real', {}).get('departure'))
-                est_arr = parse_unix_to_wib(time_info.get('estimated', {}).get('arrival'))
-
-                # Parsing Region/Kota Bandara
-                origin_pos = origin.get('position', {}) or {}
-                origin_city = origin_pos.get('region', {}).get('name') or origin_pos.get('country', {}).get('name') or 'N/A'
-                
-                dest_pos = destination.get('position', {}) or {}
-                dest_city = dest_pos.get('region', {}).get('name') or dest_pos.get('country', {}).get('name') or 'N/A'
-
-                # Parsing Thumbnail Foto Pesawat
-                images = aircraft.get('images', {}) or {}
-                thumbnails = images.get('thumbnails', []) or images.get('large', [])
-                img_url = thumbnails[0].get('src') if isinstance(thumbnails, list) and len(thumbnails) > 0 else 'N/A'
-
-                alt_ft = f.altitude if f.altitude is not None else 0
+                alt_ft = getattr(f, 'altitude', 0) or 0
                 alt_m = round(alt_ft / 3.28084, 1) if alt_ft else 0
-                speed_kts = f.ground_speed if f.ground_speed is not None else 0
+                speed_kts = getattr(f, 'ground_speed', 0) or 0
                 speed_kmh = round(speed_kts * 1.852, 1) if speed_kts else 0
-                v_speed_fpm = f.vertical_speed if f.vertical_speed is not None else 0
+                v_speed_fpm = getattr(f, 'vertical_speed', 0) or 0
                 v_speed_ms = round(v_speed_fpm / 196.85, 2) if v_speed_fpm else 0
-                is_ground = 1 if f.on_ground else 0
+                is_ground = 1 if getattr(f, 'on_ground', False) else 0
 
                 if v_speed_ms > 1.5:
                     flight_phase = "Climbing (Takeoff)"
@@ -236,28 +199,28 @@ def fetch_fr24_flights(now_wib):
 
                 flight_data.append({
                     'Timestamp_WIB': now_wib,
-                    'Callsign': f.callsign or 'N/A',
-                    'Flight_Number': f.number or 'N/A',
-                    'Flight_ID': f.id or 'N/A',
-                    'Airline_Name': airline.get('name') or get_airline_name(f.callsign),
-                    'Airline_ICAO': airline.get('code', {}).get('icao') or f.airline_icao or 'N/A',
-                    'Airline_IATA': airline.get('code', {}).get('iata') or 'N/A',
-                    'Aircraft_Model': aircraft.get('model', {}).get('code') or f.aircraft_code or 'N/A',
-                    'Aircraft_Type': aircraft.get('model', {}).get('text') or 'N/A',
-                    'Registration_Number': aircraft.get('registration') or f.registration or 'N/A',
-                    'Aircraft_Image_URL': img_url,
-                    'Origin_IATA': origin.get('code', {}).get('iata') or f.origin_airport_iata or 'N/A',
-                    'Origin_ICAO': origin.get('code', {}).get('icao') or 'N/A',
-                    'Origin_Airport_Name': origin.get('name') or 'N/A',
-                    'Origin_City': origin_city,
-                    'Destination_IATA': destination.get('code', {}).get('iata') or f.destination_airport_iata or 'N/A',
-                    'Destination_ICAO': destination.get('code', {}).get('icao') or 'N/A',
-                    'Destination_Airport_Name': destination.get('name') or 'N/A',
-                    'Destination_City': dest_city,
-                    'Latitude': f.latitude if f.latitude is not None else -6.1256,
-                    'Longitude': f.longitude if f.longitude is not None else 106.6558,
-                    'Heading_Deg': f.heading if f.heading is not None else 0,
-                    'Squawk_Code': details.get('squawk') or 'N/A',
+                    'Callsign': getattr(f, 'callsign', None) or 'N/A',
+                    'Flight_Number': getattr(f, 'number', None) or 'N/A',
+                    'Flight_ID': getattr(f, 'id', None) or 'N/A',
+                    'Airline_Name': airline_name,
+                    'Airline_ICAO': getattr(f, 'airline_icao', None) or 'N/A',
+                    'Airline_IATA': 'N/A',
+                    'Aircraft_Model': getattr(f, 'aircraft_code', None) or 'N/A',
+                    'Aircraft_Type': 'N/A',
+                    'Registration_Number': getattr(f, 'registration', None) or 'N/A',
+                    'Aircraft_Image_URL': 'N/A',
+                    'Origin_IATA': getattr(f, 'origin_airport_iata', None) or 'N/A',
+                    'Origin_ICAO': 'N/A',
+                    'Origin_Airport_Name': 'N/A',
+                    'Origin_City': 'N/A',
+                    'Destination_IATA': getattr(f, 'destination_airport_iata', None) or 'N/A',
+                    'Destination_ICAO': 'N/A',
+                    'Destination_Airport_Name': 'N/A',
+                    'Destination_City': 'N/A',
+                    'Latitude': getattr(f, 'latitude', -6.1256),
+                    'Longitude': getattr(f, 'longitude', 106.6558),
+                    'Heading_Deg': getattr(f, 'heading', 0),
+                    'Squawk_Code': getattr(f, 'squawk', 'N/A') or 'N/A',
                     'Altitude_Meters': alt_m,
                     'Altitude_Feet': alt_ft,
                     'Ground_Speed_KMH': speed_kmh,
@@ -266,10 +229,10 @@ def fetch_fr24_flights(now_wib):
                     'Vertical_Speed_FPM': v_speed_fpm,
                     'Flight_Phase': flight_phase,
                     'Is_Ground': is_ground,
-                    'Status_Text': status.get('text') or 'N/A',
-                    'Scheduled_Departure': sched_dep,
-                    'Actual_Departure': act_dep,
-                    'Estimated_Arrival': est_arr,
+                    'Status_Text': 'N/A',
+                    'Scheduled_Departure': 'N/A',
+                    'Actual_Departure': 'N/A',
+                    'Estimated_Arrival': 'N/A',
                     'Source': 'FlightRadar24'
                 })
 
