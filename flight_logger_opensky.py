@@ -11,18 +11,115 @@ def get_airline_name(callsign):
     
     prefix = callsign[:3].upper()
     airlines = {
+        # --- MASKAPAI DOMESTIK INDONESIA (Komersial & Perintis) ---
         'GIA': 'Garuda Indonesia',
         'LKN': 'Lion Air',
         'BTK': 'Batik Air',
         'CTV': 'Citilink',
         'AWQ': 'Indonesia AirAsia',
         'SJY': 'Sriwijaya Air',
-        'GFA': 'Gulf Air',
-        'SIA': 'Singapore Airlines',
-        'MAS': 'Malaysia Airlines',
+        'NAM': 'NAM Air',
+        'LNI': 'Lion Air (Alt Callsign)',
+        'RON': 'Nami Air / Indonesia Air Transport',
+        'PAS': 'Pelita Air Service',
+        'XAR': 'Express Air',
+        'WON': 'Wings Air',
+        'SUA': 'Susi Air (PT Susi Air)',
+        'TNX': 'Trigana Air Service',
+        'PTP': 'PT TransNusa Aviation Mandiri',
+        'TNU': 'TransNusa',
+        'BHA': 'Aero Nusantara Indonesia',
+        'PKN': 'Nusantara Air Charter',
+        'SMG': 'Semuwa Air',
+        'PPA': 'Pelita Air',
+        
+        # --- MASKAPAI KARGO & MILITER INDONESIA ---
+        'RGI': 'My Indo Airlines',
+        'BTP': 'Asia Cargo Airlines / Tri-MG Intra Asia',
+        'TNO': 'Tri-MG Intra Asia Airlines',
+        'TREK': 'TNI Angkatan Udara',
+        'ALPHA': 'TNI Angkatan Udara',
+        'NAVY': 'TNI Angkatan Laut',
+        'POL': 'Kepolisian Republik Indonesia',
+        
+        # --- MASKAPAI TIMUR TENGAH (Middle East) ---
+        'QTR': 'Qatar Airways',
         'UAE': 'Emirates',
+        'ETD': 'Etihad Airways',
+        'SUD': 'Saudia (Saudi Arabian Airlines)',
+        'SWR': 'Swiss International Air Lines',
+        'GFA': 'Gulf Air',
+        'OMA': 'Oman Air',
+        'RJA': 'Royal Jordanian',
+        'KAC': 'Kuwait Airways',
+        
+        # --- MASKAPAI ASIA TENGGARA (ASEAN) ---
+        'SIA': 'Singapore Airlines',
+        'SLK': 'SilkAir',
+        'TGW': 'Scoot',
+        'MAS': 'Malaysia Airlines',
+        'AXM': 'AirAsia (Malaysia)',
+        'MXD': 'Batik Air Malaysia (Malindo Air)',
+        'MYX': 'MYAirline',
+        'THA': 'Thai Airways International',
+        'AIQ': 'Thai AirAsia',
+        'TLM': 'Thai Lion Air',
+        'CPA': 'Cathay Pacific',
+        'HDA': 'Cathay Dragon / HK Express',
+        'HKP': 'Hong Kong Express Airways',
+        'CRK': 'Hong Kong Airlines',
+        'HVN': 'Vietnam Airlines',
+        'VJC': 'VietJet Air',
+        'PAL': 'Philippine Airlines',
+        'CEB': 'Cebu Pacific',
+        'RBA': 'Royal Brunei Airlines',
+        'MMR': 'Myanmar Airways International',
+        
+        # --- MASKAPAI ASIA TIMUR (Jepang, Korea, China, Taiwan) ---
+        'ANA': 'All Nippon Airways (ANA)',
+        'JAL': 'Japan Airlines (JAL)',
+        'TZP': 'Zipair Tokyo',
+        'KAL': 'Korean Air',
+        'AAR': 'Asiana Airlines',
+        'JJA': 'Jeju Air',
+        'CCA': 'Air China',
+        'CES': 'China Eastern Airlines',
+        'CSN': 'China Southern Airlines',
+        'CXA': 'XiamenAir',
+        'CHB': 'China Cargo Airlines',
+        'CAL': 'China Airlines (Taiwan)',
+        'EVA': 'EVA Air',
+        'SJX': 'Starlux Airlines',
+        
+        # --- MASKAPAI ASIA SELATAN ---
+        'AIC': 'Air India',
+        'IGO': 'IndiGo',
+        'BPO': 'Biman Bangladesh Airlines',
+        'ALK': 'SriLankan Airlines',
+        
+        # --- MASKAPAI AUSTRALIA & PASIFIK ---
         'QFA': 'Qantas',
-        'CPA': 'Cathay Pacific'
+        'VOZ': 'Virgin Australia',
+        'JST': 'Jetstar Airways',
+        'ANZ': 'Air New Zealand',
+        
+        # --- MASKAPAI EROPA & AMERIKA ---
+        'KLM': 'KLM Royal Dutch Airlines',
+        'AFR': 'Air France',
+        'BAW': 'British Airways',
+        'DLH': 'Lufthansa',
+        'THY': 'Turkish Airlines',
+        'UAL': 'United Airlines',
+        'AAL': 'American Airlines',
+        'DAL': 'Delta Air Lines',
+        
+        # --- MASKAPAI KARGO GLOBAL (Express & Logistics) ---
+        'FDX': 'FedEx Express',
+        'UPS': 'UPS Airlines',
+        'GTI': 'Atlas Air',
+        'BOX': 'Aerologic (DHL Cargo)',
+        'PAC': 'Polar Air Cargo',
+        'SQC': 'Singapore Airlines Cargo'
     }
     return airlines.get(prefix, 'Other Airline')
 
