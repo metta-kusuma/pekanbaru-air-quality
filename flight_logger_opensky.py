@@ -58,7 +58,7 @@ def get_airline_name(callsign):
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA VIA 1-REQUEST HEMAT API)
+# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA VIA 1-REQUEST 500KM+)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -68,8 +68,8 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Koridor Jakarta s/d Singapura
-    params = {'lamin': -6.85, 'lamax': 2.00, 'lomin': 103.00, 'lomax': 108.00}
+    # Bounding Box Diperluas (Cakupan Radius 500km+ untuk Koridor JKT s/d SIN)
+    params = {'lamin': -10.63, 'lamax': 5.86, 'lomin': 99.49, 'lomax': 111.16}
     url = "https://opensky-network.org/api/states/all"
 
     try:
@@ -86,10 +86,10 @@ def fetch_opensky_flights(now_wib):
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # Pemisahan Wilayah
-                    if -6.85 <= latitude <= -5.50 and 105.80 <= longitude <= 107.50:
+                    # Pemisahan Wilayah Radius 500km
+                    if -10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16:
                         region = 'Jakarta'
-                    elif 0.80 <= latitude <= 2.00 and 103.20 <= longitude <= 104.60:
+                    elif -1.59 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
                         region = 'Singapore'
                     else:
                         continue
@@ -168,7 +168,7 @@ def fetch_opensky_flights(now_wib):
             pd.DataFrame(f_jkt).to_csv('jakarta_flights_log_opensky.csv', mode='a' if os.path.exists('jakarta_flights_log_opensky.csv') else 'w', header=not os.path.exists('jakarta_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_sin).to_csv('singapore_flights_log_opensky.csv', mode='a' if os.path.exists('singapore_flights_log_opensky.csv') else 'w', header=not os.path.exists('singapore_flights_log_opensky.csv'), index=False)
             
-            print(f"[{now_wib}] OpenSky Success: Jakarta ({len(f_jkt)} penerbangan), Singapore ({len(f_sin)} penerbangan).")
+            print(f"[{now_wib}] OpenSky Success (500km Range): Jakarta ({len(f_jkt)} penerbangan), Singapore ({len(f_sin)} penerbangan).")
 
         else:
             print(f"OpenSky API Error: Status Code {response.status_code}")
@@ -177,10 +177,10 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (TEPAT 36 KOLOM UNTUK JAKARTA & SINGAPURA)
+# 2. FLIGHTRADAR24 DATA FETCHING (RADIUS 500 KM - TEPAT 36 KOLOM)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
-    # Konfigurasi Bounding Box Radius Jakarta dan Singapura
+    # Parameter radius diubah ke 500.000 meter (500 km)
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'}
@@ -193,7 +193,8 @@ def fetch_fr24_flights(now_wib):
             csv_file = config['csv']
             flight_data = []
 
-            bounds = fr_api.get_bounds_by_point(latitude=config['lat'], longitude=config['lon'], radius=100000)
+            # Parameter radius diubah menjadi 500000 (500 km)
+            bounds = fr_api.get_bounds_by_point(latitude=config['lat'], longitude=config['lon'], radius=500000)
             flights = fr_api.get_flights(bounds=bounds)
 
             if isinstance(flights, list) and len(flights) > 0:
@@ -276,7 +277,7 @@ def fetch_fr24_flights(now_wib):
             df_new = pd.DataFrame(flight_data)
             df_new = df_new.fillna('N/A')
             df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
-            print(f"[{now_wib}] FlightRadar24 ({region_name}) Success: Berhasil mencatat {len(flight_data)} penerbangan ke {csv_file}.")
+            print(f"[{now_wib}] FlightRadar24 ({region_name} - 500km Range) Success: Berhasil mencatat {len(flight_data)} penerbangan ke {csv_file}.")
             time.sleep(0.5)
 
     except Exception as e:
