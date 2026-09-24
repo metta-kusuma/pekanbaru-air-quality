@@ -11,16 +11,15 @@ def fetch_and_save_flights():
         print("Error: AIRLABS_API_KEY tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Perluas (Setara Range Approach Radar Jakarta / CGK & HLP)
+    # Bounding Box Pekanbaru Radar / TMA Area (Sultan Syarif Kasim II - PKU)
     # Format AirLabs: lat_min,lng_min,lat_max,lng_max
-    # lamin: -6.85 (Bogor/Sukabumi), lomin: 105.80 (Selat Sunda/Serang)
-    # lamax: -5.50 (Laut Jawa), lomax: 107.50 (Karawang/Purwakarta)
-    bbox = "-6.85,105.80,-5.50,107.50"
+    # Covering: Kampar, Siak, Pelalawan, Dumai South, hingga batas Riau Tengah
+    bbox = "-0.54,100.44,1.46,102.44"
     url = f"https://airlabs.co/api/v9/flights?bbox={bbox}&api_key={api_key}"
     
     wib = pytz.timezone('Asia/Jakarta')
     now_wib = datetime.now(wib).strftime('%Y-%m-%d %H:%M:%S')
-    csv_file = "jakarta_flights_log.csv"
+    csv_file = "pekanbaru_flights_log.csv"
 
     try:
         response = requests.get(url, timeout=20)
@@ -78,9 +77,9 @@ def fetch_and_save_flights():
                         'Destination_ICAO': f.get('arr_icao') or 'N/A',
                         'Destination_Terminal': f.get('arr_terminal') or 'N/A',
                         
-                        # 4. Telemetri Posisi & Koordinat
-                        'Latitude': f.get('lat') if f.get('lat') is not None else -6.1256,
-                        'Longitude': f.get('lng') if f.get('lng') is not None else 106.6558,
+                        # 4. Telemetri Posisi & Koordinat (Default: SSK II PKU)
+                        'Latitude': f.get('lat') if f.get('lat') is not None else 0.4608,
+                        'Longitude': f.get('lng') if f.get('lng') is not None else 101.4447,
                         'Heading_Deg': f.get('dir') if f.get('dir') is not None else 0,
                         
                         # 5. Ketinggian & Kecepatan Multi-Satuan
@@ -100,7 +99,7 @@ def fetch_and_save_flights():
                         'Status': f.get('status') or 'en-route'
                     })
             else:
-                # Log status jika ruang udara sedang kosong
+                # Log status jika ruang udara Pekanbaru sedang kosong
                 flight_data.append({
                     'Timestamp_WIB': now_wib,
                     'Flight_IATA': 'NONE', 'Flight_ICAO': 'NONE', 'Flight_Number': 'NONE',
@@ -108,7 +107,7 @@ def fetch_and_save_flights():
                     'Registration_Number': 'N/A', 'Transponder_Hex': 'N/A', 'Airline_Country_Flag': 'N/A',
                     'Origin_IATA': 'N/A', 'Origin_ICAO': 'N/A', 'Origin_Terminal': 'N/A',
                     'Destination_IATA': 'N/A', 'Destination_ICAO': 'N/A', 'Destination_Terminal': 'N/A',
-                    'Latitude': -6.1256, 'Longitude': 106.6558, 'Heading_Deg': 0,
+                    'Latitude': 0.4608, 'Longitude': 101.4447, 'Heading_Deg': 0,
                     'Altitude_Meters': 0, 'Altitude_Feet': 0,
                     'Ground_Speed_KMH': 0, 'Ground_Speed_Knots': 0,
                     'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0,
@@ -124,7 +123,7 @@ def fetch_and_save_flights():
                 df_new.to_csv(csv_file, mode='w', header=True, index=False)
 
             total_recorded = len(flights) if isinstance(flights, list) else 0
-            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {total_recorded} penerbangan di wilayah radar Approach Jakarta.")
+            print(f"[{now_wib}] AirLabs Success: Berhasil mencatat {total_recorded} penerbangan di wilayah radar Approach Pekanbaru (PKU).")
 
         else:
             print(f"AirLabs API Error: HTTP Status Code {response.status_code} - {response.text}")
