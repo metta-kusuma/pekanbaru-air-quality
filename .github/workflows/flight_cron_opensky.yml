@@ -1,4 +1,4 @@
-name: 24/7 Jakarta Flight Automated Logger (OpenSky)
+name: 24/7 Jakarta Flight Automated Logger (OpenSky & FR24)
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests pandas pytz; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests pandas pytz FlightRadarAPI; fi
 
       - name: Run Jakarta Flight Tracker Logger Script
         env:
@@ -38,7 +38,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add jakarta_flights_log_opensky.csv
-          git commit -m "Auto-update Jakarta flight logs (OpenSky) [skip ci]" || exit 0
+          git add jakarta_flights_log_opensky.csv jakarta_flights_log_fr24.csv
+          git commit -m "Auto-update Jakarta flight logs (OpenSky & FR24) [skip ci]" || exit 0
           git pull --rebase
           git push
