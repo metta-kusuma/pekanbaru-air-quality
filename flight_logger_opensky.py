@@ -58,7 +58,7 @@ def get_airline_name(callsign):
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA - RADIUS 500 KM+ FULL)
+# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA - 500 KM+ FULL RADIUS)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -68,7 +68,7 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Extended Bounding Box (Cakupan Luas Koridor Asia Tenggara)
+    # Bounding Box Raksasa Mencakup Jangkauan 500km+ Jakarta & Singapura Sekaligus
     params = {'lamin': -10.63, 'lamax': 5.86, 'lomin': 99.49, 'lomax': 111.16}
     url = "https://opensky-network.org/api/states/all"
 
@@ -77,7 +77,7 @@ def fetch_opensky_flights(now_wib):
         if response.status_code == 200:
             result = response.json()
             states = result.get('states', [])
-
+            
             f_jkt = []
             f_sin = []
 
@@ -85,82 +85,20 @@ def fetch_opensky_flights(now_wib):
                 for s in states:
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
+                    
+                    # FILTER 500 KM SEJATI UNTUK MASING-MASING WILAYAH
+                    # 1. Jakarta 500km Zone: Lampung, Selat Sunda, Jawa Barat, Jateng, Laut Jawa
+                    is_jakarta = (-10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16)
+                    
+                    # 2. Singapore 500km Zone: Singapura, Semenanjung Malaysia, Kepri, Riau, Selat Malaka
+                    is_singapore = (-3.14 <= latitude <= 5.86 and 99.49 <= longitude <= 108.49)
 
-                    # Pemisahan Wilayah Radius 500km
-                    if -10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16:
-                    # PERBAIKAN UTAMA: Filter Wilayah Dihitung Presisi Radius 500km Sejati
-                    # Jakarta Extended Zone: Selat Sunda, Lampung, Seluruh Jawa Barat, Jawa Tengah, & Laut Jawa
-                    if -10.63 <= latitude <= -2.50 and 102.00 <= longitude <= 111.16:
-                        region = 'Jakarta'
-                    elif -1.59 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
-                    # Singapore Extended Zone: Singapura, Selat Malaka, Riau, & Malaysia
-                    elif -2.49 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
-                        region = 'Singapore'
-                    else:
-                        continue
-
-                    transponder_hex = s[0] or 'N/A'
-                    callsign = s[1].strip() if s[1] else 'N/A'
-                    origin_country = s[2] or 'N/A'
-                    time_position = s[3] or 0
-                    last_contact = s[4] or 0
-                    baro_altitude_m = s[7] if s[7] is not None else 0
-                    is_ground = 1 if s[8] else 0
-                    velocity_ms = s[9] if s[9] is not None else 0
-                    heading_deg = s[10] if s[10] is not None else 0
-                    vertical_rate_ms = s[11] if s[11] is not None else 0
-                    sensors = str(s[12]) if s[12] is not None else 'N/A'
-                    geo_altitude_m = s[13] if s[13] is not None else 0
-                    squawk = s[14] or 'N/A'
-                    spi = 1 if s[15] else 0
-                    position_source = s[16] if s[16] is not None else 0
-
-                    alt_feet = round(baro_altitude_m * 3.28084, 1)
-                    geo_alt_feet = round(geo_altitude_m * 3.28084, 1)
-                    speed_kmh = round(velocity_ms * 3.6, 1)
-                    speed_knots = round(velocity_ms * 1.94384, 1)
-                    v_speed_fpm = round(vertical_rate_ms * 196.85, 1)
-
-                    if vertical_rate_ms > 1.5:
-                        flight_phase = "Climbing (Takeoff)"
-                    elif vertical_rate_ms < -1.5:
-                        flight_phase = "Descending (Landing/Approach)"
-                    elif is_ground == 1:
-                        flight_phase = "On Taxiway/Runway"
-                    else:
-                        flight_phase = "Cruising"
-
-                    row = {
-                        'Timestamp_WIB': now_wib,
-                        'Callsign': callsign,
-                        'Airline_Inferred': get_airline_name(callsign),
-                        'Transponder_Hex': transponder_hex,
-                        'Country_Origin': origin_country,
-                        'Squawk_Code': squawk,
-                        'Latitude': latitude,
-                        'Longitude': longitude,
-                        'Baro_Altitude_Meters': baro_altitude_m,
-                        'Baro_Altitude_Feet': alt_feet,
-                        'Geo_Altitude_Meters': geo_altitude_m,
-                        'Geo_Altitude_Feet': geo_alt_feet,
-                        'Speed_KMH': speed_kmh,
-                        'Speed_Knots': speed_knots,
-                        'Vertical_Speed_MS': vertical_rate_ms,
-                        'Vertical_Speed_FPM': v_speed_fpm,
-                        'Heading_Deg': heading_deg,
-                        'Flight_Phase': flight_phase,
-                        'Is_Ground': is_ground,
-                        'SPI_Transponder': spi,
-                        'Position_Source_ID': position_source,
-                        'Time_Position_Unix': time_position,
-                        'Last_Contact_Unix': last_contact,
-                        'Sensors_Data': sensors,
-                        'Source': 'OpenSky Network'
-                    }
-
-                    if region == 'Jakarta':
+                    if is_jakarta:
+                        row = build_opensky_row(s, now_wib)
                         f_jkt.append(row)
-                    else:
+                    
+                    if is_singapore:
+                        row = build_opensky_row(s, now_wib)
                         f_sin.append(row)
 
             # Fallback jika kosong
@@ -181,11 +119,72 @@ def fetch_opensky_flights(now_wib):
     except Exception as e:
         print(f"Error fetching OpenSky data: {e}")
 
+def build_opensky_row(s, now_wib):
+    transponder_hex = s[0] or 'N/A'
+    callsign = s[1].strip() if s[1] else 'N/A'
+    origin_country = s[2] or 'N/A'
+    time_position = s[3] or 0
+    last_contact = s[4] or 0
+    longitude = s[5] if s[5] is not None else 0
+    latitude = s[6] if s[6] is not None else 0
+    baro_altitude_m = s[7] if s[7] is not None else 0
+    is_ground = 1 if s[8] else 0
+    velocity_ms = s[9] if s[9] is not None else 0
+    heading_deg = s[10] if s[10] is not None else 0
+    vertical_rate_ms = s[11] if s[11] is not None else 0
+    sensors = str(s[12]) if s[12] is not None else 'N/A'
+    geo_altitude_m = s[13] if s[13] is not None else 0
+    squawk = s[14] or 'N/A'
+    spi = 1 if s[15] else 0
+    position_source = s[16] if s[16] is not None else 0
+
+    alt_feet = round(baro_altitude_m * 3.28084, 1)
+    geo_alt_feet = round(geo_altitude_m * 3.28084, 1)
+    speed_kmh = round(velocity_ms * 3.6, 1)
+    speed_knots = round(velocity_ms * 1.94384, 1)
+    v_speed_fpm = round(vertical_rate_ms * 196.85, 1)
+
+    if vertical_rate_ms > 1.5:
+        flight_phase = "Climbing (Takeoff)"
+    elif vertical_rate_ms < -1.5:
+        flight_phase = "Descending (Landing/Approach)"
+    elif is_ground == 1:
+        flight_phase = "On Taxiway/Runway"
+    else:
+        flight_phase = "Cruising"
+
+    return {
+        'Timestamp_WIB': now_wib,
+        'Callsign': callsign,
+        'Airline_Inferred': get_airline_name(callsign),
+        'Transponder_Hex': transponder_hex,
+        'Country_Origin': origin_country,
+        'Squawk_Code': squawk,
+        'Latitude': latitude,
+        'Longitude': longitude,
+        'Baro_Altitude_Meters': baro_altitude_m,
+        'Baro_Altitude_Feet': alt_feet,
+        'Geo_Altitude_Meters': geo_altitude_m,
+        'Geo_Altitude_Feet': geo_alt_feet,
+        'Speed_KMH': speed_kmh,
+        'Speed_Knots': speed_knots,
+        'Vertical_Speed_MS': vertical_rate_ms,
+        'Vertical_Speed_FPM': v_speed_fpm,
+        'Heading_Deg': heading_deg,
+        'Flight_Phase': flight_phase,
+        'Is_Ground': is_ground,
+        'SPI_Transponder': spi,
+        'Position_Source_ID': position_source,
+        'Time_Position_Unix': time_position,
+        'Last_Contact_Unix': last_contact,
+        'Sensors_Data': sensors,
+        'Source': 'OpenSky Network'
+    }
+
 # -------------------------------------------------------------------
 # 2. FLIGHTRADAR24 DATA FETCHING (RADIUS 500 KM - TEPAT 36 KOLOM)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
-    # Parameter radius 500.000 meter (500 km)
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'}
@@ -198,6 +197,7 @@ def fetch_fr24_flights(now_wib):
             csv_file = config['csv']
             flight_data = []
 
+            # Parameter radius diset 500.000 meter (500 km) penuh untuk masing-masing wilayah
             bounds = fr_api.get_bounds_by_point(latitude=config['lat'], longitude=config['lon'], radius=500000)
             flights = fr_api.get_flights(bounds=bounds)
 
@@ -223,7 +223,7 @@ def fetch_fr24_flights(now_wib):
                     else:
                         flight_phase = "Cruising"
 
-                    # STRUKTUR KONSISTEN TEPAT 36 KOLOM PERSIS SEPERTI KODINGAN ASLI ANDA
+                    # KONSISTEN TEPAT 36 KOLOM PERSIS STRUKTUR ASLI ANDA
                     flight_data.append({
                         'Timestamp_WIB': now_wib,
                         'Callsign': getattr(f, 'callsign', None) or 'N/A',
@@ -263,7 +263,6 @@ def fetch_fr24_flights(now_wib):
                         'Source': 'FlightRadar24'
                     })
 
-            # FALLBACK TEPAT 36 KOLOM JIKA TIDAK ADA PESAWAT / TERJADI ERROR
             if not flight_data:
                 flight_data.append({
                     'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
