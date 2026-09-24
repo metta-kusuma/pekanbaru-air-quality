@@ -1,3 +1,4 @@
 Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Code,Latitude,Longitude,Baro_Altitude_Meters,Baro_Altitude_Feet,Geo_Altitude_Meters,Geo_Altitude_Feet,Speed_KMH,Speed_Knots,Vertical_Speed_MS,Vertical_Speed_FPM,Heading_Deg,Flight_Phase,Is_Ground,SPI_Transponder,Position_Source_ID,Time_Position_Unix,Last_Contact_Unix,Sensors_Data,Source
 2026-09-24 22:21:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-24 22:28:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-24 22:37:44,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
