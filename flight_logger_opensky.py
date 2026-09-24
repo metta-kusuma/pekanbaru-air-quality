@@ -58,7 +58,7 @@ def get_airline_name(callsign):
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA, SINGAPURA, BALI - RADIUS 500 KM+)
+# 1. OPENSKY DATA FETCHING (JAKARTA, SINGAPURA, BALI, KALIMANTAN - 500 KM+)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -68,8 +68,8 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Diperluas Mencakup 3 Wilayah Sekaligus (Jakarta, Singapura, Bali)
-    params = {'lamin': -13.25, 'lamax': 5.86, 'lomin': 99.49, 'lomax': 119.70}
+    # Bounding Box Raksasa mencakup seluruh wilayah Asia Tenggara Maritim
+    params = {'lamin': -13.25, 'lamax': 7.50, 'lomin': 98.50, 'lomax': 119.70}
     url = "https://opensky-network.org/api/states/all"
 
     try:
@@ -78,44 +78,43 @@ def fetch_opensky_flights(now_wib):
             result = response.json()
             states = result.get('states', [])
             
-            f_jkt = []
-            f_sin = []
-            f_dps = []
+            f_jkt, f_sin, f_dps, f_kal = [], [], [], []
 
             if states:
                 for s in states:
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # Logika Pemisahan Radius 500 km per Bandara Pusat
+                    # Filter radius 500 km per bandara pusat
                     is_jakarta = (-10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16)
                     is_singapore = (-3.14 <= latitude <= 5.86 and 99.49 <= longitude <= 108.49)
                     is_bali = (-13.25 <= latitude <= -4.25 and 110.67 <= longitude <= 119.70)
+                    is_kalimantan = (-5.75 <= latitude <= 7.50 and 108.50 <= longitude <= 119.70)
 
-                    if not is_jakarta and not is_singapore and not is_bali:
+                    if not is_jakarta and not is_singapore and not is_bali and not is_kalimantan:
                         continue
 
                     row = build_opensky_row(s, now_wib)
 
-                    if is_jakarta:
-                        f_jkt.append(row)
-                    if is_singapore:
-                        f_sin.append(row)
-                    if is_bali:
-                        f_dps.append(row)
+                    if is_jakarta: f_jkt.append(row)
+                    if is_singapore: f_sin.append(row)
+                    if is_bali: f_dps.append(row)
+                    if is_kalimantan: f_kal.append(row)
 
             # Fallback jika data kosong
-            fallback_builder = lambda lat, lon: [{'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Airline_Inferred': 'N/A', 'Transponder_Hex': 'N/A', 'Country_Origin': 'N/A', 'Squawk_Code': 'N/A', 'Latitude': lat, 'Longitude': lon, 'Baro_Altitude_Meters': 0, 'Baro_Altitude_Feet': 0, 'Geo_Altitude_Meters': 0, 'Geo_Altitude_Feet': 0, 'Speed_KMH': 0, 'Speed_Knots': 0, 'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Heading_Deg': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0, 'SPI_Transponder': 0, 'Position_Source_ID': 0, 'Time_Position_Unix': 0, 'Last_Contact_Unix': 0, 'Sensors_Data': 'N/A', 'Source': 'OpenSky Network'}]
+            fallback = lambda lat, lon: [{'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Airline_Inferred': 'N/A', 'Transponder_Hex': 'N/A', 'Country_Origin': 'N/A', 'Squawk_Code': 'N/A', 'Latitude': lat, 'Longitude': lon, 'Baro_Altitude_Meters': 0, 'Baro_Altitude_Feet': 0, 'Geo_Altitude_Meters': 0, 'Geo_Altitude_Feet': 0, 'Speed_KMH': 0, 'Speed_Knots': 0, 'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Heading_Deg': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0, 'SPI_Transponder': 0, 'Position_Source_ID': 0, 'Time_Position_Unix': 0, 'Last_Contact_Unix': 0, 'Sensors_Data': 'N/A', 'Source': 'OpenSky Network'}]
 
-            if not f_jkt: f_jkt = fallback_builder(-6.1256, 106.6558)
-            if not f_sin: f_sin = fallback_builder(1.3644, 103.9915)
-            if not f_dps: f_dps = fallback_builder(-8.7482, 115.1672)
+            if not f_jkt: f_jkt = fallback(-6.1256, 106.6558)
+            if not f_sin: f_sin = fallback(1.3644, 103.9915)
+            if not f_dps: f_dps = fallback(-8.7482, 115.1672)
+            if not f_kal: f_kal = fallback(-1.2682, 116.8942)
 
             pd.DataFrame(f_jkt).to_csv('jakarta_flights_log_opensky.csv', mode='a' if os.path.exists('jakarta_flights_log_opensky.csv') else 'w', header=not os.path.exists('jakarta_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_sin).to_csv('singapore_flights_log_opensky.csv', mode='a' if os.path.exists('singapore_flights_log_opensky.csv') else 'w', header=not os.path.exists('singapore_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_dps).to_csv('bali_flights_log_opensky.csv', mode='a' if os.path.exists('bali_flights_log_opensky.csv') else 'w', header=not os.path.exists('bali_flights_log_opensky.csv'), index=False)
+            pd.DataFrame(f_kal).to_csv('kalimantan_flights_log_opensky.csv', mode='a' if os.path.exists('kalimantan_flights_log_opensky.csv') else 'w', header=not os.path.exists('kalimantan_flights_log_opensky.csv'), index=False)
             
-            print(f"[{now_wib}] OpenSky Success (500km Range): Jakarta ({len(f_jkt)} penerbangan), Singapore ({len(f_sin)} penerbangan), Bali ({len(f_dps)} penerbangan).")
+            print(f"[{now_wib}] OpenSky Success (500km Range): Jakarta ({len(f_jkt)}), Singapore ({len(f_sin)}), Bali ({len(f_dps)}), Kalimantan ({len(f_kal)}).")
 
         else:
             print(f"OpenSky API Error: Status Code {response.status_code}")
@@ -186,14 +185,14 @@ def build_opensky_row(s, now_wib):
     }
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (3 BANDARA - JAKARTA, SINGAPURA, BALI)
+# 2. FLIGHTRADAR24 DATA FETCHING (4 BANDARA - RADIUS 500 KM - TEPAT 36 KOLOM)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
-    # Definisi 3 Bandara dengan Radius 500 KM (500.000 meter)
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'},
-        'Bali': {'lat': -8.7482, 'lon': 115.1672, 'csv': 'bali_flights_log_fr24.csv'}
+        'Bali': {'lat': -8.7482, 'lon': 115.1672, 'csv': 'bali_flights_log_fr24.csv'},
+        'Kalimantan': {'lat': -1.2682, 'lon': 116.8942, 'csv': 'kalimantan_flights_log_fr24.csv'}  # Balikpapan / IKN Center
     }
 
     try:
@@ -232,7 +231,6 @@ def fetch_fr24_flights(now_wib):
                     else:
                         flight_phase = "Cruising"
 
-                    # KONSISTEN TEPAT 36 KOLOM PERSIS STRUKTUR ASLI ANDA
                     flight_data.append({
                         'Timestamp_WIB': now_wib,
                         'Callsign': getattr(f, 'callsign', None) or 'N/A',
@@ -290,7 +288,7 @@ def fetch_fr24_flights(now_wib):
             df_new = df_new.fillna('N/A')
             df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
             print(f"[{now_wib}] FlightRadar24 ({region_name} - 500km Range) Success: Berhasil mencatat {len(flight_data)} penerbangan ke {csv_file}.")
-            time.sleep(1) # Jeda aman 1 detik antar request bandara
+            time.sleep(1)
 
         except Exception as region_error:
             print(f"Error fetching FlightRadar24 data for {region_name}: {region_error}")
