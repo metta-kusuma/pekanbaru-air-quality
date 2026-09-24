@@ -86,14 +86,12 @@ def fetch_opensky_flights(now_wib):
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # PERBAIKAN UTAMA: Filter Wilayah Dihitung Presisi Radius 500km Sejati
-                    # Jakarta Extended Zone: Selat Sunda, Lampung, Seluruh Jawa Barat, Jawa Tengah, & Laut Jawa
-                    if -10.63 <= latitude <= -2.50 and 102.00 <= longitude <= 111.16:
-                        region = 'Jakarta'
-                    # Singapore Extended Zone: Singapura, Selat Malaka, Riau, & Malaysia
-                    elif -2.49 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
-                        region = 'Singapore'
-                    else:
+                    # LOGIKA UTUH: Seluruh pesawat dalam jangkauan 500km dari masing-masing titik dicatat
+                    # Pesawat bisa masuk ke log Jakarta ATAU log Singapura (bahkan keduanya jika berada di area irisan)
+                    is_jakarta = (-10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16)
+                    is_singapore = (-3.14 <= latitude <= 5.86 and 99.49 <= longitude <= 108.49)
+
+                    if not is_jakarta and not is_singapore:
                         continue
 
                     transponder_hex = s[0] or 'N/A'
