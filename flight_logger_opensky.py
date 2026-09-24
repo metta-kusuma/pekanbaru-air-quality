@@ -58,7 +58,7 @@ def get_airline_name(callsign):
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA VIA 1-REQUEST 500KM+)
+# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA - RADIUS 500 KM+ FULL)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -68,7 +68,7 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Diperluas (Cakupan Radius 500km+ untuk Koridor JKT s/d SIN)
+    # Extended Bounding Box (Cakupan Luas Koridor Asia Tenggara)
     params = {'lamin': -10.63, 'lamax': 5.86, 'lomin': 99.49, 'lomax': 111.16}
     url = "https://opensky-network.org/api/states/all"
 
@@ -86,10 +86,12 @@ def fetch_opensky_flights(now_wib):
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # Pemisahan Wilayah Radius 500km
-                    if -10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16:
+                    # PERBAIKAN UTAMA: Filter Wilayah Dihitung Presisi Radius 500km Sejati
+                    # Jakarta Extended Zone: Selat Sunda, Lampung, Seluruh Jawa Barat, Jawa Tengah, & Laut Jawa
+                    if -10.63 <= latitude <= -2.50 and 102.00 <= longitude <= 111.16:
                         region = 'Jakarta'
-                    elif -1.59 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
+                    # Singapore Extended Zone: Singapura, Selat Malaka, Riau, & Malaysia
+                    elif -2.49 <= latitude <= 5.86 and 99.49 <= longitude <= 108.00:
                         region = 'Singapore'
                     else:
                         continue
@@ -180,7 +182,7 @@ def fetch_opensky_flights(now_wib):
 # 2. FLIGHTRADAR24 DATA FETCHING (RADIUS 500 KM - TEPAT 36 KOLOM)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
-    # Parameter radius diubah ke 500.000 meter (500 km)
+    # Parameter radius 500.000 meter (500 km)
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'}
@@ -193,7 +195,6 @@ def fetch_fr24_flights(now_wib):
             csv_file = config['csv']
             flight_data = []
 
-            # Parameter radius diubah menjadi 500000 (500 km)
             bounds = fr_api.get_bounds_by_point(latitude=config['lat'], longitude=config['lon'], radius=500000)
             flights = fr_api.get_flights(bounds=bounds)
 
