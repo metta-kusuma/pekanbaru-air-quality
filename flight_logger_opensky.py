@@ -5,61 +5,94 @@ from datetime import datetime
 import pytz
 
 def get_airline_name(callsign):
-    """Menebak nama maskapai berdasarkan 3 huruf pertama kode Callsign ICAO"""
-    if not callsign or callsign == 'N/A':
+    """Menebak nama maskapai berdasarkan kode Callsign ICAO / Registrasi Fisik"""
+    if not callsign or callsign == 'N/A' or callsign == 'NONE':
         return 'Unknown'
     
-    prefix = callsign[:3].upper()
+    callsign = callsign.strip().upper()
+    prefix = callsign[:3]
+    
+    # Deteksi Pesawat Privat / Charter Registrasi Khusus (misal: PK-OFI, T7-MEL, T7-CPA, P7-301)
+    if callsign.startswith(('PK', 'T7', 'P7', 'VH', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'N8', 'N9')):
+        return 'Private / Business Jet / General Aviation'
+    
     airlines = {
-        # --- MASKAPAI DOMESTIK INDONESIA (Komersial & Perintis) ---
+        # --- MASKAPAI DOMESTIK INDONESIA ---
         'GIA': 'Garuda Indonesia',
-        'LKN': 'Lion Air',
+        'LNI': 'Lion Air',                   # LNI1713, LNI685, LNI020, LNI292, LNI656, LNI241
+        'LKN': 'Lion Air (Alt)',
         'BTK': 'Batik Air',
         'CTV': 'Citilink',
         'AWQ': 'Indonesia AirAsia',
+        'SJV': 'Sriwijaya Air / Super Air Jet', # SJV701, SJV850, SJV796, SJV254, SJV639, SJV604, SJV601, SJV820, SJV908, SJV921, SJV956, SJV924, SJV933, SJV316, SJV919, SJV321
         'SJY': 'Sriwijaya Air',
         'NAM': 'NAM Air',
-        'LNI': 'Lion Air',
-        'RON': 'Nami Air / Indonesia Air Transport',
-        'PAS': 'Pelita Air Service',
-        'XAR': 'Express Air',
+        'PAS': 'Pelita Air Service',          # PAS350, PAS806, PAS320, PAS213, PAS200, PAS329
+        'TNU': 'TransNusa',                   # TNU156, TNU386, TNU675, TNU633, TNU861, TNU5104
+        'PTP': 'PT TransNusa Aviation Mandiri',
         'WON': 'Wings Air',
         'SUA': 'Susi Air',
         'TNX': 'Trigana Air Service',
-        'PTP': 'PT TransNusa Aviation Mandiri',
-        'TNU': 'TransNusa',
+        'SPRN': 'Super Air Jet (Alt)',        # SPRN2
+        'KCN': 'K-Mile Air / Kencana Air',    # KCN191
+        'JDE': 'IndiGo / Eastindo Charter',   # JDE702, JDE101, JDE311
+        'RGM': 'Rimbun Air',                  # RGM369, RGM020
+        'CTW': 'Citilink (Cargo/Charter)',    # CTW436
+        'MKT': 'Mokulele / Smart Aviation',   # MKT104
+        'TAG': 'Express Transportasi Antarbenua', # TAG08
+        'OEY': 'Other Charter / Executive',   # OEY328
+        'FHS': 'Flight Inspection / Helicopter', # FHS101
+        'RON': 'Nami Air / Indonesia Air Transport',
+        'XAR': 'Express Air',
         'BHA': 'Aero Nusantara Indonesia',
         'PKN': 'Nusantara Air Charter',
         'SMG': 'Semuwa Air',
         'PPA': 'Pelita Air',
         
-        # --- MASKAPAI KARGO & MILITER INDONESIA ---
-        'RGI': 'My Indo Airlines',
-        'BTP': 'Asia Cargo Airlines',
-        'TNO': 'Tri-MG Intra Asia Airlines',
-        'TREK': 'TNI Angkatan Udara',
+        # --- MILITER & KEPOLISIAN INDONESIA ---
+        'TREK': 'TNI Angkatan Udara',          # TREK309
         'ALPHA': 'TNI Angkatan Udara',
         'NAVY': 'TNI Angkatan Laut',
         'POL': 'Kepolisian Republik Indonesia',
+        'RGI': 'My Indo Airlines',
+        'BTP': 'Asia Cargo Airlines',
+        'TNO': 'Tri-MG Intra Asia Airlines',
         
-        # --- MASKAPAI TIMUR TENGAH (Middle East) ---
-        'QTR': 'Qatar Airways',
+        # --- MASKAPAI INTERNASIONAL (Dari Log CSV Anda) ---
+        'CSN': 'China Southern Airlines',      # CSN8353, CSN8055, CSN8354, CSN387, CSN388
+        'TGW': 'Scoot',                        # TGW273, TGW28
+        'ANA': 'All Nippon Airways (ANA)',     # ANA835, ANA871, ANA836
+        'CCA': 'Air China',                    # CCA977, CCA978
+        'PAL': 'Philippine Airlines',          # PAL535, PAL536
+        'CEB': 'Cebu Pacific',                 # CEB759, CEB760
+        'CXA': 'XiamenAir',                    # CXA8674, CXA838, CXA855, CXA8673, CXA8694, CXA856
+        'JAL': 'Japan Airlines (JAL)',         # JAL729, JAL720
+        'CDG': 'Shandong Airlines / China Eastern', # CDG2153, CDG2154
+        'CES': 'China Eastern Airlines',       # CES5070
+        'HVN': 'Vietnam Airlines',             # HVN635, HVN634
+        'KAL': 'Korean Air',                   # KAL437, KAL438
+        'KMI': 'K-Mile Air',                   # KMI801, KMI804
+        'MXD': 'Batik Air Malaysia (Malindo)', # MXD396, MXD191, MXD397, MXD398
+        'ETD': 'Etihad Airways',               # ETD473, ETD479
+        'SVA': 'Saudia (Saudi Arabian)',       # SVA826, SVA827
+        'THY': 'Turkish Airlines',             # THY169
+        'QTR': 'Qatar Airways',                # QTR955, QTR958
+        'JST': 'Jetstar Airways',              # JST76
+        'MYU': 'My Indo Airlines',             # MYU924, MYU9900
+        'QQE': 'Qatar Executive / Charter',    # QQE525
+        
+        # --- MASKAPAI GLOBAL LAINNYA ---
         'UAE': 'Emirates',
-        'ETD': 'Etihad Airways',
         'SUD': 'Saudi Arabian Airlines',
         'SWR': 'Swiss International Air Lines',
         'GFA': 'Gulf Air',
         'OMA': 'Oman Air',
         'RJA': 'Royal Jordanian',
         'KAC': 'Kuwait Airways',
-        
-        # --- MASKAPAI ASIA TENGGARA (ASEAN) ---
         'SIA': 'Singapore Airlines',
         'SLK': 'SilkAir',
-        'TGW': 'Scoot',
         'MAS': 'Malaysia Airlines',
         'AXM': 'AirAsia (Malaysia)',
-        'MXD': 'Batik Air Malaysia (Malindo Air)',
         'MYX': 'MYAirline',
         'THA': 'Thai Airways International',
         'AIQ': 'Thai AirAsia',
@@ -68,52 +101,30 @@ def get_airline_name(callsign):
         'HDA': 'Cathay Dragon / HK Express',
         'HKP': 'Hong Kong Express Airways',
         'CRK': 'Hong Kong Airlines',
-        'HVN': 'Vietnam Airlines',
         'VJC': 'VietJet Air',
-        'PAL': 'Philippine Airlines',
-        'CEB': 'Cebu Pacific',
         'RBA': 'Royal Brunei Airlines',
         'MMR': 'Myanmar Airways International',
-        
-        # --- MASKAPAI ASIA TIMUR (Jepang, Korea, China, Taiwan) ---
-        'ANA': 'All Nippon Airways (ANA)',
-        'JAL': 'Japan Airlines (JAL)',
         'TZP': 'Zipair Tokyo',
-        'KAL': 'Korean Air',
         'AAR': 'Asiana Airlines',
         'JJA': 'Jeju Air',
-        'CCA': 'Air China',
-        'CES': 'China Eastern Airlines',
-        'CSN': 'China Southern Airlines',
-        'CXA': 'XiamenAir',
         'CHB': 'China Cargo Airlines',
         'CAL': 'China Airlines (Taiwan)',
         'EVA': 'EVA Air',
         'SJX': 'Starlux Airlines',
-        
-        # --- MASKAPAI ASIA SELATAN ---
         'AIC': 'Air India',
         'IGO': 'IndiGo',
         'BPO': 'Biman Bangladesh Airlines',
         'ALK': 'SriLankan Airlines',
-        
-        # --- MASKAPAI AUSTRALIA & PASIFIK ---
         'QFA': 'Qantas',
         'VOZ': 'Virgin Australia',
-        'JST': 'Jetstar Airways',
         'ANZ': 'Air New Zealand',
-        
-        # --- MASKAPAI EROPA & AMERIKA ---
         'KLM': 'KLM Royal Dutch Airlines',
         'AFR': 'Air France',
         'BAW': 'British Airways',
         'DLH': 'Lufthansa',
-        'THY': 'Turkish Airlines',
         'UAL': 'United Airlines',
         'AAL': 'American Airlines',
         'DAL': 'Delta Air Lines',
-        
-        # --- MASKAPAI KARGO GLOBAL (Express & Logistics) ---
         'FDX': 'FedEx Express',
         'UPS': 'UPS Airlines',
         'GTI': 'Atlas Air',
@@ -121,6 +132,7 @@ def get_airline_name(callsign):
         'PAC': 'Polar Air Cargo',
         'SQC': 'Singapore Airlines Cargo'
     }
+    
     return airlines.get(prefix, 'Other Airline')
 
 def fetch_and_save_flights():
@@ -135,9 +147,9 @@ def fetch_and_save_flights():
     # Radius ~80-100 km dari Soekarno-Hatta
     params = {
         'lamin': -6.85,  # Batas Selatan: Bogor, Sukabumi Utara
-        'lomin': 105.80,  # Batas Barat: Serang, Cilegon, Selat Sunda
+        'lomin': 105.80, # Batas Barat: Serang, Cilegon, Selat Sunda
         'lamax': -5.50,  # Batas Utara: Laut Jawa (Area Holding North)
-        'lomax': 107.50   # Batas Timur: Karawang, Purwakarta
+        'lomax': 107.50  # Batas Timur: Karawang, Purwakarta
     }
     
     url = "https://opensky-network.org/api/states/all"
