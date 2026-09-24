@@ -161,10 +161,11 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (EXTENDED FULL DETAILS)
+# 2. FLIGHTRADAR24 DATA FETCHING (PARSING JSON DIRECTLY)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
     csv_file = "jakarta_flights_log_fr24.csv"
+    tz_wib = pytz.timezone('Asia/Jakarta')
     
     try:
         fr_api = FlightRadar24API()
@@ -174,14 +175,46 @@ def fetch_fr24_flights(now_wib):
 
         if isinstance(flights, list) and len(flights) > 0:
             for f in flights:
-                # Memanggil detail penerbangan lengkap per pesawat
+                details = {}
                 try:
-                    details = fr_api.get_flight_details(f)
-                    if isinstance(details, dict):
-                        f.set_flight_details(details)
+                    res = fr_api.get_flight_details(f)
+                    if isinstance(res, dict):
+                        details = res
                 except Exception:
-                    pass  # Tetap amankan proses jika ada 1 detail penerbangan yang gagal
+                    pass
 
+                # Parsing aman bertingkat dari JSON FR24
+                airline = details.get('airline', {}) or {}
+                aircraft = details.get('aircraft', {}) or {}
+                airport = details.get('airport', {}) or {}
+                origin = airport.get('origin', {}) or {}
+                destination = airport.get('destination', {}) or {}
+                status = details.get('status', {}) or {}
+                time_info = details.get('time', {}) or {}
+
+                # Konversi Waktu Unix Departure & Arrival ke WIB
+                def parse_unix_to_wib(unix_val):
+                    if unix_val and isinstance(unix_val, (int, float)) and unix_val > 0:
+                        return datetime.fromtimestamp(unix_val, tz=tz_wib).strftime('%H:%M WIB')
+                    return 'N/A'
+
+                sched_dep = parse_unix_to_wib(time_info.get('scheduled', {}).get('departure'))
+                act_dep = parse_unix_to_wib(time_info.get('real', {}).get('departure'))
+                est_arr = parse_unix_to_wib(time_info.get('estimated', {}).get('arrival'))
+
+                # Parsing Kota / Region Bandara
+                origin_pos = origin.get('position', {}) or {}
+                origin_city = origin_pos.get('region', {}).get('name') or origin_pos.get('country', {}).get('name') or 'N/A'
+                
+                dest_pos = destination.get('position', {}) or {}
+                dest_city = dest_pos.get('region', {}).get('name') or dest_pos.get('country', {}).get('name') or 'N/A'
+
+                # Parsing Gambar Thumbnail Pesawat
+                images = aircraft.get('images', {}) or {}
+                thumbnails = images.get('thumbnails', []) or images.get('large', [])
+                img_url = thumbnails[0].get('src') if isinstance(thumbnails, list) and len(thumbnails) > 0 else 'N/A'
+
+                # Telemetri dasar
                 alt_ft = f.altitude if f.altitude is not None else 0
                 alt_m = round(alt_ft / 3.28084, 1) if alt_ft else 0
                 speed_kts = f.ground_speed if f.ground_speed is not None else 0
@@ -202,34 +235,34 @@ def fetch_fr24_flights(now_wib):
                 flight_data.append({
                     # 1. Identifikasi & Waktu
                     'Timestamp_WIB': now_wib,
-                    'Callsign': getattr(f, 'callsign', None) or 'N/A',
-                    'Flight_Number': getattr(f, 'number', None) or 'N/A',
-                    'Flight_ID': getattr(f, 'id', None) or 'N/A',
+                    'Callsign': f.callsign or 'N/A',
+                    'Flight_Number': f.number or 'N/A',
+                    'Flight_ID': f.id or 'N/A',
                     
                     # 2. Maskapai & Fisik Pesawat
-                    'Airline_Name': getattr(f, 'airline_name', None) or 'N/A',
-                    'Airline_ICAO': getattr(f, 'airline_icao', None) or 'N/A',
-                    'Airline_IATA': getattr(f, 'airline_iata', None) or 'N/A',
-                    'Aircraft_Model': getattr(f, 'aircraft_code', None) or 'N/A',
-                    'Aircraft_Type': getattr(f, 'aircraft_model', None) or 'N/A',
-                    'Registration_Number': getattr(f, 'registration', None) or 'N/A',
-                    'Aircraft_Image_URL': getattr(f, 'aircraft_image_thumbnail_url', None) or 'N/A',
+                    'Airline_Name': airline.get('name') or get_airline_name(f.callsign),
+                    'Airline_ICAO': airline.get('code', {}).get('icao') or f.airline_icao or 'N/A',
+                    'Airline_IATA': airline.get('code', {}).get('iata') or 'N/A',
+                    'Aircraft_Model': aircraft.get('model', {}).get('code') or f.aircraft_code or 'N/A',
+                    'Aircraft_Type': aircraft.get('model', {}).get('text') or 'N/A',
+                    'Registration_Number': aircraft.get('registration') or f.registration or 'N/A',
+                    'Aircraft_Image_URL': img_url,
                     
                     # 3. Rute & Detail Bandara
-                    'Origin_IATA': getattr(f, 'origin_airport_iata', None) or 'N/A',
-                    'Origin_ICAO': getattr(f, 'origin_airport_icao', None) or 'N/A',
-                    'Origin_Airport_Name': getattr(f, 'origin_airport_name', None) or 'N/A',
-                    'Origin_City': getattr(f, 'origin_airport_city', None) or 'N/A',
-                    'Destination_IATA': getattr(f, 'destination_airport_iata', None) or 'N/A',
-                    'Destination_ICAO': getattr(f, 'destination_airport_icao', None) or 'N/A',
-                    'Destination_Airport_Name': getattr(f, 'destination_airport_name', None) or 'N/A',
-                    'Destination_City': getattr(f, 'destination_airport_city', None) or 'N/A',
+                    'Origin_IATA': origin.get('code', {}).get('iata') or f.origin_airport_iata or 'N/A',
+                    'Origin_ICAO': origin.get('code', {}).get('icao') or 'N/A',
+                    'Origin_Airport_Name': origin.get('name') or 'N/A',
+                    'Origin_City': origin_city,
+                    'Destination_IATA': destination.get('code', {}).get('iata') or f.destination_airport_iata or 'N/A',
+                    'Destination_ICAO': destination.get('code', {}).get('icao') or 'N/A',
+                    'Destination_Airport_Name': destination.get('name') or 'N/A',
+                    'Destination_City': dest_city,
                     
                     # 4. Telemetri Posisi & Navigasi
-                    'Latitude': getattr(f, 'latitude', None) if getattr(f, 'latitude', None) is not None else -6.1256,
-                    'Longitude': getattr(f, 'longitude', None) if getattr(f, 'longitude', None) is not None else 106.6558,
-                    'Heading_Deg': getattr(f, 'heading', None) if getattr(f, 'heading', None) is not None else 0,
-                    'Squawk_Code': getattr(f, 'squawk', None) or 'N/A',
+                    'Latitude': f.latitude if f.latitude is not None else -6.1256,
+                    'Longitude': f.longitude if f.longitude is not None else 106.6558,
+                    'Heading_Deg': f.heading if f.heading is not None else 0,
+                    'Squawk_Code': details.get('squawk') or 'N/A',
                     
                     # 5. Ketinggian & Kecepatan
                     'Altitude_Meters': alt_m,
@@ -239,13 +272,13 @@ def fetch_fr24_flights(now_wib):
                     'Vertical_Speed_MS': v_speed_ms,
                     'Vertical_Speed_FPM': v_speed_fpm,
                     
-                    # 6. Status Operasional & Jadwal Presisi
+                    # 6. Status Operasional & Jadwal
                     'Flight_Phase': flight_phase,
                     'Is_Ground': is_ground,
-                    'Status_Text': getattr(f, 'status_text', None) or 'N/A',
-                    'Scheduled_Departure': getattr(f, 'time_scheduled_departure', None) or 'N/A',
-                    'Actual_Departure': getattr(f, 'time_real_departure', None) or 'N/A',
-                    'Estimated_Arrival': getattr(f, 'time_estimated_arrival', None) or 'N/A',
+                    'Status_Text': status.get('text') or 'N/A',
+                    'Scheduled_Departure': sched_dep,
+                    'Actual_Departure': act_dep,
+                    'Estimated_Arrival': est_arr,
                     
                     'Source': 'FlightRadar24'
                 })
@@ -265,7 +298,7 @@ def fetch_fr24_flights(now_wib):
 
         df_new = pd.DataFrame(flight_data)
         df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
-        print(f"[{now_wib}] FlightRadar24 Success: Berhasil mencatat {len(flights) if flights else 0} penerbangan (Full Details).")
+        print(f"[{now_wib}] FlightRadar24 Success: Berhasil mencatat {len(flights) if flights else 0} penerbangan (Full Parsed Details).")
 
     except Exception as e:
         print(f"Error fetching FlightRadar24 data: {e}")
