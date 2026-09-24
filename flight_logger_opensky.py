@@ -23,15 +23,42 @@ def get_airline_name(callsign):
         'GIA': 'Garuda Indonesia', 'LNI': 'Lion Air', 'LKN': 'Lion Air (Alt)', 'BTK': 'Batik Air',
         'CTV': 'Citilink', 'AWQ': 'Indonesia AirAsia', 'SJV': 'Sriwijaya Air / Super Air Jet',
         'SJY': 'Sriwijaya Air', 'NAM': 'NAM Air', 'PAS': 'Pelita Air Service', 'TNU': 'TransNusa',
-        'SIA': 'Singapore Airlines', 'SLK': 'SilkAir', 'TGW': 'Scoot', 'SFW': 'AeroLogic Asia / Singapore Cargo',
-        'MAS': 'Malaysia Airlines', 'AXM': 'AirAsia (Malaysia)', 'TLM': 'Thai Lion Air',
-        'CPA': 'Cathay Pacific', 'JAL': 'Japan Airlines (JAL)', 'ANA': 'All Nippon Airways (ANA)',
-        'QFA': 'Qantas', 'UAE': 'Emirates', 'QTR': 'Qatar Airways', 'DLH': 'Lufthansa', 'KLM': 'KLM Royal Dutch'
+        'PTP': 'PT TransNusa Aviation Mandiri', 'WON': 'Wings Air', 'SUA': 'Susi Air',
+        'TNX': 'Trigana Air Service', 'SPRN': 'Super Air Jet (Alt)', 'KCN': 'K-Mile Air / Kencana Air',
+        'JDE': 'IndiGo / Eastindo Charter', 'RGM': 'Rimbun Air', 'CTW': 'Citilink (Cargo/Charter)',
+        'MKT': 'Mokulele / Smart Aviation', 'TAG': 'Express Transportasi Antarbenua',
+        'OEY': 'Other Charter / Executive', 'FHS': 'Flight Inspection / Helicopter',
+        'RON': 'Nami Air / Indonesia Air Transport', 'XAR': 'Express Air', 'BHA': 'Aero Nusantara Indonesia',
+        'PKN': 'Nusantara Air Charter', 'SMG': 'Semuwa Air', 'PPA': 'Pelita Air',
+        'TREK': 'TNI Angkatan Udara', 'ALPHA': 'TNI Angkatan Udara', 'NAVY': 'TNI Angkatan Udara',
+        'POL': 'Kepolisian Republik Indonesia', 'RGI': 'My Indo Airlines', 'BTP': 'Asia Cargo Airlines',
+        'TNO': 'Tri-MG Intra Asia Airlines', 'CSN': 'China Southern Airlines', 'TGW': 'Scoot',
+        'ANA': 'All Nippon Airways (ANA)', 'CCA': 'Air China', 'PAL': 'Philippine Airlines',
+        'CEB': 'Cebu Pacific', 'CXA': 'XiamenAir', 'JAL': 'Japan Airlines (JAL)',
+        'CDG': 'Shandong Airlines / China Eastern', 'CES': 'China Eastern Airlines',
+        'HVN': 'Vietnam Airlines', 'KAL': 'Korean Air', 'KMI': 'K-Mile Air',
+        'MXD': 'Batik Air Malaysia (Malindo)', 'ETD': 'Etihad Airways', 'SVA': 'Saudia (Saudi Arabian)',
+        'THY': 'Turkish Airlines', 'QTR': 'Qatar Airways', 'JST': 'Jetstar Airways',
+        'MYU': 'My Indo Airlines', 'QQE': 'Qatar Executive / Charter', 'UAE': 'Emirates',
+        'SUD': 'Saudi Arabian Airlines', 'SWR': 'Swiss International Air Lines', 'GFA': 'Gulf Air',
+        'OMA': 'Oman Air', 'RJA': 'Royal Jordanian', 'KAC': 'Kuwait Airways', 'SIA': 'Singapore Airlines',
+        'SLK': 'SilkAir', 'MAS': 'Malaysia Airlines', 'AXM': 'AirAsia (Malaysia)', 'MYX': 'MYAirline',
+        'THA': 'Thai Airways International', 'AIQ': 'Thai AirAsia', 'TLM': 'Thai Lion Air',
+        'CPA': 'Cathay Pacific', 'HDA': 'Cathay Dragon / HK Express', 'HKP': 'Hong Kong Express Airways',
+        'CRK': 'Hong Kong Airlines', 'VJC': 'VietJet Air', 'RBA': 'Royal Brunei Airlines',
+        'MMR': 'Myanmar Airways International', 'TZP': 'Zipair Tokyo', 'AAR': 'Asiana Airlines',
+        'JJA': 'Jeju Air', 'CHB': 'China Cargo Airlines', 'CAL': 'China Airlines (Taiwan)',
+        'EVA': 'EVA Air', 'SJX': 'Starlux Airlines', 'AIC': 'Air India', 'IGO': 'IndiGo',
+        'BPO': 'Biman Bangladesh Airlines', 'ALK': 'SriLankan Airlines', 'QFA': 'Qantas',
+        'VOZ': 'Virgin Australia', 'ANZ': 'Air New Zealand', 'KLM': 'KLM Royal Dutch Airlines',
+        'AFR': 'Air France', 'BAW': 'British Airways', 'DLH': 'Lufthansa', 'UAL': 'United Airlines',
+        'AAL': 'American Airlines', 'DAL': 'Delta Air Lines', 'FDX': 'FedEx Express', 'UPS': 'UPS Airlines',
+        'GTI': 'Atlas Air', 'BOX': 'Aerologic (DHL Cargo)', 'PAC': 'Polar Air Cargo', 'SQC': 'Singapore Airlines Cargo'
     }
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPORE VIA 1-REQUEST)
+# 1. OPENSKY DATA FETCHING (JAKARTA & SINGAPURA VIA 1-REQUEST HEMAT API)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -41,7 +68,7 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Raksasa Koridor Jakarta - Singapore (Hanya 1x HTTP Request!)
+    # Bounding Box Koridor Jakarta s/d Singapura
     params = {'lamin': -6.85, 'lamax': 2.00, 'lomin': 103.00, 'lomax': 108.00}
     url = "https://opensky-network.org/api/states/all"
 
@@ -59,13 +86,13 @@ def fetch_opensky_flights(now_wib):
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # Filtering Otomatis Berdasarkan Koordinat Wilayah
+                    # Pemisahan Wilayah
                     if -6.85 <= latitude <= -5.50 and 105.80 <= longitude <= 107.50:
                         region = 'Jakarta'
                     elif 0.80 <= latitude <= 2.00 and 103.20 <= longitude <= 104.60:
                         region = 'Singapore'
                     else:
-                        continue  # Pesawat di luar 2 wilayah radar diabaikan
+                        continue
 
                     transponder_hex = s[0] or 'N/A'
                     callsign = s[1].strip() if s[1] else 'N/A'
@@ -77,10 +104,14 @@ def fetch_opensky_flights(now_wib):
                     velocity_ms = s[9] if s[9] is not None else 0
                     heading_deg = s[10] if s[10] is not None else 0
                     vertical_rate_ms = s[11] if s[11] is not None else 0
+                    sensors = str(s[12]) if s[12] is not None else 'N/A'
                     geo_altitude_m = s[13] if s[13] is not None else 0
                     squawk = s[14] or 'N/A'
+                    spi = 1 if s[15] else 0
+                    position_source = s[16] if s[16] is not None else 0
 
                     alt_feet = round(baro_altitude_m * 3.28084, 1)
+                    geo_alt_feet = round(geo_altitude_m * 3.28084, 1)
                     speed_kmh = round(velocity_ms * 3.6, 1)
                     speed_knots = round(velocity_ms * 1.94384, 1)
                     v_speed_fpm = round(vertical_rate_ms * 196.85, 1)
@@ -94,9 +125,8 @@ def fetch_opensky_flights(now_wib):
                     else:
                         flight_phase = "Cruising"
 
-                    data_row = {
+                    row = {
                         'Timestamp_WIB': now_wib,
-                        'Region': region,
                         'Callsign': callsign,
                         'Airline_Inferred': get_airline_name(callsign),
                         'Transponder_Hex': transponder_hex,
@@ -107,6 +137,7 @@ def fetch_opensky_flights(now_wib):
                         'Baro_Altitude_Meters': baro_altitude_m,
                         'Baro_Altitude_Feet': alt_feet,
                         'Geo_Altitude_Meters': geo_altitude_m,
+                        'Geo_Altitude_Feet': geo_alt_feet,
                         'Speed_KMH': speed_kmh,
                         'Speed_Knots': speed_knots,
                         'Vertical_Speed_MS': vertical_rate_ms,
@@ -114,25 +145,30 @@ def fetch_opensky_flights(now_wib):
                         'Heading_Deg': heading_deg,
                         'Flight_Phase': flight_phase,
                         'Is_Ground': is_ground,
+                        'SPI_Transponder': spi,
+                        'Position_Source_ID': position_source,
                         'Time_Position_Unix': time_position,
                         'Last_Contact_Unix': last_contact,
+                        'Sensors_Data': sensors,
                         'Source': 'OpenSky Network'
                     }
 
                     if region == 'Jakarta':
-                        f_jkt.append(data_row)
+                        f_jkt.append(row)
                     else:
-                        f_sin.append(data_row)
+                        f_sin.append(row)
 
-            # Simpan ke CSV Masing-Masing
-            pd.DataFrame(f_jkt if f_jkt else [{'Timestamp_WIB': now_wib, 'Region': 'Jakarta', 'Callsign': 'NONE', 'Latitude': -6.1256, 'Longitude': 106.6558, 'Source': 'OpenSky Network'}]).to_csv(
-                'jakarta_flights_log_opensky.csv', mode='a', header=not os.path.exists('jakarta_flights_log_opensky.csv'), index=False
-            )
-            pd.DataFrame(f_sin if f_sin else [{'Timestamp_WIB': now_wib, 'Region': 'Singapore', 'Callsign': 'NONE', 'Latitude': 1.3644, 'Longitude': 103.9915, 'Source': 'OpenSky Network'}]).to_csv(
-                'singapore_flights_log_opensky.csv', mode='a', header=not os.path.exists('singapore_flights_log_opensky.csv'), index=False
-            )
+            # Fallback jika kosong
+            if not f_jkt:
+                f_jkt.append({'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Airline_Inferred': 'N/A', 'Transponder_Hex': 'N/A', 'Country_Origin': 'N/A', 'Squawk_Code': 'N/A', 'Latitude': -6.1256, 'Longitude': 106.6558, 'Baro_Altitude_Meters': 0, 'Baro_Altitude_Feet': 0, 'Geo_Altitude_Meters': 0, 'Geo_Altitude_Feet': 0, 'Speed_KMH': 0, 'Speed_Knots': 0, 'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Heading_Deg': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0, 'SPI_Transponder': 0, 'Position_Source_ID': 0, 'Time_Position_Unix': 0, 'Last_Contact_Unix': 0, 'Sensors_Data': 'N/A', 'Source': 'OpenSky Network'})
+            
+            if not f_sin:
+                f_sin.append({'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Airline_Inferred': 'N/A', 'Transponder_Hex': 'N/A', 'Country_Origin': 'N/A', 'Squawk_Code': 'N/A', 'Latitude': 1.3644, 'Longitude': 103.9915, 'Baro_Altitude_Meters': 0, 'Baro_Altitude_Feet': 0, 'Geo_Altitude_Meters': 0, 'Geo_Altitude_Feet': 0, 'Speed_KMH': 0, 'Speed_Knots': 0, 'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Heading_Deg': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0, 'SPI_Transponder': 0, 'Position_Source_ID': 0, 'Time_Position_Unix': 0, 'Last_Contact_Unix': 0, 'Sensors_Data': 'N/A', 'Source': 'OpenSky Network'})
 
-            print(f"[{now_wib}] OpenSky Success: Jakarta ({len(f_jkt)} pesawat), Singapore ({len(f_sin)} pesawat).")
+            pd.DataFrame(f_jkt).to_csv('jakarta_flights_log_opensky.csv', mode='a' if os.path.exists('jakarta_flights_log_opensky.csv') else 'w', header=not os.path.exists('jakarta_flights_log_opensky.csv'), index=False)
+            pd.DataFrame(f_sin).to_csv('singapore_flights_log_opensky.csv', mode='a' if os.path.exists('singapore_flights_log_opensky.csv') else 'w', header=not os.path.exists('singapore_flights_log_opensky.csv'), index=False)
+            
+            print(f"[{now_wib}] OpenSky Success: Jakarta ({len(f_jkt)} penerbangan), Singapore ({len(f_sin)} penerbangan).")
 
         else:
             print(f"OpenSky API Error: Status Code {response.status_code}")
@@ -141,9 +177,10 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (JAKARTA & SINGAPORE)
+# 2. FLIGHTRADAR24 DATA FETCHING (TEPAT 36 KOLOM UNTUK JAKARTA & SINGAPURA)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
+    # Konfigurasi Bounding Box Radius Jakarta dan Singapura
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'}
@@ -181,9 +218,9 @@ def fetch_fr24_flights(now_wib):
                     else:
                         flight_phase = "Cruising"
 
+                    # STRUKTUR KONSISTEN TEPAT 36 KOLOM PERSIS SEPERTI KODINGAN ASLI ANDA
                     flight_data.append({
                         'Timestamp_WIB': now_wib,
-                        'Region': region_name,
                         'Callsign': getattr(f, 'callsign', None) or 'N/A',
                         'Flight_Number': getattr(f, 'number', None) or 'N/A',
                         'Flight_ID': getattr(f, 'id', None) or 'N/A',
@@ -191,9 +228,17 @@ def fetch_fr24_flights(now_wib):
                         'Airline_ICAO': getattr(f, 'airline_icao', None) or 'N/A',
                         'Airline_IATA': 'N/A',
                         'Aircraft_Model': getattr(f, 'aircraft_code', None) or 'N/A',
+                        'Aircraft_Type': 'N/A',
                         'Registration_Number': getattr(f, 'registration', None) or 'N/A',
+                        'Aircraft_Image_URL': 'N/A',
                         'Origin_IATA': getattr(f, 'origin_airport_iata', None) or 'N/A',
+                        'Origin_ICAO': 'N/A',
+                        'Origin_Airport_Name': 'N/A',
+                        'Origin_City': 'N/A',
                         'Destination_IATA': getattr(f, 'destination_airport_iata', None) or 'N/A',
+                        'Destination_ICAO': 'N/A',
+                        'Destination_Airport_Name': 'N/A',
+                        'Destination_City': 'N/A',
                         'Latitude': getattr(f, 'latitude', config['lat']),
                         'Longitude': getattr(f, 'longitude', config['lon']),
                         'Heading_Deg': getattr(f, 'heading', 0),
@@ -206,17 +251,25 @@ def fetch_fr24_flights(now_wib):
                         'Vertical_Speed_FPM': v_speed_fpm,
                         'Flight_Phase': flight_phase,
                         'Is_Ground': is_ground,
+                        'Status_Text': 'N/A',
+                        'Scheduled_Departure': 'N/A',
+                        'Actual_Departure': 'N/A',
+                        'Estimated_Arrival': 'N/A',
                         'Source': 'FlightRadar24'
                     })
 
+            # FALLBACK TEPAT 36 KOLOM JIKA TIDAK ADA PESAWAT / TERJADI ERROR
             if not flight_data:
                 flight_data.append({
-                    'Timestamp_WIB': now_wib, 'Region': region_name, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
-                    'Airline_Name': 'N/A', 'Airline_ICAO': 'N/A', 'Airline_IATA': 'N/A', 'Aircraft_Model': 'N/A',
-                    'Registration_Number': 'N/A', 'Origin_IATA': 'N/A', 'Destination_IATA': 'N/A',
+                    'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
+                    'Airline_Name': 'N/A', 'Airline_ICAO': 'N/A', 'Airline_IATA': 'N/A',
+                    'Aircraft_Model': 'N/A', 'Aircraft_Type': 'N/A', 'Registration_Number': 'N/A', 'Aircraft_Image_URL': 'N/A',
+                    'Origin_IATA': 'N/A', 'Origin_ICAO': 'N/A', 'Origin_Airport_Name': 'N/A', 'Origin_City': 'N/A',
+                    'Destination_IATA': 'N/A', 'Destination_ICAO': 'N/A', 'Destination_Airport_Name': 'N/A', 'Destination_City': 'N/A',
                     'Latitude': config['lat'], 'Longitude': config['lon'], 'Heading_Deg': 0, 'Squawk_Code': 'N/A',
                     'Altitude_Meters': 0, 'Altitude_Feet': 0, 'Ground_Speed_KMH': 0, 'Ground_Speed_Knots': 0,
                     'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Flight_Phase': 'No Flights / API Error', 'Is_Ground': 0,
+                    'Status_Text': 'N/A', 'Scheduled_Departure': 'N/A', 'Actual_Departure': 'N/A', 'Estimated_Arrival': 'N/A',
                     'Source': 'FlightRadar24'
                 })
 
