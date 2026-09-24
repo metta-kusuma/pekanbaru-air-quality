@@ -1,7 +1,10 @@
-name: Hourly Weather, AQI & AirLabs Flight Logger
+name: Hourly Weather, AQI & AirLabs Flight Logger (Pekanbaru)
 
 on:
-  workflow_dispatch:
+  schedule:
+    # Berjalan otomatis setiap 1 jam sekali (pada menit ke-0)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Tetap bisa dijalankan manual via tombol UI GitHub
 
 concurrency:
   group: global-repo-git-lock
@@ -35,8 +38,8 @@ jobs:
         run: |
           python logger.py || exit 0
 
-      # 2. Jalankan Skrip AirLabs Flight Logger Jakarta
-      - name: Run AirLabs Flight Logger Script
+      # 2. Jalankan Skrip AirLabs Flight Logger Pekanbaru
+      - name: Run AirLabs Flight Logger Script (Pekanbaru Radar)
         env:
           AIRLABS_API_KEY: ${{ secrets.AIRLABS_API_KEY }}
         run: |
@@ -48,6 +51,6 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add .
-          git commit -m "Auto-update hourly weather, AQI & AirLabs flight logs [skip ci]" || exit 0
+          git commit -m "Auto-update hourly weather, AQI & AirLabs flight logs (Pekanbaru) [skip ci]" || exit 0
           git pull --rebase origin main
           git push
