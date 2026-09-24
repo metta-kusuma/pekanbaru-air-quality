@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: repo-git-push-lock
+  group: global-repo-git-lock
   cancel-in-progress: false
 
 permissions:
