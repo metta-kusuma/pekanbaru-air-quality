@@ -1,39 +1,53 @@
-name: 24/7 Pekanbaru Weather & AQI Automated Logger
+name: Hourly Weather, AQI & AirLabs Flight Logger
 
 on:
   workflow_dispatch:
+
+concurrency:
+  group: repo-git-push-lock
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
-  run-logger:
+  run-hourly-loggers:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install Dependencies
         run: |
-          pip install requests pandas
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests pandas pytz; fi
 
-      - name: Run Combined Logger Script
+      # 1. Jalankan Skrip Weather & Air Quality Pekanbaru
+      - name: Run Weather & AQI Logger Script
         env:
           API_KEY: ${{ secrets.API_KEY }}
           AQICN_API_KEY: ${{ secrets.AQICN_API_KEY }}
         run: |
-          python logger.py
+          python logger.py || exit 0
 
-      - name: Commit and Push Dataset Changes
+      # 2. Jalankan Skrip AirLabs Flight Logger Jakarta
+      - name: Run AirLabs Flight Logger Script
+        env:
+          AIRLABS_API_KEY: ${{ secrets.AIRLABS_API_KEY }}
+        run: |
+          python flight_logger.py || exit 0
+
+      # 3. Commit dan Push Sekaligus
+      - name: Commit and Push Hourly Dataset Changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add .
-          git commit -m "Auto-update weather & air quality logs [skip ci]" || exit 0
-          git pull --rebase
+          git commit -m "Auto-update hourly weather, AQI & AirLabs flight logs [skip ci]" || exit 0
+          git pull --rebase origin main
           git push
