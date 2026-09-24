@@ -50,4 +50,6 @@ jobs:
           git add .
           git commit -m "Auto-update hourly weather, AQI & AirLabs flight logs (Pekanbaru) [skip ci]" || exit 0
           git pull --rebase origin main
-          git push
+          for i in {1..3}; do
+            git push && break || sleep 5
+          done
