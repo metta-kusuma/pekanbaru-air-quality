@@ -1,0 +1,55 @@
+Timestamp_WIB,Region,Callsign,Flight_Number,Flight_ID,Airline_Name,Airline_ICAO,Airline_IATA,Aircraft_Model,Registration_Number,Origin_IATA,Destination_IATA,Latitude,Longitude,Heading_Deg,Squawk_Code,Altitude_Meters,Altitude_Feet,Ground_Speed_KMH,Ground_Speed_Knots,Vertical_Speed_MS,Vertical_Speed_FPM,Flight_Phase,Is_Ground,Source
+2026-09-24 15:35:25,Singapore,MAS605,MH605,41cf3213,Malaysia Airlines,MAS,N/A,B38M,9M-MVL,KUL,SIN,1.5521,103.1446,157,N/A,5882.6,19300,764.9,413,-4.88,-960,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW472,TR472,41cf34a8,Scoot,TGW,N/A,A21N,9V-NCF,SIN,KUL,1.1626,103.4271,315,N/A,4175.8,13700,677.8,366,8.45,1664,Climbing (Takeoff),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,SWR176,LX176,41cd8f42,Other Airline,SWR,N/A,B77W,HB-JNB,ZRH,SIN,0.9723,103.4664,96,N/A,6903.7,22650,651.9,352,-2.28,-448,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,VHOFA,N/A,41ceead4,Private / Business Jet / General Aviation,GDY,N/A,CL60,VH-OFA,LOP,N/A,1.021,103.5164,89,N/A,1257.3,4125,370.4,200,0.0,0,Cruising,0,FlightRadar24
+2026-09-24 15:35:25,Singapore,AXM714,AK714,41cf36bd,AirAsia (Malaysia),AXM,N/A,A320,9M-RAN,SIN,KUL,1.0776,103.6306,279,N/A,2918.5,9575,531.5,287,4.55,896,Climbing (Takeoff),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,GLF4,N/A,41cf03af,Other Airline,N/A,N/A,GLF4,N/A,N/A,N/A,1.4076,103.8634,185,N/A,0.0,0,16.7,9,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,VJT294,VJT294,41cd490d,Other Airline,VJT,N/A,GL7T,9H-VIC,MLA,XSP,1.4071,103.8637,348,N/A,0.0,0,1.9,1,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,P4BVM,N/A,41cf1c12,Other Airline,N/A,N/A,GLEX,P4-BVM,XSP,N/A,1.4112,103.8658,213,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,N/A,N/A,41ceec8d,Unknown,QFA,N/A,A333,VH-QPB,QPG,N/A,1.3504,103.8963,98,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,GTI8685,5Y8685,41ce6395,Other Airline,GTI,N/A,B744,N415MC,OKO,N/A,1.5864,103.9559,334,N/A,1249.7,4100,409.3,221,0.65,128,Cruising,0,FlightRadar24
+2026-09-24 15:35:25,Singapore,R52,N/A,41cf3f3a,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3484,103.9789,205,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R16,N/A,41cf1dec,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3484,103.9789,323,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R73,N/A,41cef6d8,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.348,103.979,143,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R49,N/A,41cf1aae,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3481,103.9791,340,N/A,0.0,0,5.6,3,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ATT83,N/A,41cf3ba7,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3502,103.9828,92,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R48,N/A,41cefd9b,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3666,103.9829,22,N/A,0.0,0,35.2,19,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ATT88,N/A,41ceee6e,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3508,103.9836,22,N/A,0.0,0,20.4,11,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,CSN3039,CZ3039,41cebfad,Other Airline,CSN,N/A,A21N,B-1092,CAN,SIN,1.3594,103.9838,22,N/A,0.0,0,37.0,20,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA7921,SQ7921,41cecbbc,Singapore Airlines,SIA,N/A,B744,9V-SFP,HKG,SIN,1.3647,103.9861,2,N/A,0.0,0,14.8,8,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,DKH1602,HO1602,41cf41ed,Other Airline,DKH,N/A,B789,B-226N,SIN,PVG,1.3432,103.9865,112,N/A,0.0,0,1.9,1,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ATT73,N/A,41cf20f0,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.362,103.9883,202,N/A,0.0,0,27.8,15,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,N/A,N/A,41cf4340,Unknown,N/A,N/A,GRND,N/A,SIN,N/A,1.3318,103.989,202,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW289,TR289,41cee613,Scoot,TGW,N/A,B788,9V-OFH,DPS,SIN,1.3676,103.99,112,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW571,TR571,41cec4df,Scoot,TGW,N/A,A21N,9V-NCA,CEB,SIN,1.3792,103.9902,202,N/A,76.2,250,250.0,135,-3.25,-640,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,R31,N/A,41cee8eb,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3713,103.9904,90,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,A6,N/A,41cf3365,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3692,103.9907,292,N/A,0.0,0,11.1,6,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ATT02,N/A,41cf2415,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3692,103.9908,289,N/A,0.0,0,9.3,5,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW694,TR694,41cf3ff3,Scoot,TGW,N/A,E290,9V-THA,SIN,USM,1.3654,103.9914,171,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,IGO1029,6E1029,41cea5fe,Other Airline,IGO,N/A,A20N,VT-IOF,VGA,SIN,1.3512,103.9915,253,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,A4,N/A,41cf1e32,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3715,103.9921,202,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA158,SQ158,41cf2290,Singapore Airlines,SIA,N/A,B38M,9V-MBL,SIN,KTI,1.3577,103.9922,19,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA122,SQ122,41cf3c71,Singapore Airlines,SIA,N/A,A359,9V-SHT,SIN,KUL,1.3523,103.993,22,N/A,0.0,0,24.1,13,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R75,N/A,41cf0139,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3667,103.9932,303,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ATT72,N/A,41cf28be,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3791,103.9945,236,N/A,0.0,0,14.8,8,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R80,N/A,41cf13af,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.37,103.9952,112,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R93,N/A,41cf06fe,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3146,103.9961,309,N/A,0.0,0,9.3,5,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA736,SQ736,41cf31d7,Singapore Airlines,SIA,N/A,B38M,9V-MBA,SIN,HKT,1.3614,103.9968,22,N/A,0.0,0,3.7,2,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW516,TR516,41cf3d13,Scoot,TGW,N/A,A21N,9V-NCE,SIN,SGN,1.3624,103.9978,112,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,CCA404,CA404,41cf3c10,Other Airline,CCA,N/A,A21N,B-32PH,SIN,TFU,1.364,103.9983,112,N/A,0.0,0,1.9,1,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R88,N/A,41cf1cf0,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3629,104.0125,258,N/A,0.0,0,24.1,13,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,R78,N/A,41cf0a1f,Other Airline,N/A,N/A,GRND,N/A,SIN,N/A,1.3638,104.0172,22,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,T79999,N/A,41cee795,Private / Business Jet / General Aviation,N/A,N/A,GLEX,T7-9999,VTE,N/A,2.1635,104.0233,180,N/A,2164.1,7100,379.7,205,0.0,0,Cruising,0,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA637,SQ637,41ce60ec,Singapore Airlines,SIA,N/A,B78X,9V-SCH,NRT,SIN,1.4585,104.0237,202,N/A,541.0,1775,298.2,161,-3.9,-768,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,CPA734,CX734,41cf3352,Cathay Pacific,CPA,N/A,A333,B-HLS,SIN,HKG,2.0435,104.0532,359,N/A,6347.5,20825,770.4,416,7.15,1408,Climbing (Takeoff),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,QFA2,QF2,41cd62a1,Qantas,QFA,N/A,A388,VH-OQL,LHR,SIN,1.5407,104.0817,280,N/A,853.4,2800,359.3,194,-2.28,-448,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA962,SQ962,41cf37a7,Singapore Airlines,SIA,N/A,A359,9V-SMJ,SIN,CGK,0.9704,104.0826,130,N/A,3230.9,10600,640.8,346,14.63,2880,Climbing (Takeoff),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,IGO1163,6E1163,41ce91ff,Other Airline,IGO,N/A,A21N,VT-NCJ,BOM,SIN,1.2728,104.1063,15,N/A,1912.6,6275,461.1,249,-4.88,-960,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,GIA159,GA159,41cf3ed4,Garuda Indonesia,GIA,N/A,B738,PK-GUM,BTH,CGK,1.1325,104.1271,90,N/A,0.0,0,0.0,0,0.0,0,On Taxiway/Runway,1,FlightRadar24
+2026-09-24 15:35:25,Singapore,ANA841,NH841,41ce67c1,All Nippon Airways (ANA),ANA,N/A,B789,JA887A,HND,SIN,1.6153,104.1592,261,N/A,1485.9,4875,374.1,202,-4.55,-896,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA721,SQ721,41cef84c,Singapore Airlines,SIA,N/A,B78X,9V-SCK,BKK,SIN,2.0684,104.2599,187,N/A,3185.2,10450,496.3,268,-6.18,-1216,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,BKP963,PG963,41cf1085,Other Airline,BKP,N/A,A319,HS-PGZ,USM,SIN,1.8666,104.265,180,N/A,2507.0,8225,487.1,263,-5.2,-1024,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,TGW645,TR645,41cf05d4,Scoot,TGW,N/A,A21N,9V-NCB,HKT,SIN,2.1806,104.3045,164,N/A,4526.3,14850,594.5,321,-10.08,-1984,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,ANZ284,NZ284,41cdd113,Other Airline,ANZ,N/A,B77W,ZK-OKN,AKL,SIN,1.1684,104.6547,268,N/A,4343.4,14250,498.2,269,-4.55,-896,Descending (Landing/Approach),0,FlightRadar24
+2026-09-24 15:35:25,Singapore,SIA944,SQ944,41cf2ff6,Singapore Airlines,SIA,N/A,B78X,9V-SDB,SIN,DPS,0.4652,104.659,134,N/A,6134.1,20125,766.7,414,8.13,1600,Climbing (Takeoff),0,FlightRadar24

@@ -1,0 +1,25 @@
+Timestamp_WIB,Region,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Code,Latitude,Longitude,Baro_Altitude_Meters,Baro_Altitude_Feet,Geo_Altitude_Meters,Speed_KMH,Speed_Knots,Vertical_Speed_MS,Vertical_Speed_FPM,Heading_Deg,Flight_Phase,Is_Ground,Time_Position_Unix,Last_Contact_Unix,Source
+2026-09-24 15:35:25,Singapore,IGO1163,Other Airline,801772,India,N/A,1.2733,104.1064,1905.0,6250.0,2019.3,462.8,249.9,-4.88,-960.6,15.32,Descending (Landing/Approach),0,1790238924,1790238924,OpenSky Network
+2026-09-24 15:35:25,Singapore,TGW571,Scoot,76b861,Singapore,N/A,1.3798,103.9905,76.2,250.0,76.2,251.5,135.8,-3.58,-704.7,202.98,Descending (Landing/Approach),0,1790238923,1790238923,OpenSky Network
+2026-09-24 15:35:25,Singapore,N/A,Unknown,76b865,Singapore,N/A,1.3624,103.9978,0.0,0.0,0.0,0.2,0.1,0.0,0.0,112.5,On Taxiway/Runway,1,1790238880,1790238883,OpenSky Network
+2026-09-24 15:35:25,Singapore,TGW472,Scoot,76b866,Singapore,N/A,1.1643,103.4254,4183.38,13725.0,4434.84,679.7,367.0,7.8,1535.4,315.33,Climbing (Takeoff),0,1790238925,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,BKP963,Other Airline,8840fa,Thailand,N/A,1.8655,104.2649,2506.98,8225.0,2659.38,487.1,263.0,-5.53,-1088.6,180.0,Descending (Landing/Approach),0,1790238925,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,IGO1029,Other Airline,80182d,India,N/A,1.3512,103.9915,0.0,0.0,0.0,0.0,0.0,0.0,0.0,253.12,On Taxiway/Runway,1,1790238921,1790238923,OpenSky Network
+2026-09-24 15:35:25,Singapore,SIA637,Singapore Airlines,76cc68,Singapore,N/A,1.4589,104.0239,541.02,1775.0,563.88,299.6,161.8,-3.9,-767.7,202.92,Descending (Landing/Approach),0,1790238925,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,CSN3039,Other Airline,7813c0,China,N/A,1.3586,103.9835,0.0,0.0,0.0,35.2,19.0,0.0,0.0,22.5,On Taxiway/Runway,1,1790238915,1790238915,OpenSky Network
+2026-09-24 15:35:25,Singapore,A6,Other Airline,76e992,Singapore,N/A,1.3694,103.9902,0.0,0.0,0.0,11.1,6.0,0.0,0.0,289.69,On Taxiway/Runway,1,1790238879,1790238879,OpenSky Network
+2026-09-24 15:35:25,Singapore,R80,Other Airline,76e9a1,Singapore,N/A,1.3723,103.9925,0.0,0.0,0.0,5.5,3.0,0.0,0.0,168.75,On Taxiway/Runway,1,1790238748,1790238748,OpenSky Network
+2026-09-24 15:35:25,Singapore,N/A,Unknown,76b441,Singapore,N/A,1.3614,103.9968,0.0,0.0,0.0,3.7,2.0,0.0,0.0,22.5,On Taxiway/Runway,1,1790238918,1790238918,OpenSky Network
+2026-09-24 15:35:25,Singapore,GTI8685,Other Airline,a4e7c9,United States,N/A,1.5842,103.9569,1249.68,4100.0,1303.02,410.9,221.9,0.33,65.0,334.36,Cruising,0,1790238921,1790238921,OpenSky Network
+2026-09-24 15:35:25,Singapore,ATT02,Other Airline,76ea0e,Singapore,N/A,1.3694,103.9902,0.0,0.0,0.0,7.4,4.0,0.0,0.0,289.69,On Taxiway/Runway,1,1790238902,1790238902,OpenSky Network
+2026-09-24 15:35:25,Singapore,T710MAX,Private / Business Jet / General Aviation,500520,San Marino,N/A,1.4338,103.8786,129.54,425.0,114.3,253.7,137.0,-4.23,-832.7,213.69,Descending (Landing/Approach),0,1790238807,1790238809,OpenSky Network
+2026-09-24 15:35:25,Singapore,QFA2,Qantas,7c492b,Australia,N/A,1.5406,104.0826,853.44,2800.0,899.16,358.5,193.6,-2.28,-448.8,281.02,Descending (Landing/Approach),0,1790238925,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,DKH1602,Other Airline,782159,China,N/A,1.3433,103.9864,0.0,0.0,0.0,3.7,2.0,0.0,0.0,112.5,On Taxiway/Runway,1,1790238897,1790238897,OpenSky Network
+2026-09-24 15:35:25,Singapore,CCA404,Other Airline,78235e,China,N/A,1.364,103.9983,0.0,0.0,0.0,0.2,0.1,0.0,0.0,112.5,On Taxiway/Runway,1,1790238863,1790238863,OpenSky Network
+2026-09-24 15:35:25,Singapore,ANA841,All Nippon Airways (ANA),86ebd8,Japan,N/A,1.6154,104.1603,1493.52,4900.0,1577.34,374.3,202.1,-4.55,-895.7,261.75,Descending (Landing/Approach),0,1790238924,1790238924,OpenSky Network
+2026-09-24 15:35:25,Singapore,SIA7921,Singapore Airlines,76ccd0,Singapore,N/A,1.3649,103.9862,0.0,0.0,0.0,14.8,8.0,0.0,0.0,14.06,On Taxiway/Runway,1,1790238918,1790238918,OpenSky Network
+2026-09-24 15:35:25,Singapore,SIA962,Singapore Airlines,76cdaa,Singapore,N/A,0.9776,104.0741,3131.82,10275.0,3314.7,642.6,347.0,14.31,2816.9,130.21,Climbing (Takeoff),0,1790238917,1790238919,OpenSky Network
+2026-09-24 15:35:25,Singapore,AXM714,AirAsia (Malaysia),7504a1,Malaysia,N/A,1.0776,103.6306,2918.46,9575.0,3101.34,532.8,287.7,4.55,895.7,279.2,Climbing (Takeoff),0,1790238924,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,TGW289,Scoot,76bcc8,Singapore,N/A,1.3677,103.9873,0.0,0.0,0.0,27.8,15.0,0.0,0.0,22.5,On Taxiway/Runway,1,1790238861,1790238861,OpenSky Network
+2026-09-24 15:35:25,Singapore,VHOFA,Private / Business Jet / General Aviation,7c4794,Australia,N/A,1.021,103.5172,1257.3,4125.0,1310.64,370.4,200.0,0.0,0.0,89.43,Cruising,0,1790238925,1790238925,OpenSky Network
+2026-09-24 15:35:25,Singapore,SWR176,Other Airline,4b1917,Switzerland,N/A,0.9723,103.4664,6903.72,22650.0,7360.92,652.4,352.3,-2.28,-448.8,96.52,Descending (Landing/Approach),0,1790238925,1790238925,OpenSky Network
