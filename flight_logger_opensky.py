@@ -161,21 +161,22 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (PARSING JSON DIRECTLY)
+# 2. FLIGHTRADAR24 DATA FETCHING (SAFE PARSING & GUARANTEED CSV SAVE)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
     csv_file = "jakarta_flights_log_fr24.csv"
     tz_wib = pytz.timezone('Asia/Jakarta')
+    flight_data = []
     
     try:
         fr_api = FlightRadar24API()
         bounds = fr_api.get_bounds_by_point(latitude=-6.1256, longitude=106.6558, radius=100000)
         flights = fr_api.get_flights(bounds=bounds)
-        flight_data = []
 
         if isinstance(flights, list) and len(flights) > 0:
             for f in flights:
                 details = {}
+                # Ambil detail per pesawat dengan proteksi try-except tersendiri
                 try:
                     res = fr_api.get_flight_details(f)
                     if isinstance(res, dict):
@@ -183,7 +184,6 @@ def fetch_fr24_flights(now_wib):
                 except Exception:
                     pass
 
-                # Parsing aman bertingkat dari JSON FR24
                 airline = details.get('airline', {}) or {}
                 aircraft = details.get('aircraft', {}) or {}
                 airport = details.get('airport', {}) or {}
@@ -192,7 +192,7 @@ def fetch_fr24_flights(now_wib):
                 status = details.get('status', {}) or {}
                 time_info = details.get('time', {}) or {}
 
-                # Konversi Waktu Unix Departure & Arrival ke WIB String (Jam:Menit WIB)
+                # Konversi Waktu Unix ke WIB String
                 def parse_unix_to_wib(unix_val):
                     if unix_val and isinstance(unix_val, (int, float)) and unix_val > 0:
                         return datetime.fromtimestamp(unix_val, tz=tz_wib).strftime('%H:%M WIB')
@@ -202,19 +202,18 @@ def fetch_fr24_flights(now_wib):
                 act_dep = parse_unix_to_wib(time_info.get('real', {}).get('departure'))
                 est_arr = parse_unix_to_wib(time_info.get('estimated', {}).get('arrival'))
 
-                # Parsing Kota / Region Bandara
+                # Parsing Region/Kota Bandara
                 origin_pos = origin.get('position', {}) or {}
                 origin_city = origin_pos.get('region', {}).get('name') or origin_pos.get('country', {}).get('name') or 'N/A'
                 
                 dest_pos = destination.get('position', {}) or {}
                 dest_city = dest_pos.get('region', {}).get('name') or dest_pos.get('country', {}).get('name') or 'N/A'
 
-                # Parsing Gambar Thumbnail Pesawat
+                # Parsing Thumbnail Foto Pesawat
                 images = aircraft.get('images', {}) or {}
                 thumbnails = images.get('thumbnails', []) or images.get('large', [])
                 img_url = thumbnails[0].get('src') if isinstance(thumbnails, list) and len(thumbnails) > 0 else 'N/A'
 
-                # Telemetri dasar
                 alt_ft = f.altitude if f.altitude is not None else 0
                 alt_m = round(alt_ft / 3.28084, 1) if alt_ft else 0
                 speed_kts = f.ground_speed if f.ground_speed is not None else 0
@@ -233,13 +232,10 @@ def fetch_fr24_flights(now_wib):
                     flight_phase = "Cruising"
 
                 flight_data.append({
-                    # 1. Identifikasi & Waktu
                     'Timestamp_WIB': now_wib,
                     'Callsign': f.callsign or 'N/A',
                     'Flight_Number': f.number or 'N/A',
                     'Flight_ID': f.id or 'N/A',
-                    
-                    # 2. Maskapai & Fisik Pesawat
                     'Airline_Name': airline.get('name') or get_airline_name(f.callsign),
                     'Airline_ICAO': airline.get('code', {}).get('icao') or f.airline_icao or 'N/A',
                     'Airline_IATA': airline.get('code', {}).get('iata') or 'N/A',
@@ -247,8 +243,6 @@ def fetch_fr24_flights(now_wib):
                     'Aircraft_Type': aircraft.get('model', {}).get('text') or 'N/A',
                     'Registration_Number': aircraft.get('registration') or f.registration or 'N/A',
                     'Aircraft_Image_URL': img_url,
-                    
-                    # 3. Rute & Detail Bandara
                     'Origin_IATA': origin.get('code', {}).get('iata') or f.origin_airport_iata or 'N/A',
                     'Origin_ICAO': origin.get('code', {}).get('icao') or 'N/A',
                     'Origin_Airport_Name': origin.get('name') or 'N/A',
@@ -257,51 +251,48 @@ def fetch_fr24_flights(now_wib):
                     'Destination_ICAO': destination.get('code', {}).get('icao') or 'N/A',
                     'Destination_Airport_Name': destination.get('name') or 'N/A',
                     'Destination_City': dest_city,
-                    
-                    # 4. Telemetri Posisi & Navigasi
                     'Latitude': f.latitude if f.latitude is not None else -6.1256,
                     'Longitude': f.longitude if f.longitude is not None else 106.6558,
                     'Heading_Deg': f.heading if f.heading is not None else 0,
                     'Squawk_Code': details.get('squawk') or 'N/A',
-                    
-                    # 5. Ketinggian & Kecepatan
                     'Altitude_Meters': alt_m,
                     'Altitude_Feet': alt_ft,
                     'Ground_Speed_KMH': speed_kmh,
                     'Ground_Speed_Knots': speed_kts,
                     'Vertical_Speed_MS': v_speed_ms,
                     'Vertical_Speed_FPM': v_speed_fpm,
-                    
-                    # 6. Status Operasional & Jadwal
                     'Flight_Phase': flight_phase,
                     'Is_Ground': is_ground,
                     'Status_Text': status.get('text') or 'N/A',
                     'Scheduled_Departure': sched_dep,
                     'Actual_Departure': act_dep,
                     'Estimated_Arrival': est_arr,
-                    
                     'Source': 'FlightRadar24'
                 })
-        else:
-            flight_data.append({
-                'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
-                'Airline_Name': 'N/A', 'Airline_ICAO': 'N/A', 'Airline_IATA': 'N/A',
-                'Aircraft_Model': 'N/A', 'Aircraft_Type': 'N/A', 'Registration_Number': 'N/A', 'Aircraft_Image_URL': 'N/A',
-                'Origin_IATA': 'N/A', 'Origin_ICAO': 'N/A', 'Origin_Airport_Name': 'N/A', 'Origin_City': 'N/A',
-                'Destination_IATA': 'N/A', 'Destination_ICAO': 'N/A', 'Destination_Airport_Name': 'N/A', 'Destination_City': 'N/A',
-                'Latitude': -6.1256, 'Longitude': 106.6558, 'Heading_Deg': 0, 'Squawk_Code': 'N/A',
-                'Altitude_Meters': 0, 'Altitude_Feet': 0, 'Ground_Speed_KMH': 0, 'Ground_Speed_Knots': 0,
-                'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0,
-                'Status_Text': 'N/A', 'Scheduled_Departure': 'N/A', 'Actual_Departure': 'N/A', 'Estimated_Arrival': 'N/A',
-                'Source': 'FlightRadar24'
-            })
-
-        df_new = pd.DataFrame(flight_data)
-        df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
-        print(f"[{now_wib}] FlightRadar24 Success: Berhasil mencatat {len(flights) if flights else 0} penerbangan (Full Parsed Details).")
 
     except Exception as e:
         print(f"Error fetching FlightRadar24 data: {e}")
+
+    # JAMINAN PENYIMPANAN: Jika terganggu/kosong, isi baris fallback agar file CSV TETAP terbuat
+    if not flight_data:
+        flight_data.append({
+            'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
+            'Airline_Name': 'N/A', 'Airline_ICAO': 'N/A', 'Airline_IATA': 'N/A',
+            'Aircraft_Model': 'N/A', 'Aircraft_Type': 'N/A', 'Registration_Number': 'N/A', 'Aircraft_Image_URL': 'N/A',
+            'Origin_IATA': 'N/A', 'Origin_ICAO': 'N/A', 'Origin_Airport_Name': 'N/A', 'Origin_City': 'N/A',
+            'Destination_IATA': 'N/A', 'Destination_ICAO': 'N/A', 'Destination_Airport_Name': 'N/A', 'Destination_City': 'N/A',
+            'Latitude': -6.1256, 'Longitude': 106.6558, 'Heading_Deg': 0, 'Squawk_Code': 'N/A',
+            'Altitude_Meters': 0, 'Altitude_Feet': 0, 'Ground_Speed_KMH': 0, 'Ground_Speed_Knots': 0,
+            'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Flight_Phase': 'No Flights / API Error', 'Is_Ground': 0,
+            'Status_Text': 'N/A', 'Scheduled_Departure': 'N/A', 'Actual_Departure': 'N/A', 'Estimated_Arrival': 'N/A',
+            'Source': 'FlightRadar24'
+        })
+
+    # PROSES PENULISAN DILAKUKAN DILUAR TRY-EXCEPT
+    df_new = pd.DataFrame(flight_data)
+    df_new = df_new.fillna('N/A')
+    df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
+    print(f"[{now_wib}] FlightRadar24 Success: Berhasil mencatat {len(flight_data)} penerbangan ke {csv_file}.")
 
 # -------------------------------------------------------------------
 # MAIN EXECUTION
