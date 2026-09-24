@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 from datetime import datetime
 import pytz
+import time
 from FlightRadarAPI import FlightRadar24API
 
 def get_airline_name(callsign):
@@ -161,7 +162,7 @@ def fetch_opensky_flights(now_wib):
         print(f"Error fetching OpenSky data: {e}")
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (SAFE PARSING & GUARANTEED CSV SAVE)
+# 2. FLIGHTRADAR24 DATA FETCHING (DENGAN SLEEP JEDA ANTI-BLOCK)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
     csv_file = "jakarta_flights_log_fr24.csv"
@@ -176,13 +177,15 @@ def fetch_fr24_flights(now_wib):
         if isinstance(flights, list) and len(flights) > 0:
             for f in flights:
                 details = {}
-                # Ambil detail per pesawat dengan proteksi try-except tersendiri
                 try:
                     res = fr_api.get_flight_details(f)
                     if isinstance(res, dict):
                         details = res
                 except Exception:
                     pass
+
+                # PERBAIKAN UTAMA: Tambah jeda 0.3 detik antar request agar IP tidak diblokir
+                time.sleep(0.3)
 
                 airline = details.get('airline', {}) or {}
                 aircraft = details.get('aircraft', {}) or {}
@@ -273,7 +276,7 @@ def fetch_fr24_flights(now_wib):
     except Exception as e:
         print(f"Error fetching FlightRadar24 data: {e}")
 
-    # JAMINAN PENYIMPANAN: Jika terganggu/kosong, isi baris fallback agar file CSV TETAP terbuat
+    # Fallback jika jaringan/API bermasalah
     if not flight_data:
         flight_data.append({
             'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Flight_Number': 'NONE', 'Flight_ID': 'N/A',
@@ -288,7 +291,6 @@ def fetch_fr24_flights(now_wib):
             'Source': 'FlightRadar24'
         })
 
-    # PROSES PENULISAN DILAKUKAN DILUAR TRY-EXCEPT
     df_new = pd.DataFrame(flight_data)
     df_new = df_new.fillna('N/A')
     df_new.to_csv(csv_file, mode='a' if os.path.exists(csv_file) else 'w', header=not os.path.exists(csv_file), index=False)
