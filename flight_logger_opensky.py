@@ -170,7 +170,7 @@ def fetch_fr24_flights(now_wib):
     
     try:
         fr_api = FlightRadar24API()
-        bounds = "-5.50,-6.85,105.80,107.50"
+        bounds = fr_api.get_bounds_by_point(latitude=-6.1256, longitude=106.6558, radius=100000)
         flights = fr_api.get_flights(bounds=bounds)
 
         if isinstance(flights, list) and len(flights) > 0:
