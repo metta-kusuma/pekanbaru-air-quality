@@ -237,3 +237,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 16:07:21,LNI692,Lion Air,8a01cd,Indonesia,N/A,-6.989,111.1964,7840.98,25725.0,8641.08,28350.0,746.5,403.1,-9.75,-1919.3,91.0,Descending (Landing/Approach),0,0,0,1790327157,1790327157,N/A,OpenSky Network
 2026-09-25 16:07:21,SJV128,Sriwijaya Air / Super Air Jet,8a092e,Indonesia,N/A,-7.4764,110.9348,708.66,2325.0,754.38,2475.0,287.0,155.0,-3.58,-704.7,255.43,Descending (Landing/Approach),0,0,0,1790326920,1790326923,N/A,OpenSky Network
 2026-09-25 16:14:25,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-25 16:21:27,LNI857,Lion Air,8a0455,Indonesia,N/A,-6.9852,110.969,9738.36,31950.0,10469.88,34350.0,820.5,443.1,-12.03,-2368.1,90.91,Descending (Landing/Approach),0,0,0,1790328078,1790328078,N/A,OpenSky Network
