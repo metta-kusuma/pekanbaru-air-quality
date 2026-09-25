@@ -269,3 +269,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 18:28:24,SJY712,Sriwijaya Air,8a0365,Indonesia,N/A,-7.5604,110.6963,3870.96,12700.0,4130.04,13550.0,633.2,341.9,-5.2,-1023.6,227.73,Descending (Landing/Approach),0,0,0,1790335695,1790335695,N/A,OpenSky Network
 2026-09-25 18:28:24,BTK7368,Batik Air,8a09a2,Indonesia,N/A,-7.4817,110.9124,670.56,2200.0,769.62,2525.0,256.9,138.7,-2.28,-448.8,256.66,Descending (Landing/Approach),0,0,0,1790335630,1790335630,N/A,OpenSky Network
 2026-09-25 18:35:30,AWQ818,Indonesia AirAsia,8a09ad,Indonesia,N/A,-7.0175,111.4738,10675.62,35025.0,11407.14,37425.0,811.3,438.1,0,0.0,90.92,Cruising,0,0,0,1790336089,1790336089,N/A,OpenSky Network
+2026-09-25 18:42:25,GIA320,Garuda Indonesia,8a04f4,Indonesia,N/A,-6.9652,111.1702,7795.26,25575.0,8366.76,27450.0,675.2,364.6,-8.78,-1728.3,103.16,Descending (Landing/Approach),0,0,0,1790336454,1790336454,N/A,OpenSky Network
