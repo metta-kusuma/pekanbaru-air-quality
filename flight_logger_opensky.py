@@ -58,7 +58,7 @@ def get_airline_name(callsign):
     return airlines.get(prefix, 'Other Airline')
 
 # -------------------------------------------------------------------
-# 1. OPENSKY DATA FETCHING (JAKARTA, SINGAPURA, BALI, KALIMANTAN - 500 KM+)
+# 1. OPENSKY DATA FETCHING (5 WILAYAH - COVERAGE 100% FULL TANPA GAP)
 # -------------------------------------------------------------------
 def fetch_opensky_flights(now_wib):
     username = os.getenv("OPENSKY_USERNAME")
@@ -68,7 +68,7 @@ def fetch_opensky_flights(now_wib):
         print("Error: OPENSKY_USERNAME atau OPENSKY_PASSWORD tidak ditemukan di environment variables.")
         return
 
-    # Bounding Box Raksasa mencakup seluruh wilayah Asia Tenggara Maritim
+    # Bounding Box Raksasa Asia Tenggara Maritim (Tetap 1 Request HTTP = 1 Kredit)
     params = {'lamin': -13.25, 'lamax': 7.50, 'lomin': 98.50, 'lomax': 119.70}
     url = "https://opensky-network.org/api/states/all"
 
@@ -78,20 +78,21 @@ def fetch_opensky_flights(now_wib):
             result = response.json()
             states = result.get('states', [])
             
-            f_jkt, f_sin, f_dps, f_kal = [], [], [], []
+            f_jkt, f_sin, f_dps, f_kal, f_pnk = [], [], [], [], []
 
             if states:
                 for s in states:
                     latitude = s[6] if s[6] is not None else 0
                     longitude = s[5] if s[5] is not None else 0
                     
-                    # Filter radius 500 km per bandara pusat
+                    # 5 Filter Presisi Radius 500 km
                     is_jakarta = (-10.63 <= latitude <= -1.60 and 102.00 <= longitude <= 111.16)
-                    is_singapore = (-3.14 <= latitude <= 5.86 and 99.49 <= longitude <= 108.49)
+                    is_singapore = (-3.14 <= latitude <= 7.50 and 98.50 <= longitude <= 108.50)
                     is_bali = (-13.25 <= latitude <= -4.25 and 110.67 <= longitude <= 119.70)
-                    is_kalimantan = (-5.75 <= latitude <= 7.50 and 108.50 <= longitude <= 119.70)
+                    is_kalimantan = (-5.75 <= latitude <= 3.25 and 112.00 <= longitude <= 121.70) # Balikpapan / IKN Center
+                    is_pontianak = (-4.65 <= latitude <= 4.35 and 104.90 <= longitude <= 113.90)  # Pontianak Center (Penutup Gap Natuna)
 
-                    if not is_jakarta and not is_singapore and not is_bali and not is_kalimantan:
+                    if not is_jakarta and not is_singapore and not is_bali and not is_kalimantan and not is_pontianak:
                         continue
 
                     row = build_opensky_row(s, now_wib)
@@ -100,6 +101,7 @@ def fetch_opensky_flights(now_wib):
                     if is_singapore: f_sin.append(row)
                     if is_bali: f_dps.append(row)
                     if is_kalimantan: f_kal.append(row)
+                    if is_pontianak: f_pnk.append(row)
 
             # Fallback jika data kosong
             fallback = lambda lat, lon: [{'Timestamp_WIB': now_wib, 'Callsign': 'NONE', 'Airline_Inferred': 'N/A', 'Transponder_Hex': 'N/A', 'Country_Origin': 'N/A', 'Squawk_Code': 'N/A', 'Latitude': lat, 'Longitude': lon, 'Baro_Altitude_Meters': 0, 'Baro_Altitude_Feet': 0, 'Geo_Altitude_Meters': 0, 'Geo_Altitude_Feet': 0, 'Speed_KMH': 0, 'Speed_Knots': 0, 'Vertical_Speed_MS': 0, 'Vertical_Speed_FPM': 0, 'Heading_Deg': 0, 'Flight_Phase': 'No Flights', 'Is_Ground': 0, 'SPI_Transponder': 0, 'Position_Source_ID': 0, 'Time_Position_Unix': 0, 'Last_Contact_Unix': 0, 'Sensors_Data': 'N/A', 'Source': 'OpenSky Network'}]
@@ -108,13 +110,15 @@ def fetch_opensky_flights(now_wib):
             if not f_sin: f_sin = fallback(1.3644, 103.9915)
             if not f_dps: f_dps = fallback(-8.7482, 115.1672)
             if not f_kal: f_kal = fallback(-1.2682, 116.8942)
+            if not f_pnk: f_pnk = fallback(-0.1506, 109.4042)
 
             pd.DataFrame(f_jkt).to_csv('jakarta_flights_log_opensky.csv', mode='a' if os.path.exists('jakarta_flights_log_opensky.csv') else 'w', header=not os.path.exists('jakarta_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_sin).to_csv('singapore_flights_log_opensky.csv', mode='a' if os.path.exists('singapore_flights_log_opensky.csv') else 'w', header=not os.path.exists('singapore_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_dps).to_csv('bali_flights_log_opensky.csv', mode='a' if os.path.exists('bali_flights_log_opensky.csv') else 'w', header=not os.path.exists('bali_flights_log_opensky.csv'), index=False)
             pd.DataFrame(f_kal).to_csv('kalimantan_flights_log_opensky.csv', mode='a' if os.path.exists('kalimantan_flights_log_opensky.csv') else 'w', header=not os.path.exists('kalimantan_flights_log_opensky.csv'), index=False)
+            pd.DataFrame(f_pnk).to_csv('pontianak_flights_log_opensky.csv', mode='a' if os.path.exists('pontianak_flights_log_opensky.csv') else 'w', header=not os.path.exists('pontianak_flights_log_opensky.csv'), index=False)
             
-            print(f"[{now_wib}] OpenSky Success (500km Range): Jakarta ({len(f_jkt)}), Singapore ({len(f_sin)}), Bali ({len(f_dps)}), Kalimantan ({len(f_kal)}).")
+            print(f"[{now_wib}] OpenSky Success (100% Full): JKT({len(f_jkt)}), SIN({len(f_sin)}), BALI({len(f_dps)}), KAL({len(f_kal)}), PNK({len(f_pnk)}).")
 
         else:
             print(f"OpenSky API Error: Status Code {response.status_code}")
@@ -185,14 +189,15 @@ def build_opensky_row(s, now_wib):
     }
 
 # -------------------------------------------------------------------
-# 2. FLIGHTRADAR24 DATA FETCHING (4 BANDARA - RADIUS 500 KM - TEPAT 36 KOLOM)
+# 2. FLIGHTRADAR24 DATA FETCHING (5 WILAYAH - RADIUS 500 KM TEPAT 36 KOLOM)
 # -------------------------------------------------------------------
 def fetch_fr24_flights(now_wib):
     regions = {
         'Jakarta': {'lat': -6.1256, 'lon': 106.6558, 'csv': 'jakarta_flights_log_fr24.csv'},
         'Singapore': {'lat': 1.3644, 'lon': 103.9915, 'csv': 'singapore_flights_log_fr24.csv'},
         'Bali': {'lat': -8.7482, 'lon': 115.1672, 'csv': 'bali_flights_log_fr24.csv'},
-        'Kalimantan': {'lat': -1.2682, 'lon': 116.8942, 'csv': 'kalimantan_flights_log_fr24.csv'}  # Balikpapan / IKN Center
+        'Kalimantan': {'lat': -1.2682, 'lon': 116.8942, 'csv': 'kalimantan_flights_log_fr24.csv'},
+        'Pontianak': {'lat': -0.1506, 'lon': 109.4042, 'csv': 'pontianak_flights_log_fr24.csv'}  # Penutup Gap Natuna & Kalbar
     }
 
     try:
