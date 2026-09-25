@@ -653,3 +653,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 17:56:24,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-25 18:00:49,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-25 18:07:29,QFA7531,Qantas,7c1469,Australia,N/A,3.1285,115.183,11887.2,39000.0,12733.02,41775.0,859.4,464.0,0,0.0,11.31,Cruising,0,0,0,1790334447,1790334447,N/A,OpenSky Network
+2026-09-25 18:14:28,TWB155,Other Airline,71c501,Republic of Korea,N/A,3.009,113.5808,12192,40000.0,13037.82,42775.0,899.4,485.6,0,0.0,213.49,Cruising,0,0,0,1790334733,1790334735,N/A,OpenSky Network
