@@ -301,3 +301,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 21:42:25,BTK7521,Batik Air,8a0634,Indonesia,N/A,-6.9354,110.9886,9235.44,30300.0,9928.86,32575.0,827.4,446.8,-11.7,-2303.1,97.46,Descending (Landing/Approach),0,0,0,1790347335,1790347335,N/A,OpenSky Network
 2026-09-25 21:49:22,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-25 21:56:27,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-25 22:00:51,LNI012,Lion Air,8a0311,Indonesia,N/A,-6.966,111.2473,11277.6,37000.0,12077.7,39625.0,819.1,442.3,0,0.0,98.84,Cruising,0,0,0,1790348402,1790348402,N/A,OpenSky Network
