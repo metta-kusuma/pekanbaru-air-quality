@@ -93,3 +93,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 07:28:24,PAS646,Pelita Air Service,8a0915,Indonesia,N/A,-6.6185,111.1938,10972.8,36000.0,11750.04,38550.0,864.2,466.6,0.0,0.0,217.34,Cruising,0,0,0,1790296081,1790296083,N/A,OpenSky Network
 2026-09-25 07:28:24,SJV127,Sriwijaya Air / Super Air Jet,8a08b7,Indonesia,N/A,-6.8976,111.2434,7673.34,25175.0,8206.74,26925.0,794.6,429.0,7.8,1535.4,89.2,Climbing (Takeoff),0,0,0,1790295929,1790295929,N/A,OpenSky Network
 2026-09-25 07:35:28,PAS646,Pelita Air Service,8a0915,Indonesia,N/A,-7.3993,110.749,8549.64,28050.0,9189.72,30150.0,770.6,416.1,-6.83,-1344.5,181.24,Descending (Landing/Approach),0,0,0,1790296514,1790296514,N/A,OpenSky Network
+2026-09-25 07:42:28,LNI668,Lion Air,8a1812,Indonesia,N/A,-7.2025,110.7574,8648.7,28375.0,9258.3,30375.0,785.5,424.1,-2.28,-448.8,197.28,Descending (Landing/Approach),0,0,0,1790296938,1790296938,N/A,OpenSky Network
