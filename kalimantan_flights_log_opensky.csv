@@ -679,3 +679,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 20:49:25,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-25 20:56:26,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-25 21:00:48,KAL433,Korean Air,71c734,Republic of Korea,N/A,3.229,115.2835,10972.8,36000.0,11795.76,38700.0,919.4,496.4,-0.33,-65.0,190.56,Cruising,0,0,0,1790344724,1790344730,N/A,OpenSky Network
+2026-09-25 21:07:28,CES5029,China Eastern Airlines,78157f,China,N/A,2.9807,115.2374,11582.4,38000.0,12420.6,40750.0,867.4,468.3,0,0.0,190.83,Cruising,0,0,0,1790345245,1790345246,N/A,OpenSky Network
