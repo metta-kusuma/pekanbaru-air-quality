@@ -234,3 +234,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-25 16:00:40,CTV646,Citilink,8a0377,Indonesia,N/A,-6.9876,111.1091,10058.4,33000.0,10728.96,35200.0,824.3,445.1,0.33,65.0,91.03,Cruising,0,0,0,1790326668,1790326668,N/A,OpenSky Network
 2026-09-25 16:00:40,SJV131,Sriwijaya Air / Super Air Jet,8a08b7,Indonesia,N/A,-6.9534,111.0323,6408.42,21025.0,6903.72,22650.0,765.0,413.0,9.1,1791.3,95.7,Climbing (Takeoff),0,0,0,1790326697,1790326770,N/A,OpenSky Network
 2026-09-25 16:00:40,PAS206,Pelita Air Service,8a0a89,Indonesia,N/A,-7.0084,111.2133,7536.18,24725.0,8084.82,26525.0,740.7,399.9,-9.75,-1919.3,104.04,Descending (Landing/Approach),0,0,0,1790326559,1790326560,N/A,OpenSky Network
+2026-09-25 16:07:21,LNI692,Lion Air,8a01cd,Indonesia,N/A,-6.989,111.1964,7840.98,25725.0,8641.08,28350.0,746.5,403.1,-9.75,-1919.3,91.0,Descending (Landing/Approach),0,0,0,1790327157,1790327157,N/A,OpenSky Network
+2026-09-25 16:07:21,SJV128,Sriwijaya Air / Super Air Jet,8a092e,Indonesia,N/A,-7.4764,110.9348,708.66,2325.0,754.38,2475.0,287.0,155.0,-3.58,-704.7,255.43,Descending (Landing/Approach),0,0,0,1790326920,1790326923,N/A,OpenSky Network
