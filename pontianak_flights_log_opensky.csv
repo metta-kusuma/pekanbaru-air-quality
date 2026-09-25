@@ -1295,3 +1295,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 04:49:24,ANZ282,Air New Zealand,c820f2,New Zealand,N/A,0.9421,105.2377,7162.8,23500.0,7635.24,25050.0,736.5,397.7,-8.13,-1600.4,330.47,Descending (Landing/Approach),0,0,0,1790372839,1790372845,N/A,OpenSky Network
 2026-09-26 04:56:25,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 05:00:41,ANZ282,Air New Zealand,c820f2,New Zealand,N/A,1.0852,104.9436,3832.86,12575.0,4069.08,13350.0,500.1,270.0,-4.55,-895.7,88.94,Descending (Landing/Approach),0,0,0,1790373401,1790373402,N/A,OpenSky Network
+2026-09-26 05:07:27,SIA37,Singapore Airlines,76cd49,Singapore,N/A,3.0914,108.05,12192,40000.0,12946.38,42475.0,946.8,511.2,0,0.0,232.95,Cruising,0,0,0,1790374029,1790374029,N/A,OpenSky Network
