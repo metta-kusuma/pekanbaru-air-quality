@@ -672,3 +672,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 06:28:25,LKN280,Lion Air (Alt),8a054f,Indonesia,N/A,-6.9893,111.2145,10050.78,32975.0,10751.82,35275.0,761.2,411.0,0,0.0,90.7,Cruising,0,0,0,1790465191,1790465192,N/A,OpenSky Network
 2026-09-27 06:35:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-27 06:42:24,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-27 06:49:26,AWQ806,Indonesia AirAsia,8a09b8,Indonesia,N/A,-6.9889,111.2072,10668,35000.0,11430,37500.0,831.6,449.0,0,0.0,90.89,Cruising,0,0,0,1790466428,1790466428,N/A,OpenSky Network
