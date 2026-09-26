@@ -485,3 +485,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 13:42:32,PAS142,Pelita Air Service,8a0a4a,Indonesia,N/A,-6.989,111.2088,9448.8,31000.0,10119.36,33200.0,816.8,441.1,0.0,0.0,90.91,Cruising,0,0,0,1790404755,1790404755,N/A,OpenSky Network
 2026-09-26 13:49:23,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 13:56:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-26 14:00:38,LNI983,Lion Air,8a1822,Indonesia,N/A,-6.9848,110.9576,9814.56,32200.0,10500.36,34450.0,837.3,452.1,-18.53,-3647.6,91.01,Descending (Landing/Approach),0,0,0,1790406025,1790406026,N/A,OpenSky Network
