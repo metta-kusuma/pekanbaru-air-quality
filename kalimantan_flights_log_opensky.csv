@@ -874,3 +874,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 18:00:46,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 18:07:24,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 18:14:25,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-26 18:21:22,AAR761,Asiana Airlines,71c079,Republic of Korea,N/A,3.1913,113.4679,10972.8,36000.0,11750.04,38550.0,907.8,490.2,0.0,0.0,207.45,Cruising,0,0,0,1790421649,1790421652,N/A,OpenSky Network
+2026-09-26 18:21:22,TWB155,Other Airline,71c561,Republic of Korea,N/A,3.0896,113.3397,12192.0,40000.0,13030.2,42750.0,860.8,464.8,-0.33,-65.0,205.08,Cruising,0,0,0,1790421469,1790421469,N/A,OpenSky Network
