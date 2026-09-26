@@ -393,3 +393,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 07:21:23,SJV132,Sriwijaya Air / Super Air Jet,8a08b7,Indonesia,N/A,-6.9897,111.1441,6804.66,22325.0,7299.96,23950.0,772.3,417.0,9.1,1791.3,90.69,Climbing (Takeoff),0,0,0,1790381944,1790381951,N/A,OpenSky Network
 2026-09-26 07:28:26,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 07:35:26,GIA456,Garuda Indonesia,8a02d3,Indonesia,N/A,-6.9879,111.1291,10668,35000.0,11414.76,37450.0,840.9,454.1,0,0.0,90.88,Cruising,0,0,0,1790382908,1790382908,N/A,OpenSky Network
+2026-09-26 07:42:26,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
