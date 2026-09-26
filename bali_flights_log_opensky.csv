@@ -668,3 +668,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 06:01:19,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-27 06:07:25,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-27 06:14:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-27 06:21:23,SJV777,Sriwijaya Air / Super Air Jet,8a0974,Indonesia,N/A,-7.3762,110.7495,8656.32,28400.0,9296.4,30500.0,837.3,452.1,-9.43,-1856.3,181.14,Descending (Landing/Approach),0,0,0,1790464874,1790464874,N/A,OpenSky Network
