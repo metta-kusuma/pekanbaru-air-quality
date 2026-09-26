@@ -395,3 +395,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 07:35:26,GIA456,Garuda Indonesia,8a02d3,Indonesia,N/A,-6.9879,111.1291,10668,35000.0,11414.76,37450.0,840.9,454.1,0,0.0,90.88,Cruising,0,0,0,1790382908,1790382908,N/A,OpenSky Network
 2026-09-26 07:42:26,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-26 07:49:20,CTV178,Citilink,8a04a5,Indonesia,N/A,-6.9892,111.1957,7597.14,24925.0,8191.5,26875.0,717.9,387.6,-6.5,-1279.5,93.25,Descending (Landing/Approach),0,0,0,1790383626,1790383626,N/A,OpenSky Network
+2026-09-26 07:56:19,SJV316,Sriwijaya Air / Super Air Jet,8a0948,Indonesia,N/A,-7.025,111.1648,7612.38,24975.0,8229.6,27000.0,775.0,418.5,-11.05,-2175.2,102.84,Descending (Landing/Approach),0,0,0,1790384175,1790384175,N/A,OpenSky Network
