@@ -469,3 +469,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-26 12:28:27,GIA254,Garuda Indonesia,8a0240,Indonesia,N/A,-7.4127,110.8493,8199.12,26900.0,8785.86,28825.0,723.0,390.4,11.05,2175.2,53.54,Climbing (Takeoff),0,0,0,1790400412,1790400446,N/A,OpenSky Network
 2026-09-26 12:35:26,GIA254,Garuda Indonesia,8a0240,Indonesia,N/A,-7.1552,111.1985,9928.86,32575.0,10561.32,34650.0,785.3,424.0,5.53,1088.6,53.54,Climbing (Takeoff),0,0,0,1790400644,1790400644,N/A,OpenSky Network
 2026-09-26 12:42:28,CTV736,Citilink,8a03b3,Indonesia,N/A,-7.0206,111.1618,7627.62,25025.0,8206.74,26925.0,741.7,400.5,-10.73,-2112.2,103.13,Descending (Landing/Approach),0,0,0,1790401308,1790401308,N/A,OpenSky Network
+2026-09-26 12:49:27,T71818,Private / Business Jet / General Aviation,50040d,San Marino,N/A,-7.4219,110.6777,2987.04,9800.0,3162.3,10375.0,455.3,245.9,-9.43,-1856.3,215.56,Descending (Landing/Approach),0,0,0,1790401758,1790401758,N/A,OpenSky Network
