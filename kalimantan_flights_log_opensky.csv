@@ -1137,3 +1137,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 22:56:30,PAL537,Philippine Airlines,758302,Philippines,N/A,3.107,115.2615,10370.82,34025.0,11125.2,36500.0,869.5,469.5,0,0.0,190.93,Cruising,0,0,0,1790524575,1790524575,N/A,OpenSky Network
 2026-09-27 23:00:44,PAL537,Philippine Airlines,758302,Philippines,N/A,2.7762,115.0558,10347.96,33950.0,11102.34,36425.0,869.3,469.4,0.33,65.0,210.61,Cruising,0,0,0,1790524755,1790524756,N/A,OpenSky Network
 2026-09-27 23:07:28,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-27 23:14:26,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
