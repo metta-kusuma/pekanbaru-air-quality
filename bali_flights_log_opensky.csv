@@ -674,3 +674,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 06:42:24,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-27 06:49:26,AWQ806,Indonesia AirAsia,8a09b8,Indonesia,N/A,-6.9889,111.2072,10668,35000.0,11430,37500.0,831.6,449.0,0,0.0,90.89,Cruising,0,0,0,1790466428,1790466428,N/A,OpenSky Network
 2026-09-27 06:56:29,CTV738,Citilink,8a03aa,Indonesia,N/A,-7.0592,111.1259,7917.18,25975.0,8549.64,28050.0,779.2,420.7,-12.03,-2368.1,96.55,Descending (Landing/Approach),0,0,0,1790466980,1790466980,N/A,OpenSky Network
+2026-09-27 07:00:44,PKJCO,Private / Business Jet / General Aviation,8a0395,Indonesia,N/A,-6.9862,111.0312,12496.8,41000.0,13266.42,43525.0,794.6,429.1,0.0,0.0,90.93,Cruising,0,0,0,1790467158,1790467158,N/A,OpenSky Network
+2026-09-27 07:00:44,CTV738,Citilink,8a03aa,Indonesia,N/A,-7.0592,111.1259,7917.18,25975.0,8549.64,28050.0,779.2,420.7,-12.03,-2368.1,96.55,Descending (Landing/Approach),0,0,0,1790466980,1790466980,N/A,OpenSky Network
