@@ -767,3 +767,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 12:07:29,LNI640,Lion Air,8a01af,Indonesia,N/A,-7.1918,111.0648,7162.8,23500.0,7642.86,25075.0,797.2,430.5,4.55,895.7,56.75,Climbing (Takeoff),0,0,0,1790485643,1790485648,N/A,OpenSky Network
 2026-09-27 12:07:29,BTK7583,Batik Air,8a0515,Indonesia,N/A,-6.9976,111.4238,10058.4,33000.0,10782.3,35375.0,799.9,431.9,0.0,0.0,98.66,Cruising,0,0,0,1790485381,1790485382,N/A,OpenSky Network
 2026-09-27 12:14:25,T71818,Private / Business Jet / General Aviation,50040d,San Marino,N/A,-7.2182,110.7354,5029.2,16500.0,5341.62,17525.0,695.7,375.7,13,2559.0,333.78,Climbing (Takeoff),0,0,0,1790486054,1790486054,N/A,OpenSky Network
+2026-09-27 12:21:23,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
