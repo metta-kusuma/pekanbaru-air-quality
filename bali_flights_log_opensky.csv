@@ -678,3 +678,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 07:00:44,CTV738,Citilink,8a03aa,Indonesia,N/A,-7.0592,111.1259,7917.18,25975.0,8549.64,28050.0,779.2,420.7,-12.03,-2368.1,96.55,Descending (Landing/Approach),0,0,0,1790466980,1790466980,N/A,OpenSky Network
 2026-09-27 07:07:26,PKJCO,Private / Business Jet / General Aviation,8a0395,Indonesia,N/A,-7.0829,111.6341,12496.8,41000.0,13266.42,43525.0,793.8,428.6,0.0,0.0,112.5,Cruising,0,0,0,1790467469,1790467469,N/A,OpenSky Network
 2026-09-27 07:07:26,PAS646,Pelita Air Service,8a09e4,Indonesia,N/A,-7.0198,110.853,9281.16,30450.0,9974.58,32725.0,866.7,468.0,-9.43,-1856.3,209.58,Descending (Landing/Approach),0,0,0,1790467628,1790467629,N/A,OpenSky Network
+2026-09-27 07:14:25,CTV780,Citilink,8a0376,Indonesia,N/A,-6.931,111.1489,10972.8,36000.0,11734.8,38500.0,851.7,459.9,0,0.0,236.17,Cruising,0,0,0,1790468014,1790468014,N/A,OpenSky Network
