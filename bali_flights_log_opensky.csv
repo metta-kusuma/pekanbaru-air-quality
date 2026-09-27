@@ -875,3 +875,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-27 18:56:29,AWQ818,Indonesia AirAsia,8a017c,Indonesia,N/A,-6.9813,111.1379,10668,35000.0,11407.14,37425.0,813.7,439.4,-0.33,-65.0,112.48,Cruising,0,0,0,1790509686,1790509919,N/A,OpenSky Network
 2026-09-27 19:00:44,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-27 19:07:25,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-27 19:14:27,N/A,Unknown,8a0603,Indonesia,N/A,-7.3708,110.7268,2133.6,7000.0,2316.48,7600.0,525.1,283.5,-11.05,-2175.2,153.62,Descending (Landing/Approach),0,0,0,1790511112,1790511112,N/A,OpenSky Network
