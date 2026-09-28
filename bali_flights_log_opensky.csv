@@ -1213,3 +1213,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-28 18:42:29,GIA313,Garuda Indonesia,8a0a9e,Indonesia,N/A,-6.5567,111.1382,10972.8,36000.0,11727.18,38475.0,842.0,454.7,0.0,0.0,307.85,Cruising,0,0,0,1790595456,1790595457,N/A,OpenSky Network
 2026-09-28 18:49:28,SJV121,Sriwijaya Air / Super Air Jet,8a08b7,Indonesia,N/A,-7.0628,111.587,10599.42,34775.0,11361.42,37275.0,821.0,443.3,4.88,960.6,112.69,Climbing (Takeoff),0,0,0,1790596153,1790596154,N/A,OpenSky Network
 2026-09-28 18:56:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-28 19:00:48,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
