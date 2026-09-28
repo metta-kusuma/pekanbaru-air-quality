@@ -5765,3 +5765,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 02:29:08,SIA7409,Singapore Airlines,769102,Singapore,N/A,0.7758,105.2932,6659.88,21850.0,7109.46,23325.0,764.9,413.0,-9.1,-1791.3,294.77,Descending (Landing/Approach),0,0,0,1790623741,1790623742,N/A,OpenSky Network
 2026-09-29 02:35:46,SIA612,Singapore Airlines,76cd0e,Singapore,N/A,2.6907,106.5473,11887.2,39000.0,12649.2,41500.0,858.8,463.7,0.0,0.0,33.66,Cruising,0,0,0,1790623969,1790623972,N/A,OpenSky Network
 2026-09-29 02:35:46,CAL756,China Airlines (Taiwan),899114,Taiwan,N/A,2.7039,106.5386,9753.6,32000.0,10439.4,34250.0,833.8,450.2,0.33,65.0,31.47,Cruising,0,0,0,1790624110,1790624122,N/A,OpenSky Network
+2026-09-29 02:42:31,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
