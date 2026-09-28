@@ -1388,3 +1388,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 02:56:35,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 03:00:49,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 03:07:28,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 03:14:31,ANA871,All Nippon Airways (ANA),86e7de,Japan,N/A,3.0827,113.6006,12192,40000.0,12992.1,42625.0,937.0,506.0,-0.33,-65.0,212.65,Cruising,0,0,0,1790626445,1790626447,N/A,OpenSky Network
