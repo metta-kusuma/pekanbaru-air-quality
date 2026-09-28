@@ -1259,3 +1259,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-28 22:42:31,LNI012,Lion Air,8a03e2,Indonesia,N/A,-7.0718,111.6076,10668,35000.0,11414.76,37450.0,791.8,427.5,0,0.0,112.85,Cruising,0,0,0,1790609884,1790609889,N/A,OpenSky Network
 2026-09-28 22:49:28,CTV728,Citilink,8a0301,Indonesia,N/A,-6.9874,111.1107,8442.96,27700.0,9075.42,29775.0,748.3,404.1,-11.7,-2303.1,90.99,Descending (Landing/Approach),0,0,0,1790610552,1790610552,N/A,OpenSky Network
 2026-09-28 22:56:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-28 23:00:51,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
