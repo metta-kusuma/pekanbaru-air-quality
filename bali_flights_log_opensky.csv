@@ -1325,3 +1325,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 05:49:36,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 05:56:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 06:00:43,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 06:07:30,BTK7511,Batik Air,8a0515,Indonesia,N/A,-6.9752,110.8724,9921.24,32550.0,10660.38,34975.0,789.4,426.2,-10.4,-2047.2,91.88,Descending (Landing/Approach),0,0,0,1790636839,1790636839,N/A,OpenSky Network
+2026-09-29 06:07:30,SJV777,Sriwijaya Air / Super Air Jet,8a0951,Indonesia,N/A,-7.2176,111.125,8290.56,27200.0,8900.16,29200.0,844.0,455.7,-12.68,-2496.1,231.77,Descending (Landing/Approach),0,0,0,1790636838,1790636838,N/A,OpenSky Network
