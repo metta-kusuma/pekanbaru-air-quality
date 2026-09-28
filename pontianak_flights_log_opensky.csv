@@ -5811,3 +5811,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 04:42:25,UAL1,United Airlines,ab0f8b,United States,N/A,1.1915,105.5384,7635.24,25050.0,8153.4,26750.0,831.8,449.1,-10.08,-1984.2,259.09,Descending (Landing/Approach),0,0,0,1790631634,1790631634,N/A,OpenSky Network
 2026-09-29 04:49:32,ACA19,Other Airline,c038a7,Canada,N/A,2.9337,108.0388,12184.38,39975.0,12969.24,42550.0,953.6,514.9,0,0.0,223.74,Cruising,0,0,0,1790631854,1790631854,N/A,OpenSky Network
 2026-09-29 04:56:28,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 05:00:43,ACA19,Other Airline,c038a7,Canada,N/A,1.5899,106.1186,10485.12,34400.0,11186.16,36700.0,982.2,530.3,-12.03,-2368.1,235.68,Descending (Landing/Approach),0,0,0,1790632840,1790632841,N/A,OpenSky Network
