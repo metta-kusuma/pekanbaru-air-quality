@@ -1102,3 +1102,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-28 12:07:24,PAS204,Pelita Air Service,8a0914,Indonesia,N/A,-6.9139,110.9968,8785.86,28825.0,9425.94,30925.0,765.0,413.0,-11.05,-2175.2,100.6,Descending (Landing/Approach),0,0,0,1790572035,1790572035,N/A,OpenSky Network
 2026-09-28 12:07:24,GIA253,Garuda Indonesia,8a0a9e,Indonesia,N/A,-7.1548,110.8621,9753.6,32000.0,10431.78,34225.0,807.2,435.9,0.0,0.0,249.03,Cruising,0,0,0,1790572035,1790572035,N/A,OpenSky Network
 2026-09-28 12:14:32,PAS204,Pelita Air Service,8a0914,Indonesia,N/A,-6.9701,111.2191,7711.44,25300.0,8267.7,27125.0,737.0,397.9,-11.05,-2175.2,105.75,Descending (Landing/Approach),0,0,0,1790572156,1790572162,N/A,OpenSky Network
+2026-09-28 12:21:23,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
