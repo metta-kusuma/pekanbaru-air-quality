@@ -1348,3 +1348,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-28 22:28:28,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-28 22:35:33,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-28 22:42:31,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-28 22:49:28,KAL437,Korean Air,71c011,Republic of Korea,N/A,3.1515,113.7189,10972.8,36000.0,11772.9,38625.0,951.9,514.0,0,0.0,214.62,Cruising,0,0,0,1790610475,1790610475,N/A,OpenSky Network
