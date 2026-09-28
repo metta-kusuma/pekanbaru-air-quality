@@ -1026,3 +1026,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-28 08:42:31,WGB14,Other Airline,8a02d9,Indonesia,N/A,-7.289,110.7776,3398.52,11150.0,3642.36,11950.0,417.2,225.3,-7.48,-1472.4,353.88,Descending (Landing/Approach),0,0,0,1790559496,1790559499,N/A,OpenSky Network
 2026-09-28 08:49:26,GIA302,Garuda Indonesia,8a01dd,Indonesia,N/A,-6.9889,111.1904,8138.16,26700.0,8983.98,29475.0,705.8,381.1,-9.75,-1919.3,91.2,Descending (Landing/Approach),0,0,0,1790560016,1790560016,N/A,OpenSky Network
 2026-09-28 08:49:26,BTK6584,Batik Air,8a091f,Indonesia,N/A,-6.9841,110.9443,9075.42,29775.0,9776.46,32075.0,768.7,415.0,-11.05,-2175.2,90.97,Descending (Landing/Approach),0,0,0,1790560156,1790560156,N/A,OpenSky Network
+2026-09-28 08:56:24,BTK6584,Batik Air,8a091f,Indonesia,N/A,-6.9877,111.1611,7871.46,25825.0,8488.68,27850.0,746.5,403.1,-10.73,-2112.2,91,Descending (Landing/Approach),0,0,0,1790560270,1790560270,N/A,OpenSky Network
