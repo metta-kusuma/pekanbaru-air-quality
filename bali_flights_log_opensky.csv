@@ -1638,3 +1638,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 06:07:28,KCN05,K-Mile Air / Kencana Air,8a0024,Indonesia,N/A,-6.9612,111.1197,8999.22,29525.0,9585.96,31450.0,789.5,426.3,-4.55,-895.7,97.14,Descending (Landing/Approach),0,0,0,1790723230,1790723231,N/A,OpenSky Network
 2026-09-30 06:14:28,BTK7511,Batik Air,8a0636,Indonesia,N/A,-7.0085,111.2538,7581.9,24875.0,8328.66,27325.0,753.7,407.0,-10.4,-2047.2,104.51,Descending (Landing/Approach),0,0,0,1790723525,1790723525,N/A,OpenSky Network
 2026-09-30 06:14:28,SJV777,Sriwijaya Air / Super Air Jet,8a09c4,Indonesia,N/A,-7.5759,110.6755,6835.14,22425.0,7330.44,24050.0,754.6,407.4,-12.68,-2496.1,228.68,Descending (Landing/Approach),0,0,0,1790723667,1790723668,N/A,OpenSky Network
+2026-09-30 06:21:32,LKN280,Lion Air (Alt),8a054f,Indonesia,N/A,-6.9701,111.2444,10073.64,33050.0,10774.68,35350.0,829.0,447.6,-0.33,-65.0,97.32,Cruising,0,0,0,1790724076,1790724076,N/A,OpenSky Network
