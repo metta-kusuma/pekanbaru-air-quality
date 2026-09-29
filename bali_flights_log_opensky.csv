@@ -1452,3 +1452,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 13:42:30,N/A,Unknown,500323,San Marino,N/A,-6.8312,111.3068,8023.86,26325.0,8580.12,28150.0,900.6,486.3,-14.63,-2879.9,145.13,Descending (Landing/Approach),0,0,0,1790663950,1790663954,N/A,OpenSky Network
 2026-09-29 13:49:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 13:56:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 14:00:47,LNI983,Lion Air,8a0486,Indonesia,N/A,-6.9882,111.1453,8656.32,28400.0,9288.78,30475.0,759.5,410.1,-13.33,-2624.0,91.12,Descending (Landing/Approach),0,0,0,1790665237,1790665237,N/A,OpenSky Network
