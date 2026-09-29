@@ -1642,3 +1642,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 06:28:36,LKN280,Lion Air (Alt),8a054f,Indonesia,N/A,-6.9701,111.2444,10073.64,33050.0,10774.68,35350.0,838.5,452.8,0,0.0,112.6,Cruising,0,0,0,1790724076,1790724223,N/A,OpenSky Network
 2026-09-30 06:35:33,T7808,Private / Business Jet / General Aviation,500305,San Marino,N/A,-6.9581,110.9169,12496.8,41000.0,13281.66,43575.0,906.0,489.2,0,0.0,93.99,Cruising,0,0,0,1790724925,1790724925,N/A,OpenSky Network
 2026-09-30 06:42:33,T7808,Private / Business Jet / General Aviation,500305,San Marino,N/A,-7.0743,111.6141,12496.8,41000.0,13281.66,43575.0,898.1,484.9,0,0.0,112.81,Cruising,0,0,0,1790725241,1790725242,N/A,OpenSky Network
+2026-09-30 06:50:04,N/A,Unknown,8a0376,Indonesia,N/A,-6.9842,110.9111,8900.16,29200.0,9563.1,31375.0,753.9,407.1,-10.08,-1984.2,90.99,Descending (Landing/Approach),0,0,0,1790725795,1790725795,N/A,OpenSky Network
