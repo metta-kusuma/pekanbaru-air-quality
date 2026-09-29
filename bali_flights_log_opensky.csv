@@ -1349,3 +1349,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 07:21:26,T7MPI,Private / Business Jet / General Aviation,500126,San Marino,N/A,-7.0833,111.6354,11887.2,39000.0,0.0,0.0,823.2,444.5,0.33,65.0,113.05,Cruising,0,0,0,1790641025,1790641025,N/A,OpenSky Network
 2026-09-29 07:21:26,SJV127,Sriwijaya Air / Super Air Jet,8a094d,Indonesia,N/A,-7.0924,111.0941,6073.14,19925.0,6423.66,21075.0,774.5,418.2,9.43,1856.3,73.04,Climbing (Takeoff),0,0,0,1790641206,1790641206,N/A,OpenSky Network
 2026-09-29 07:28:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 07:35:29,GIA304,Garuda Indonesia,8a0ad5,Indonesia,N/A,-6.9803,110.6962,10005.06,32825.0,10767.06,35325.0,791.0,427.1,0,0.0,91.21,Cruising,0,0,0,1790642124,1790642124,N/A,OpenSky Network
