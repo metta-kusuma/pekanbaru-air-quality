@@ -1360,3 +1360,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 08:14:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 08:21:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 08:28:28,WGB14,Other Airline,8a02d9,Indonesia,N/A,-7.4553,110.8092,3337.56,10950.0,3581.4,11750.0,432.4,233.5,-3.9,-767.7,353.61,Descending (Landing/Approach),0,0,0,1790645293,1790645293,N/A,OpenSky Network
+2026-09-29 08:35:29,WGB14,Other Airline,8a02d9,Indonesia,N/A,-7.2161,110.7777,3360.42,11025.0,3634.74,11925.0,422.9,228.3,1.63,320.9,341.88,Climbing (Takeoff),0,0,0,1790645520,1790645520,N/A,OpenSky Network
+2026-09-29 08:35:29,N/A,Unknown,8a03c4,Indonesia,N/A,-6.989,111.1973,10668.0,35000.0,11399.52,37400.0,779.8,421.1,0.33,65.0,90.95,Cruising,0,0,0,1790645467,1790645467,N/A,OpenSky Network
