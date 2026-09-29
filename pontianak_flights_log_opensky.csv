@@ -7176,3 +7176,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 03:14:33,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-30 03:21:33,MAS6102,Malaysia Airlines,750263,Malaysia,N/A,2.5014,106.6162,12496.8,41000.0,13281.66,43575.0,808.3,436.4,0.0,0.0,105.28,Cruising,0,0,0,1790713016,1790713029,N/A,OpenSky Network
 2026-09-30 03:21:33,CSN388,China Southern Airlines,781947,China,N/A,-4.3979,105.5105,9403.08,30850.0,9951.72,32650.0,814.6,439.8,3.9,767.7,330.29,Climbing (Takeoff),0,0,0,1790713275,1790713275,N/A,OpenSky Network
+2026-09-30 03:28:25,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
