@@ -1483,3 +1483,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 13:28:27,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 13:35:30,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 13:42:30,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 13:49:28,GIA879,Garuda Indonesia,8a05ab,Indonesia,N/A,2.9993,113.6904,12192,40000.0,12992.1,42625.0,906.7,489.6,0,0.0,216.61,Cruising,0,0,0,1790664281,1790664281,N/A,OpenSky Network
+2026-09-29 13:49:28,ANA855,All Nippon Airways (ANA),872f5c,Japan,N/A,3.2479,113.9551,12192,40000.0,12984.48,42600.0,901.5,486.8,0,0.0,218.49,Cruising,0,0,0,1790664528,1790664528,N/A,OpenSky Network
