@@ -1481,3 +1481,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 15:28:29,PAS206,Pelita Air Service,8a0a44,Indonesia,N/A,-6.974,111.2551,7764.78,25475.0,8336.28,27350.0,746.9,403.3,-10.73,-2112.2,105.83,Descending (Landing/Approach),0,0,0,1790670286,1790670287,N/A,OpenSky Network
 2026-09-29 15:35:30,CTV833,Citilink,8a03b1,Indonesia,N/A,-6.9877,111.1474,8450.58,27725.0,9075.42,29775.0,720.6,389.1,-18.86,-3712.6,91.18,Descending (Landing/Approach),0,0,0,1790670785,1790670789,N/A,OpenSky Network
 2026-09-29 15:35:30,GIA326,Garuda Indonesia,8a03c4,Indonesia,N/A,-7.0278,111.1487,7574.28,24850.0,8100.06,26575.0,784.0,423.3,-10.08,-1984.2,102.69,Descending (Landing/Approach),0,0,0,1790670748,1790670750,N/A,OpenSky Network
+2026-09-29 15:42:37,GIA410,Garuda Indonesia,8a043b,Indonesia,N/A,-6.9283,111.0375,10668,35000.0,11391.9,37375.0,807.8,436.2,0,0.0,99.64,Cruising,0,0,0,1790671348,1790671348,N/A,OpenSky Network
