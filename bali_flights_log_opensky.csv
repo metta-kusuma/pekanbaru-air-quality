@@ -1523,3 +1523,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 18:07:36,PAS210,Pelita Air Service,8a0a89,Indonesia,N/A,-6.9922,111.036,8633.46,28325.0,9265.92,30400.0,764.4,412.7,-4.88,-960.6,102.45,Descending (Landing/Approach),0,0,0,1790680040,1790680041,N/A,OpenSky Network
 2026-09-29 18:14:25,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-29 18:21:27,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 18:28:30,AWQ818,Indonesia AirAsia,8a0394,Indonesia,N/A,-6.9839,110.9125,11277.6,37000.0,12054.84,39550.0,776.1,419.1,0,0.0,91.09,Cruising,0,0,0,1790681297,1790681299,N/A,OpenSky Network
