@@ -1633,3 +1633,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 05:35:31,BTK7508,Batik Air,8a06fd,Indonesia,N/A,-6.4555,111.2665,10043.16,32950.0,10744.2,35250.0,843.1,455.2,5.2,1023.6,299.04,Climbing (Takeoff),0,0,0,1790721245,1790721247,N/A,OpenSky Network
 2026-09-30 05:42:29,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-30 05:49:31,SPRN03,Other Airline,8a0abf,Indonesia,N/A,-6.966,111.1711,8115.3,26625.0,8656.32,28400.0,745.8,402.7,-9.1,-1791.3,102.62,Descending (Landing/Approach),0,0,0,1790722028,1790722050,N/A,OpenSky Network
+2026-09-30 05:56:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
