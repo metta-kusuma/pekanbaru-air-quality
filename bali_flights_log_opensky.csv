@@ -1451,3 +1451,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 13:35:30,PAS142,Pelita Air Service,8a09e4,Indonesia,N/A,-6.9967,111.4471,10668.0,35000.0,11422.38,37475.0,802.0,433.0,-0.33,-65.0,90.93,Cruising,0,0,0,1790663692,1790663692,N/A,OpenSky Network
 2026-09-29 13:42:30,N/A,Unknown,500323,San Marino,N/A,-6.8312,111.3068,8023.86,26325.0,8580.12,28150.0,900.6,486.3,-14.63,-2879.9,145.13,Descending (Landing/Approach),0,0,0,1790663950,1790663954,N/A,OpenSky Network
 2026-09-29 13:49:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-09-29 13:56:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
