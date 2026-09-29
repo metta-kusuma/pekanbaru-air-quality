@@ -7191,3 +7191,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 04:00:43,MYU931,My Indo Airlines,8a090f,Indonesia,N/A,1.2079,105.4247,8031.48,26350.0,7139.94,23425.0,707.7,382.1,9.43,1856.3,88.5,Climbing (Takeoff),0,0,0,1790715630,1790715630,N/A,OpenSky Network
 2026-09-30 04:00:43,SIA246,Singapore Airlines,76cd04,Singapore,N/A,0.9584,105.2285,6812.28,22350.0,7360.92,24150.0,768.0,414.7,-9.1,-1791.3,330.53,Descending (Landing/Approach),0,0,0,1790715464,1790715464,N/A,OpenSky Network
 2026-09-30 04:00:43,SIA33,Singapore Airlines,76cce2,Singapore,N/A,2.5681,107.362,13106.4,43000.0,13860.78,45475.0,908.2,490.4,0.0,0.0,232.87,Cruising,0,0,0,1790715392,1790715392,N/A,OpenSky Network
+2026-09-30 04:07:28,N/A,Unknown,76cce2,Singapore,N/A,1.6722,106.1915,10248.9,33625.0,10919.46,35825.0,929.0,501.6,-5.2,-1023.6,232.7,Descending (Landing/Approach),0,0,0,1790716030,1790716033,N/A,OpenSky Network
+2026-09-30 04:07:28,N/A,Unknown,76bcc5,Singapore,N/A,3.3422,104.977,11849.1,38875.0,0.0,0.0,878.0,474.1,-8.78,-1728.3,263.46,Descending (Landing/Approach),0,0,0,1790716032,1790716032,N/A,OpenSky Network
