@@ -1384,3 +1384,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-29 09:43:02,GIA322,Garuda Indonesia,8a026e,Indonesia,N/A,-6.9814,110.75,10180.32,33400.0,11407.14,37425.0,787.2,425.1,0.0,0.0,90.94,Cruising,0,0,0,1790649733,1790649733,N/A,OpenSky Network
 2026-09-29 09:49:25,LNI522,Lion Air,8a082d,Indonesia,N/A,-6.9739,111.2104,8481.06,27825.0,9014.46,29575.0,831.4,448.9,6.18,1216.5,40.57,Climbing (Takeoff),0,0,0,1790650138,1790650138,N/A,OpenSky Network
 2026-09-29 09:49:25,GIA322,Garuda Indonesia,8a026e,Indonesia,N/A,-6.9892,111.2108,7840.98,25725.0,8503.92,27900.0,724.2,391.0,-10.4,-2047.2,90.88,Descending (Landing/Approach),0,0,0,1790649977,1790649977,N/A,OpenSky Network
+2026-09-29 09:56:29,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
