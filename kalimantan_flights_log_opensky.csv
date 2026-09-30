@@ -1687,3 +1687,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 11:49:29,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-30 11:56:27,CAL761,China Airlines (Taiwan),89916b,Taiwan,N/A,3.2067,113.9223,12192,40000.0,12992.1,42625.0,942.6,509.0,0,0.0,218.38,Cruising,0,0,0,1790744166,1790744166,N/A,OpenSky Network
 2026-09-30 12:00:45,CAL761,China Airlines (Taiwan),89916b,Taiwan,N/A,3.0955,113.8346,12192,40000.0,12992.1,42625.0,942.6,509.0,0,0.0,218.38,Cruising,0,0,0,1790744226,1790744226,N/A,OpenSky Network
+2026-09-30 12:07:27,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
