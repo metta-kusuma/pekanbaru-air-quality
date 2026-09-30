@@ -1977,3 +1977,6 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 06:00:49,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 06:07:37,T7RMA,Private / Business Jet / General Aviation,500272,San Marino,N/A,-6.9355,111.0652,11887.2,39000.0,12702.54,41675.0,765.1,413.1,0.33,65.0,99.05,Cruising,0,0,0,1790809638,1790809638,N/A,OpenSky Network
 2026-10-01 06:07:37,BTK7511,Batik Air,8a06fd,Indonesia,N/A,-6.9466,110.9897,9387.84,30800.0,10066.02,33025.0,827.1,446.6,-16.26,-3200.8,96.17,Descending (Landing/Approach),0,0,0,1790809652,1790809654,N/A,OpenSky Network
+2026-10-01 06:14:34,T7RMA,Private / Business Jet / General Aviation,500272,San Marino,N/A,-7.0818,111.6312,11887.2,39000.0,12702.54,41675.0,772.8,417.3,-0.33,-65.0,112.69,Cruising,0,0,0,1790809943,1790809943,N/A,OpenSky Network
+2026-10-01 06:14:34,BTK7511,Batik Air,8a06fd,Indonesia,N/A,-6.9779,111.2266,8008.62,26275.0,8580.12,28150.0,800.5,432.3,-7.15,-1407.5,103.1,Descending (Landing/Approach),0,0,0,1790809769,1790809769,N/A,OpenSky Network
+2026-10-01 06:14:34,SJV777,Sriwijaya Air / Super Air Jet,8a09c4,Indonesia,N/A,-7.2716,110.7314,7886.7,25875.0,8450.58,27725.0,858.9,463.8,-14.96,-2944.9,210.16,Descending (Landing/Approach),0,0,0,1790810067,1790810067,N/A,OpenSky Network
