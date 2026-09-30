@@ -1658,3 +1658,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-09-30 07:49:29,N/A,Unknown,8a03c4,Indonesia,N/A,-6.989,111.1987,10668,35000.0,11399.52,37400.0,822.4,444.1,0,0.0,90.9,Cruising,0,0,0,1790729141,1790729141,N/A,OpenSky Network
 2026-09-30 07:56:30,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-09-30 08:00:41,SJV316,Sriwijaya Air / Super Air Jet,8a090b,Indonesia,N/A,-6.9533,111.1871,6842.76,22450.0,7353.3,24125.0,782.8,422.7,-14.31,-2816.9,99.4,Descending (Landing/Approach),0,0,0,1790729957,1790729958,N/A,OpenSky Network
+2026-09-30 08:07:31,SJV762,Sriwijaya Air / Super Air Jet,8a0974,Indonesia,N/A,-6.9891,111.2045,10058.4,33000.0,10797.54,35425.0,855.8,462.1,0,0.0,90.99,Cruising,0,0,0,1790730411,1790730411,N/A,OpenSky Network
