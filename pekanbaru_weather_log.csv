@@ -171,3 +171,4 @@ Timestamp,City,Weather_Main,Weather_Desc,Temp_C,Feels_Like_C,Humidity_Pct,Pressu
 2026-09-30 09:05:31,Pekanbaru,Clouds,few clouds,27.15,30.39,83,1013,2.06,11,10000
 2026-09-30 10:05:32,Pekanbaru,Clear,clear sky,29.15,34.94,79,1014,4.12,8,10000
 2026-09-30 11:05:26,Pekanbaru,Clear,clear sky,30.15,36.44,74,1014,3.09,8,10000
+2026-09-30 12:05:35,Pekanbaru,Clear,clear sky,31.15,36.8,66,1013,3.6,7,10000
