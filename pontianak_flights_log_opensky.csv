@@ -8680,3 +8680,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 05:00:50,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 05:07:33,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 05:14:30,MAS2547,Malaysia Airlines,7503ab,Malaysia,N/A,2.7011,106.9842,11590.02,38025.0,12344.4,40500.0,895.8,483.7,0,0.0,276.05,Cruising,0,0,0,1790806464,1790806464,N/A,OpenSky Network
+2026-10-01 05:21:30,MAS2547,Malaysia Airlines,7503ab,Malaysia,N/A,2.7457,106.5585,11590.02,38025.0,12344.4,40500.0,888.2,479.6,0,0.0,275.98,Cruising,0,0,0,1790806656,1790806657,N/A,OpenSky Network
