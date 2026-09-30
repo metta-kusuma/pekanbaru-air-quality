@@ -1975,3 +1975,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 05:49:26,CTV680,Citilink,8a060e,Indonesia,N/A,-7.0766,111.6199,10668,35000.0,11399.52,37400.0,809.5,437.1,0,0.0,91.05,Cruising,0,0,0,1790808457,1790808457,N/A,OpenSky Network
 2026-10-01 05:56:26,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 06:00:49,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-01 06:07:37,T7RMA,Private / Business Jet / General Aviation,500272,San Marino,N/A,-6.9355,111.0652,11887.2,39000.0,12702.54,41675.0,765.1,413.1,0.33,65.0,99.05,Cruising,0,0,0,1790809638,1790809638,N/A,OpenSky Network
+2026-10-01 06:07:37,BTK7511,Batik Air,8a06fd,Indonesia,N/A,-6.9466,110.9897,9387.84,30800.0,10066.02,33025.0,827.1,446.6,-16.26,-3200.8,96.17,Descending (Landing/Approach),0,0,0,1790809652,1790809654,N/A,OpenSky Network
