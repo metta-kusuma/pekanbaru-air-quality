@@ -2114,3 +2114,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 13:43:30,JDE701,IndiGo / Eastindo Charter,8a09cc,Indonesia,N/A,-7.072,111.1997,10050.78,32975.0,10736.58,35225.0,772.7,417.2,0,0.0,97.16,Cruising,0,0,0,1790836992,1790836992,N/A,OpenSky Network
 2026-10-01 13:43:30,PAS142,Pelita Air Service,8a0915,Indonesia,N/A,-7.0299,111.6555,10675.62,35025.0,11414.76,37450.0,828.8,447.5,0,0.0,99.0,Cruising,0,0,0,1790836871,1790836871,N/A,OpenSky Network
 2026-10-01 13:52:24,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-01 13:56:33,SJV722,Sriwijaya Air / Super Air Jet,8a08c0,Indonesia,N/A,-6.9857,111.0296,10668,35000.0,11407.14,37425.0,824.3,445.1,0,0.0,91.03,Cruising,0,0,0,1790837753,1790837753,N/A,OpenSky Network
