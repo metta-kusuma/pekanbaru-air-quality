@@ -2023,3 +2023,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 01:07:32,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 01:14:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 01:21:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-02 01:28:32,CPA143,Cathay Pacific,780aa4,China,N/A,2.984,115.3493,12192,40000.0,12999.72,42650.0,920.2,496.8,-0.33,-65.0,222.55,Cruising,0,0,0,1790879295,1790879297,N/A,OpenSky Network
