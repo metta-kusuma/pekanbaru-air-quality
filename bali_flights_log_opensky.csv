@@ -1993,3 +1993,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 07:07:32,PAS646,Pelita Air Service,8a0a89,Indonesia,N/A,-7.4919,110.7567,7818.12,25650.0,8397.24,27550.0,787.0,424.9,-12.68,-2496.1,209.46,Descending (Landing/Approach),0,0,0,1790813237,1790813237,N/A,OpenSky Network
 2026-10-01 07:14:28,N/A,Unknown,8a03af,Indonesia,N/A,-7.146,110.8413,10325.1,33875.0,11094.72,36400.0,897.2,484.5,-3.58,-704.7,226.09,Descending (Landing/Approach),0,0,0,1790813666,1790813666,N/A,OpenSky Network
 2026-10-01 07:14:28,SJV665,Sriwijaya Air / Super Air Jet,8a0949,Indonesia,N/A,-7.5888,110.7268,7147.56,23450.0,7673.34,25175.0,694.1,374.8,-9.1,-1791.3,193.11,Descending (Landing/Approach),0,0,0,1790813668,1790813668,N/A,OpenSky Network
+2026-10-01 07:21:26,PAS200,Pelita Air Service,8a0993,Indonesia,N/A,-6.971,111.0237,11277.6,37000.0,12039.6,39500.0,810.4,437.6,0,0.0,93.01,Cruising,0,0,0,1790813916,1790813916,N/A,OpenSky Network
