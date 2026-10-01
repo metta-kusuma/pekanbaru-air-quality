@@ -2176,3 +2176,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 17:01:08,N/A,Unknown,8a0908,Indonesia,N/A,-6.8655,110.9121,9182.1,30125.0,0,0.0,831.0,448.7,-12.03,-2368.1,104.19,Descending (Landing/Approach),0,0,0,1790848864,1790848864,N/A,OpenSky Network
 2026-10-01 17:07:33,BTK6578,Batik Air,8a0604,Indonesia,N/A,-6.989,111.2102,8168.64,26800.0,8755.38,28725.0,679.8,367.1,-3.9,-767.7,90.94,Descending (Landing/Approach),0,0,0,1790849177,1790849193,N/A,OpenSky Network
 2026-10-01 17:07:33,SJV363,Sriwijaya Air / Super Air Jet,8a0908,Indonesia,N/A,-6.9445,111.2092,7543.8,24750.0,8122.92,26650.0,749.5,404.7,-13.33,-2624.0,106.51,Descending (Landing/Approach),0,0,0,1790849018,1790849018,N/A,OpenSky Network
+2026-10-01 17:14:35,N/A,Unknown,8a0515,Indonesia,N/A,-6.3897,111.2643,10972.8,36000.0,11750.04,38550.0,849.0,458.4,0,0.0,295.73,Cruising,0,0,0,1790849630,1790849630,N/A,OpenSky Network
