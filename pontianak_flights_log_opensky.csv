@@ -10072,3 +10072,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 04:00:50,SIA218,Singapore Airlines,76cd01,Singapore,N/A,0.256,105.8278,10675.62,35025.0,11376.66,37325.0,924.3,499.1,-7.8,-1535.4,327.52,Descending (Landing/Approach),0,0,0,1790888448,1790888448,N/A,OpenSky Network
 2026-10-02 04:00:50,TGW581,Scoot,76d107,Singapore,N/A,1.6076,106.4175,11087.1,36375.0,11811.0,38750.0,861.2,465.0,-4.88,-960.6,248.95,Descending (Landing/Approach),0,0,0,1790888382,1790888397,N/A,OpenSky Network
 2026-10-02 04:00:50,SIA33,Singapore Airlines,76cce2,Singapore,N/A,2.8265,107.7015,12199.62,40025.0,12946.38,42475.0,924.2,499.0,0.0,0.0,232.9,Cruising,0,0,0,1790888335,1790888335,N/A,OpenSky Network
+2026-10-02 04:07:27,SIA218,Singapore Airlines,76cd01,Singapore,N/A,0.7486,105.7026,9288.78,30475.0,9959.34,32675.0,750.5,405.2,-5.2,-1023.6,347.75,Descending (Landing/Approach),0,0,0,1790888693,1790888693,N/A,OpenSky Network
