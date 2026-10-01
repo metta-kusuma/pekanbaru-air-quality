@@ -2228,3 +2228,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 20:07:33,SJV950,Sriwijaya Air / Super Air Jet,8a08e9,Indonesia,N/A,-7.3668,110.7493,7269.48,23850.0,7818.12,25650.0,776.1,419.1,-4.55,-895.7,181.09,Descending (Landing/Approach),0,0,0,1790860031,1790860031,N/A,OpenSky Network
 2026-10-01 20:14:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 20:21:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-01 20:28:30,CTV684,Citilink,8a074d,Indonesia,N/A,-6.9857,111.0065,11285.22,37025.0,12092.94,39675.0,837.3,452.1,-0.33,-65.0,91.01,Cruising,0,0,0,1790861300,1790861300,N/A,OpenSky Network
+2026-10-01 20:28:30,PAS105,Pelita Air Service,8a0a44,Indonesia,N/A,-6.4619,111.2094,10972.8,36000.0,11757.66,38575.0,852.6,460.4,0.0,0.0,280.26,Cruising,0,0,0,1790861120,1790861120,N/A,OpenSky Network
