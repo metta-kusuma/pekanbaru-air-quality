@@ -1927,3 +1927,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-01 14:35:33,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 14:42:29,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-01 14:49:28,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-01 14:56:31,VJC92,VietJet Air,888143,Viet Nam,N/A,2.7635,114.8383,10660.38,34975.0,11422.38,37475.0,890.8,481.0,0.33,65.0,337.38,Cruising,0,0,0,1790841260,1790841260,N/A,OpenSky Network
