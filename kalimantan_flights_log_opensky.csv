@@ -2146,3 +2146,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 14:49:30,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 14:56:31,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 15:00:49,GIA895,Garuda Indonesia,8a07d4,Indonesia,N/A,3.0095,113.7674,12192,40000.0,13022.58,42725.0,909.6,491.2,0,0.0,218.39,Cruising,0,0,0,1790927970,1790928017,N/A,OpenSky Network
+2026-10-02 15:07:35,JAL725,Japan Airlines (JAL),861b8e,Japan,N/A,3.231,113.6231,10972.8,36000.0,11734.8,38500.0,917.0,495.1,0,0.0,221.64,Cruising,0,0,0,1790928282,1790928282,N/A,OpenSky Network
