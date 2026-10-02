@@ -11604,3 +11604,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 04:42:31,E 6WZV1Q,Other Airline,89505b,Brunei Darussalam,N/A,1.1903,105.5253,7200.9,23625.0,7696.2,25250.0,862.7,465.8,-7.48,-1472.4,259.49,Descending (Landing/Approach),0,0,0,1790977199,1790977199,N/A,OpenSky Network
 2026-10-03 04:49:38,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 04:56:32,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-03 05:00:47,MAS2547,Malaysia Airlines,750214,Malaysia,N/A,2.309,107.3126,11574.78,37975.0,12359.64,40550.0,862.7,465.8,0,0.0,285.44,Cruising,0,0,0,1790978424,1790978424,N/A,OpenSky Network
