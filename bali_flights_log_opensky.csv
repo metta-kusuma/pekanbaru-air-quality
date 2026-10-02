@@ -2498,3 +2498,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 15:49:35,BTK6406,Batik Air,8a0515,Indonesia,N/A,-6.988,111.1532,7711.44,25300.0,8298.18,27225.0,763.1,412.1,-6.5,-1279.5,90.97,Descending (Landing/Approach),0,0,0,1790930745,1790930746,N/A,OpenSky Network
 2026-10-02 15:49:35,PAS106,Pelita Air Service,8a0915,Indonesia,N/A,-7.0872,111.6448,11277.6,37000.0,12062.46,39575.0,785.2,424.0,0.0,0.0,112.75,Cruising,0,0,0,1790930690,1790930690,N/A,OpenSky Network
 2026-10-02 15:49:35,SJV128,Sriwijaya Air / Super Air Jet,8a094d,Indonesia,N/A,-7.3439,110.7722,2598.42,8525.0,2788.92,9150.0,532.3,287.4,-9.1,-1791.3,172.6,Descending (Landing/Approach),0,0,0,1790930883,1790930884,N/A,OpenSky Network
+2026-10-02 15:56:31,SJV128,Sriwijaya Air / Super Air Jet,8a094d,Indonesia,N/A,-7.4753,110.9378,678.18,2225.0,731.52,2400.0,367.5,198.4,-5.2,-1023.6,256.59,Descending (Landing/Approach),0,0,0,1790931256,1790931259,N/A,OpenSky Network
