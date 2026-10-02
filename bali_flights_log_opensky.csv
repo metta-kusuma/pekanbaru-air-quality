@@ -2585,3 +2585,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 21:49:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 21:56:27,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 22:00:51,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-02 22:07:32,TNU5110,TransNusa,8a09f8,Indonesia,N/A,-6.9523,111.1954,11277.6,37000.0,12092.94,39675.0,788.7,425.8,0,0.0,100.28,Cruising,0,0,0,1790953634,1790953646,N/A,OpenSky Network
