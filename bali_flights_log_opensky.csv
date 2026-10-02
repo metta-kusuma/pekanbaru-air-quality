@@ -2570,3 +2570,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 20:36:14,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 20:42:30,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 20:49:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-02 20:56:32,CTV172,Citilink,8a0301,Indonesia,N/A,-6.9869,111.0954,8435.34,27675.0,9090.66,29825.0,757.6,409.1,-11.38,-2240.2,91.12,Descending (Landing/Approach),0,0,0,1790949382,1790949382,N/A,OpenSky Network
+2026-10-02 20:56:32,LNI664,Lion Air,8a081e,Indonesia,N/A,-7.5524,110.7051,5715.0,18750.0,6111.24,20050.0,734.1,396.4,7.15,1407.5,47.66,Climbing (Takeoff),0,0,0,1790949385,1790949385,N/A,OpenSky Network
