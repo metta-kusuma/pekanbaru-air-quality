@@ -2540,3 +2540,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 18:14:36,N/A,Unknown,8a03f4,Indonesia,N/A,-6.5906,111.1307,10965.18,35975.0,0.0,0.0,878.7,474.5,0.33,65.0,283.16,Cruising,0,0,0,1790939486,1790939486,N/A,OpenSky Network
 2026-10-02 18:14:36,GIA420,Garuda Indonesia,8a09d6,Indonesia,N/A,-6.9647,111.2254,8587.74,28175.0,9212.58,30225.0,787.8,425.4,-4.88,-960.6,98.24,Descending (Landing/Approach),0,0,0,1790939437,1790939437,N/A,OpenSky Network
 2026-10-02 18:14:36,PAS210,Pelita Air Service,8a0a89,Indonesia,N/A,-7.0799,111.1329,8107.68,26600.0,8717.28,28600.0,768.3,414.8,-10.4,-2047.2,100.42,Descending (Landing/Approach),0,0,0,1790939503,1790939506,N/A,OpenSky Network
+2026-10-02 18:21:33,SJY712,Sriwijaya Air,8a0365,Indonesia,N/A,-7.1749,110.8022,8892.54,29175.0,9570.72,31400.0,855.3,461.8,-10.73,-2112.2,236.93,Descending (Landing/Approach),0,0,0,1790940090,1790940090,N/A,OpenSky Network
