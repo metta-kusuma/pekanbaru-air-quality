@@ -11602,3 +11602,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 04:35:40,ANZ282,Air New Zealand,c820f2,New Zealand,N/A,0.9687,105.2228,6758.94,22175.0,7315.2,24000.0,758.1,409.3,-8.78,-1728.3,330.43,Descending (Landing/Approach),0,0,0,1790976637,1790976637,N/A,OpenSky Network
 2026-10-03 04:35:40,WCM3806,Other Airline,75059d,Malaysia,N/A,2.4238,106.8984,10050.78,32975.0,10713.72,35150.0,771.9,416.8,0.0,0.0,105.3,Cruising,0,0,0,1790976811,1790976812,N/A,OpenSky Network
 2026-10-03 04:42:31,E 6WZV1Q,Other Airline,89505b,Brunei Darussalam,N/A,1.1903,105.5253,7200.9,23625.0,7696.2,25250.0,862.7,465.8,-7.48,-1472.4,259.49,Descending (Landing/Approach),0,0,0,1790977199,1790977199,N/A,OpenSky Network
+2026-10-03 04:49:38,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
