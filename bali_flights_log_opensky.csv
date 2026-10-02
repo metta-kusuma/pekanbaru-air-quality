@@ -2550,3 +2550,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 18:56:33,SJV778,Sriwijaya Air / Super Air Jet,8a0971,Indonesia,N/A,-7.0804,111.3152,8016.24,26300.0,8595.36,28200.0,858.4,463.5,4.55,895.7,64.98,Climbing (Takeoff),0,0,0,1790942124,1790942124,N/A,OpenSky Network
 2026-10-02 19:00:52,CTV785,Citilink,8a03af,Indonesia,N/A,-7.2041,110.7784,8755.38,28725.0,9425.94,30925.0,802.9,433.6,-7.8,-1535.4,198.56,Descending (Landing/Approach),0,0,0,1790942448,1790942449,N/A,OpenSky Network
 2026-10-02 19:07:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-02 19:14:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
