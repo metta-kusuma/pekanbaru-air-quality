@@ -2643,3 +2643,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 04:14:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 04:21:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 04:28:31,LNI690,Lion Air,8a0455,Indonesia,N/A,-6.9814,110.7529,10668,35000.0,11407.14,37425.0,807.6,436.1,-0.33,-65.0,90.92,Cruising,0,0,0,1790976493,1790976494,N/A,OpenSky Network
+2026-10-03 04:35:40,LNI690,Lion Air,8a0455,Indonesia,N/A,-7.0529,111.6315,10447.02,34275.0,11277.6,37000.0,816.1,440.6,-4.88,-960.6,105.8,Descending (Landing/Approach),0,0,0,1790976932,1790976932,N/A,OpenSky Network
