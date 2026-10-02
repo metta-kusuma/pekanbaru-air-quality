@@ -2526,3 +2526,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 17:07:28,GIA414,Garuda Indonesia,8a0a53,Indonesia,N/A,-6.988,111.1376,9448.8,31000.0,10119.36,33200.0,776.1,419.1,0.0,0.0,90.96,Cruising,0,0,0,1790935633,1790935633,N/A,OpenSky Network
 2026-10-02 17:14:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 17:21:32,BTK7503,Batik Air,8a09a1,Indonesia,N/A,-6.9684,111.2313,7559.04,24800.0,8122.92,26650.0,787.5,425.2,-7.15,-1407.5,103.19,Descending (Landing/Approach),0,0,0,1790936299,1790936301,N/A,OpenSky Network
+2026-10-02 17:28:35,SJV950,Sriwijaya Air / Super Air Jet,8a0971,Indonesia,N/A,-7.2441,110.7341,8549.64,28050.0,9174.48,30100.0,795.6,429.6,-1.63,-320.9,163.08,Descending (Landing/Approach),0,0,0,1790936913,1790936914,N/A,OpenSky Network
