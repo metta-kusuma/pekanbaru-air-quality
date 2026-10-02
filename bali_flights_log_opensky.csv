@@ -2665,3 +2665,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 06:28:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 06:35:47,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 06:42:34,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-03 06:49:36,AWQ809,Indonesia AirAsia,8a06f0,Indonesia,N/A,-6.4747,111.2469,10972.8,36000.0,11704.32,38400.0,855.0,461.7,0,0.0,300.45,Cruising,0,0,0,1790984973,1790984974,N/A,OpenSky Network
