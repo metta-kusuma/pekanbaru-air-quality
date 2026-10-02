@@ -2579,3 +2579,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-02 21:14:44,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-02 21:21:33,N/A,Unknown,8a0376,Indonesia,N/A,-6.9833,110.8613,10668,35000.0,0,0.0,792.8,428.1,0,0.0,90.94,Cruising,0,0,0,1790950887,1790950887,N/A,OpenSky Network
 2026-10-02 21:28:34,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-02 21:35:41,BTK7521,Batik Air,8a0636,Indonesia,N/A,-6.983,110.8549,9921.24,32550.0,10683.24,35050.0,809.5,437.1,-15.61,-3072.8,91.05,Descending (Landing/Approach),0,0,0,1790951726,1790951727,N/A,OpenSky Network
