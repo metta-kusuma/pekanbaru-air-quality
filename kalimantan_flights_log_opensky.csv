@@ -2296,3 +2296,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 07:14:37,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 07:21:28,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-03 07:28:32,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-03 07:35:33,RBA796,Royal Brunei Airlines,89505e,Brunei Darussalam,N/A,2.5606,114.8594,11277.6,37000.0,12070.08,39600.0,814.9,440.0,0.33,65.0,0.52,Cruising,0,0,0,1790987488,1790987488,N/A,OpenSky Network
