@@ -2747,3 +2747,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 11:42:32,SJV371,Sriwijaya Air / Super Air Jet,8a09c4,Indonesia,N/A,-6.41,111.2972,10363.2,34000.0,11102.34,36425.0,879.6,475.0,0,0.0,295.97,Cruising,0,0,0,1791002386,1791002386,N/A,OpenSky Network
 2026-10-03 11:49:29,SJV123,Sriwijaya Air / Super Air Jet,8a0909,Indonesia,N/A,-7.0876,111.1694,8206.74,26925.0,8801.1,28875.0,856.0,462.2,7.8,1535.4,39.82,Climbing (Takeoff),0,0,0,1791002957,1791002957,N/A,OpenSky Network
 2026-10-03 11:49:29,PAS204,Pelita Air Service,8a0a4a,Indonesia,N/A,-6.9638,111.2309,8282.94,27175.0,8991.6,29500.0,763.6,412.3,-13.66,-2689.0,104.61,Descending (Landing/Approach),0,0,0,1791002841,1791002841,N/A,OpenSky Network
+2026-10-03 11:56:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
