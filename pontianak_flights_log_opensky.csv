@@ -13098,3 +13098,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 04:14:33,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 04:21:28,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 04:28:34,ANZ282,Air New Zealand,c81d7e,New Zealand,N/A,0.6398,105.5754,9227.82,30275.0,9852.66,32325.0,888.1,479.5,-5.2,-1023.6,295.18,Descending (Landing/Approach),0,0,0,1791062909,1791062909,N/A,OpenSky Network
+2026-10-04 04:35:35,TZP54,Zipair Tokyo,86d668,Japan,2233,1.3493,105.2152,7467.6,24500.0,7726.68,25350.0,817.0,441.1,6.83,1344.5,88.57,Climbing (Takeoff),0,0,0,1791063247,1791063247,N/A,OpenSky Network
