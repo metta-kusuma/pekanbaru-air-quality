@@ -2700,3 +2700,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-03 08:49:34,GIA302,Garuda Indonesia,8a0ad5,Indonesia,N/A,-6.8405,111.3166,9425.94,30925.0,10195.56,33450.0,812.0,438.5,-19.51,-3840.5,112.53,Descending (Landing/Approach),0,0,0,1790992145,1790992145,N/A,OpenSky Network
 2026-10-03 08:56:26,TNU5105,TransNusa,8a09f8,Indonesia,N/A,-6.476,111.341,11582.4,38000.0,12390.12,40650.0,893.0,482.2,0,0.0,279.91,Cruising,0,0,0,1790992353,1790992403,N/A,OpenSky Network
 2026-10-03 09:00:46,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-03 09:07:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
