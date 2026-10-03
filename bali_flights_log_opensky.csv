@@ -2938,3 +2938,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 02:28:33,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 02:35:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 02:42:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-04 02:49:33,BTK6540,Batik Air,8a091b,Indonesia,N/A,-6.9861,111.0353,10668,35000.0,11391.9,37375.0,792.8,428.1,0,0.0,90.94,Cruising,0,0,0,1791056916,1791056916,N/A,OpenSky Network
