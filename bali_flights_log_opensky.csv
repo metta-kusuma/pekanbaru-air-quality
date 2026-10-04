@@ -3101,3 +3101,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 13:21:33,GIA312,Garuda Indonesia,8a03c4,Indonesia,N/A,-6.9733,111.1676,8397.24,27550.0,9067.8,29750.0,784.3,423.5,-17.56,-3456.7,96.24,Descending (Landing/Approach),0,0,0,1791094865,1791094865,N/A,OpenSky Network
 2026-10-04 13:21:33,AWQ803,Indonesia AirAsia,8a07ad,Indonesia,N/A,-6.3912,111.25,11582.4,38000.0,12359.64,40550.0,843.2,455.3,0.0,0.0,296.06,Cruising,0,0,0,1791094717,1791094719,N/A,OpenSky Network
 2026-10-04 13:21:33,KCN05,K-Mile Air / Kencana Air,8a0024,Indonesia,N/A,-7.4949,110.8996,3025.14,9925.0,3223.26,10575.0,567.3,306.3,-9.43,-1856.3,239.16,Descending (Landing/Approach),0,0,0,1791094726,1791094726,N/A,OpenSky Network
+2026-10-04 13:28:34,PAS142,Pelita Air Service,8a0a4a,Indonesia,N/A,-6.9975,111.4495,11277.6,37000.0,12039.6,39500.0,808.8,436.7,-0.98,-192.9,97.5,Cruising,0,0,0,1791095282,1791095282,N/A,OpenSky Network
