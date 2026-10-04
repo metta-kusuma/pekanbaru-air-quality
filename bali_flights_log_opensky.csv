@@ -3234,3 +3234,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 21:35:39,GIA324,Garuda Indonesia,8a09ef,Indonesia,2310,-6.9895,111.2105,8138.16,26700.0,8740.14,28675.0,757.5,409.0,-11.05,-2175.2,90.84,Descending (Landing/Approach),0,0,0,1791124475,1791124475,N/A,OpenSky Network
 2026-10-04 21:42:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 21:49:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-04 21:56:30,BTK7521,Batik Air,8a0515,Indonesia,N/A,-6.9296,110.9039,10005.06,32825.0,10637.52,34900.0,802.4,433.3,-5.53,-1088.6,105.26,Descending (Landing/Approach),0,0,0,1791125623,1791125623,N/A,OpenSky Network
