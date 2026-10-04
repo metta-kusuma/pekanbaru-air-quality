@@ -3197,3 +3197,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 18:56:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 19:00:44,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 19:07:36,SJY712,Sriwijaya Air,8a034e,Indonesia,N/A,-7.4661,110.7754,7559.04,24800.0,8107.68,26600.0,746.6,403.1,-5.2,-1023.6,208.28,Descending (Landing/Approach),0,0,0,1791115647,1791115647,N/A,OpenSky Network
+2026-10-04 19:14:33,N/A,Unknown,8a0521,Indonesia,N/A,-6.6438,111.4441,8915.4,29250.0,0,0.0,909.4,491.0,3.58,704.7,302.52,Climbing (Takeoff),0,0,0,1791116025,1791116025,N/A,OpenSky Network
