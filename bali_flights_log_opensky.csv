@@ -3060,3 +3060,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 11:14:31,TNU5104,TransNusa,8a095b,Indonesia,N/A,-7.0101,111.6386,11277.6,37000.0,12070.08,39600.0,816.3,440.8,0,0.0,93.38,Cruising,0,0,0,1791087243,1791087243,N/A,OpenSky Network
 2026-10-04 11:21:30,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 11:28:34,SJV356,Sriwijaya Air / Super Air Jet,8a08d8,Indonesia,N/A,-6.9631,111.1862,7818.12,25650.0,8389.62,27525.0,773.1,417.5,-24.71,-4864.2,112.39,Descending (Landing/Approach),0,0,0,1791087957,1791087970,N/A,OpenSky Network
+2026-10-04 11:35:35,PAS204,Pelita Air Service,8a09bb,Indonesia,N/A,-6.9838,110.9061,9364.98,30725.0,10027.92,32900.0,778.0,420.1,-11.05,-2175.2,90.95,Descending (Landing/Approach),0,0,0,1791088519,1791088522,N/A,OpenSky Network
+2026-10-04 11:35:35,SJV123,Sriwijaya Air / Super Air Jet,8a094d,Indonesia,N/A,-7.3347,110.75,6987.54,22925.0,7414.26,24325.0,800.2,432.1,6.18,1216.5,1.06,Climbing (Takeoff),0,0,0,1791088517,1791088517,N/A,OpenSky Network
