@@ -14777,3 +14777,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 03:00:48,SIA33,Singapore Airlines,76cce7,Singapore,N/A,4.3023,112.867,12192.0,40000.0,12946.38,42475.0,941.6,508.4,0.0,0.0,274.29,Cruising,0,0,0,1791144040,1791144040,N/A,OpenSky Network
 2026-10-05 03:07:31,SIA635,Singapore Airlines,76cc71,Singapore,N/A,1.8465,106.3967,11117.58,36475.0,11856.72,38900.0,949.2,512.5,-3.58,-704.7,230.07,Descending (Landing/Approach),0,0,0,1791144378,1791144378,N/A,OpenSky Network
 2026-10-05 03:14:33,SIA635,Singapore Airlines,76cc71,Singapore,N/A,1.4695,105.9264,9281.16,30450.0,9898.38,32475.0,918.3,495.8,-10.4,-2047.2,232.62,Descending (Landing/Approach),0,0,0,1791144634,1791144635,N/A,OpenSky Network
+2026-10-05 03:21:31,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
