@@ -3297,3 +3297,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 04:14:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 04:21:31,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 04:28:37,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 04:35:37,N/A,Unknown,8a0235,Indonesia,N/A,-6.9858,111.004,10675.62,35025.0,11384.28,37350.0,811.3,438.1,0,0.0,90.92,Cruising,0,0,0,1791149663,1791149666,N/A,OpenSky Network
