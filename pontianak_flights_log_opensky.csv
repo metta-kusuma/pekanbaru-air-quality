@@ -14816,3 +14816,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 04:56:32,VHPFW,Private / Business Jet / General Aviation,7c4cba,Australia,N/A,3.8763,113.4124,12192.0,40000.0,12984.48,42600.0,894.9,483.2,-0.33,-65.0,232.82,Cruising,0,0,0,1791150988,1791150988,N/A,OpenSky Network
 2026-10-05 04:56:32,ANA843,All Nippon Airways (ANA),86eb72,Japan,N/A,1.2093,105.5832,7467.6,24500.0,8572.5,28125.0,875.3,472.6,-11.38,-2240.2,232.91,Descending (Landing/Approach),0,0,0,1791150734,1791150734,N/A,OpenSky Network
 2026-10-05 05:00:56,VHPFW,Private / Business Jet / General Aviation,7c4cba,Australia,N/A,3.5712,113.0082,12192,40000.0,12984.48,42600.0,899.3,485.6,0.33,65.0,233.04,Cruising,0,0,0,1791151214,1791151216,N/A,OpenSky Network
+2026-10-05 05:07:29,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
