@@ -2579,3 +2579,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-04 14:42:27,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 14:49:31,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-04 14:57:08,CES7405,China Eastern Airlines,780c01,China,N/A,3.2282,115.51,12192,40000.0,13022.58,42725.0,884.1,477.3,0,0.0,184.33,Cruising,0,0,0,1791100420,1791100425,N/A,OpenSky Network
+2026-10-04 15:00:47,GIA879,Garuda Indonesia,8a05ab,Indonesia,N/A,3.1302,113.0794,10972.8,36000.0,11734.8,38500.0,888.4,479.7,0.33,65.0,202.56,Cruising,0,0,0,1791100811,1791100812,N/A,OpenSky Network
