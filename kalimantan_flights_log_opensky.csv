@@ -2784,3 +2784,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 13:28:27,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 13:35:37,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 13:42:35,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 13:49:34,GIA895,Garuda Indonesia,8a05ab,Indonesia,N/A,2.8889,113.4232,11582.4,38000.0,12367.26,40575.0,931.2,502.8,0,0.0,211,Cruising,0,0,0,1791182839,1791182844,N/A,OpenSky Network
