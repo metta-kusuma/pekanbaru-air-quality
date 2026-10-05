@@ -3521,3 +3521,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 17:42:37,TGW228,Scoot,76d256,Singapore,N/A,-7.511,110.7394,6416.04,21050.0,6911.34,22675.0,765.4,413.3,-24.38,-4799.2,198.48,Descending (Landing/Approach),0,0,0,1791196954,1791196954,N/A,OpenSky Network
 2026-10-05 17:49:28,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 17:56:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 18:00:55,GIA420,Garuda Indonesia,8a040b,Indonesia,N/A,-6.9851,110.964,11277.6,37000.0,12039.6,39500.0,803.9,434.1,0,0.0,91.06,Cruising,0,0,0,1791198040,1791198043,N/A,OpenSky Network
