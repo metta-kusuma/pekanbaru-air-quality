@@ -3411,3 +3411,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 11:00:52,J922G,Other Airline,8a0424,Indonesia,N/A,-7.7495,110.674,1859.28,6100.0,2004.06,6575.0,287.0,154.9,-2.93,-576.8,43.17,Descending (Landing/Approach),0,0,0,1791172844,1791172845,N/A,OpenSky Network
 2026-10-05 11:00:52,AWQ802,Indonesia AirAsia,8a074e,Indonesia,2363,-7.057,111.5724,11277.6,37000.0,12054.84,39550.0,803.9,434.1,0.0,0.0,90.92,Cruising,0,0,0,1791172721,1791172721,N/A,OpenSky Network
 2026-10-05 11:07:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 11:14:33,GIA431,Garuda Indonesia,8a0ad5,Indonesia,N/A,-6.4082,111.2931,12192,40000.0,12984.48,42600.0,854.0,461.1,0,0.0,295.84,Cruising,0,0,0,1791173669,1791173669,N/A,OpenSky Network
