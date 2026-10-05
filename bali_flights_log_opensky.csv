@@ -3576,3 +3576,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 21:35:35,BTK7521,Batik Air,8a05ef,Indonesia,N/A,-6.9921,111.2002,8206.74,26925.0,8831.58,28975.0,781.9,422.2,-5.2,-1023.6,98.99,Descending (Landing/Approach),0,0,0,1791210931,1791210931,N/A,OpenSky Network
 2026-10-05 21:35:35,TNU5110,TransNusa,8a0aba,Indonesia,2417,-7.0815,111.6314,11887.2,39000.0,12717.78,41725.0,805.2,434.8,0.0,0.0,112.73,Cruising,0,0,0,1791210678,1791210679,N/A,OpenSky Network
 2026-10-05 21:42:40,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 21:49:30,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
