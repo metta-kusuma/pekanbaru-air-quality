@@ -2839,3 +2839,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 19:35:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 19:42:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 19:49:42,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 19:56:44,CSN8137,China Southern Airlines,781bf4,China,N/A,3.2249,115.2839,9761.22,32025.0,10492.74,34425.0,844.8,456.2,0.33,65.0,190.87,Cruising,0,0,0,1791204994,1791204998,N/A,OpenSky Network
