@@ -3577,3 +3577,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 21:35:35,TNU5110,TransNusa,8a0aba,Indonesia,2417,-7.0815,111.6314,11887.2,39000.0,12717.78,41725.0,805.2,434.8,0.0,0.0,112.73,Cruising,0,0,0,1791210678,1791210679,N/A,OpenSky Network
 2026-10-05 21:42:40,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 21:49:30,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-05 21:56:36,CTV728,Citilink,8a0376,Indonesia,2334,-6.9832,110.8542,9616.44,31550.0,10378.44,34050.0,731.7,395.1,-10.4,-2047.2,91.02,Descending (Landing/Approach),0,0,0,1791212187,1791212187,N/A,OpenSky Network
