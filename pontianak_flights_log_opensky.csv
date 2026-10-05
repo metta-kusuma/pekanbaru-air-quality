@@ -16232,3 +16232,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 04:01:03,SIA246,Singapore Airlines,76cd0a,Singapore,N/A,0.1629,106.3562,11292.84,37050.0,12039.6,39500.0,945.9,510.7,-4.88,-960.6,296.51,Descending (Landing/Approach),0,0,0,1791234047,1791234047,N/A,OpenSky Network
 2026-10-06 04:27:21,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 04:29:49,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-06 04:35:52,UAL1,United Airlines,ab0f8b,United States,N/A,0.5553,105.9754,10005.06,32825.0,10675.62,35025.0,946.5,511.1,-6.5,-1279.5,278.1,Descending (Landing/Approach),0,0,0,1791236145,1791236145,N/A,OpenSky Network
+2026-10-06 04:35:52,ANZ6008,Air New Zealand,c82439,New Zealand,2210,-0.0162,105.4849,9608.82,31525.0,10256.52,33650.0,865.3,467.2,5.53,1088.6,119.91,Climbing (Takeoff),0,0,0,1791236144,1791236144,N/A,OpenSky Network
