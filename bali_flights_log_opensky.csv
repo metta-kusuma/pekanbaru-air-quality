@@ -3466,3 +3466,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 14:28:37,LNI670,Lion Air,8a026a,Indonesia,N/A,-7.098,110.8337,10485.12,34400.0,11201.4,36750.0,901.3,486.7,-5.2,-1023.6,219.41,Descending (Landing/Approach),0,0,0,1791185292,1791185301,N/A,OpenSky Network
 2026-10-05 14:35:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 14:43:07,GIA422,Garuda Indonesia,8a03c7,Indonesia,N/A,-6.9892,111.203,10668,35000.0,11384.28,37350.0,796.5,430.1,0,0.0,90.93,Cruising,0,0,0,1791186177,1791186177,N/A,OpenSky Network
+2026-10-05 14:49:31,PKTWY,Private / Business Jet / General Aviation,8a037c,Indonesia,N/A,-6.989,111.2103,12496.8,41000.0,13220.7,43375.0,794.6,429.1,0.0,0.0,90.93,Cruising,0,0,0,1791186558,1791186558,N/A,OpenSky Network
+2026-10-05 14:49:31,BTK7531,Batik Air,8a09a5,Indonesia,N/A,-7.4761,110.9291,716.28,2350.0,777.24,2550.0,311.6,168.2,-1.95,-383.9,250.92,Descending (Landing/Approach),0,0,0,1791186331,1791186331,N/A,OpenSky Network
