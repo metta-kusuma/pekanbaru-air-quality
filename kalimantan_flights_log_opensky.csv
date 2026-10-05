@@ -2860,3 +2860,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-05 21:42:40,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 21:49:30,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-05 21:56:36,ANA835,All Nippon Airways (ANA),86ebb6,Japan,N/A,3.0496,113.3621,10972.8,36000.0,11765.28,38600.0,940.2,507.7,0,0.0,248.39,Cruising,0,0,0,1791212178,1791212178,N/A,OpenSky Network
+2026-10-05 22:00:56,ANA835,All Nippon Airways (ANA),86ebb6,Japan,N/A,3.0496,113.3621,10972.8,36000.0,11765.28,38600.0,940.2,507.7,0,0.0,248.39,Cruising,0,0,0,1791212178,1791212178,N/A,OpenSky Network
