@@ -16240,3 +16240,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 04:49:43,ANZ282,Air New Zealand,c81d80,New Zealand,N/A,0.7836,105.3259,7414.26,24325.0,7901.94,25925.0,787.5,425.2,-5.53,-1088.6,331.02,Descending (Landing/Approach),0,0,0,1791236976,1791236976,N/A,OpenSky Network
 2026-10-06 04:56:37,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 05:00:52,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-06 05:07:36,THA483,Thai Airways International,8852e2,Thailand,0742,0.1056,104.9182,11887.2,39000.0,12649.2,41500.0,888.6,479.8,0,0.0,141.6,Cruising,0,0,0,1791237853,1791237853,N/A,OpenSky Network
