@@ -16238,3 +16238,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 04:43:20,UAL1,United Airlines,ab0f8b,United States,N/A,0.8837,105.2704,7056.12,23150.0,7543.8,24750.0,830.2,448.3,-10.4,-2047.2,330.46,Descending (Landing/Approach),0,0,0,1791236522,1791236522,N/A,OpenSky Network
 2026-10-06 04:43:20,ANZ6008,Air New Zealand,c82439,New Zealand,2210,-0.3055,105.9852,10972.8,36000.0,11681.46,38325.0,894.3,482.9,5.85,1151.6,119.8,Climbing (Takeoff),0,0,0,1791236406,1791236406,N/A,OpenSky Network
 2026-10-06 04:49:43,ANZ282,Air New Zealand,c81d80,New Zealand,N/A,0.7836,105.3259,7414.26,24325.0,7901.94,25925.0,787.5,425.2,-5.53,-1088.6,331.02,Descending (Landing/Approach),0,0,0,1791236976,1791236976,N/A,OpenSky Network
+2026-10-06 04:56:37,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
