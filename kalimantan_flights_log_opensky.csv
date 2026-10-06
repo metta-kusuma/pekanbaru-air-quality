@@ -3068,3 +3068,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 22:07:48,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 22:14:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 22:21:41,PAL537,Philippine Airlines,758369,Philippines,N/A,2.6807,114.8815,9768.84,32050.0,10515.6,34500.0,903.0,487.6,0,0.0,227.24,Cruising,0,0,0,1791299972,1791299972,N/A,OpenSky Network
+2026-10-06 22:28:51,CAL763,China Airlines (Taiwan),899109,Taiwan,N/A,3.1508,113.9738,10965.18,35975.0,11780.52,38650.0,873.8,471.8,0,0.0,220.27,Cruising,0,0,0,1791300511,1791300512,N/A,OpenSky Network
