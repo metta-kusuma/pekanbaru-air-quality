@@ -3051,3 +3051,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 20:14:40,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 20:21:40,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 20:28:50,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-06 20:35:42,CSN625,China Southern Airlines,782236,China,N/A,2.7319,115.1069,10972.8,36000.0,11803.38,38725.0,894.2,482.8,0.33,65.0,208.58,Cruising,0,0,0,1791293637,1791293643,N/A,OpenSky Network
