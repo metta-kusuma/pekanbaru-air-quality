@@ -3856,3 +3856,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-06 17:49:37,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 17:56:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-06 18:00:56,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-06 18:07:43,PAS210,Pelita Air Service,8a09bb,Indonesia,2377,-6.9847,110.9643,9380.22,30775.0,10058.4,33000.0,776.1,419.1,-11.38,-2240.2,90.96,Descending (Landing/Approach),0,0,0,1791284854,1791284854,N/A,OpenSky Network
+2026-10-06 18:07:43,BTK6578,Batik Air,8a09a6,Indonesia,2365,-7.0345,111.1833,7993.38,26225.0,8587.74,28175.0,771.0,416.3,-11.05,-2175.2,102.77,Descending (Landing/Approach),0,0,0,1791284797,1791284798,N/A,OpenSky Network
