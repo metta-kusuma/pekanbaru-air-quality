@@ -4189,3 +4189,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-07 17:35:38,GIA413,Garuda Indonesia,8a09ef,Indonesia,N/A,-6.3752,111.273,11582.4,38000.0,12359.64,40550.0,861.8,465.4,0,0.0,294.64,Cruising,0,0,0,1791369078,1791369079,N/A,OpenSky Network
 2026-10-07 17:42:44,SJV120,Sriwijaya Air / Super Air Jet,8a096f,Indonesia,N/A,-7.4514,110.8333,8747.76,28700.0,9425.94,30925.0,864.4,466.7,-13,-2559.0,224.48,Descending (Landing/Approach),0,0,0,1791369757,1791369757,N/A,OpenSky Network
 2026-10-07 17:49:40,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-07 17:56:42,SJV677,Sriwijaya Air / Super Air Jet,8a09c6,Indonesia,N/A,-7.3681,110.7493,8252.46,27075.0,8862.06,29075.0,815.0,440.1,-14.63,-2879.9,181.17,Descending (Landing/Approach),0,0,0,1791370593,1791370595,N/A,OpenSky Network
+2026-10-07 17:56:42,SJV768,Sriwijaya Air / Super Air Jet,8a08b8,Indonesia,N/A,-6.9247,111.1757,10058.4,33000.0,10782.3,35375.0,788.7,425.8,-0.33,-65.0,100.28,Cruising,0,0,0,1791370596,1791370596,N/A,OpenSky Network
