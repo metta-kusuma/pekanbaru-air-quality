@@ -3186,3 +3186,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-07 11:21:34,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-07 11:28:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-07 11:35:43,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-07 11:42:40,EVA237,EVA Air,899087,Taiwan,N/A,3.1646,113.8893,12192,40000.0,13030.2,42750.0,934.5,504.6,0,0.0,218.48,Cruising,0,0,0,1791348015,1791348015,N/A,OpenSky Network
