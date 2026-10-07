@@ -3252,3 +3252,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-07 18:42:39,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-07 18:49:37,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-07 18:56:32,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-07 19:00:54,JJA5303,Jeju Air,71c552,Republic of Korea,N/A,2.857,115.1896,10972.8,36000.0,11780.52,38650.0,865.0,467.1,0,0.0,185.41,Cruising,0,0,0,1791374382,1791374389,N/A,OpenSky Network
