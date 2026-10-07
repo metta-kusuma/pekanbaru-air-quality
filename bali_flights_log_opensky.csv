@@ -4159,3 +4159,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-07 16:07:38,N/A,Unknown,8a074d,Indonesia,N/A,-6.9846,110.9418,10035.54,32925.0,11003.28,36100.0,802.0,433.1,-12.03,-2368.1,91.06,Descending (Landing/Approach),0,0,0,1791364049,1791364049,N/A,OpenSky Network
 2026-10-07 16:07:38,ATLAS02,Other Airline,8a0a26,Indonesia,N/A,-7.525,111.4271,586.74,1925.0,632.46,2075.0,271.8,146.7,0.33,65.0,194.6,Cruising,0,0,0,1791363779,1791363779,N/A,OpenSky Network
 2026-10-07 16:15:10,GIA221,Garuda Indonesia,8a03c4,Indonesia,N/A,-7.2547,110.6776,3688.08,12100.0,3916.68,12850.0,570.5,308.0,9.1,1791.3,311.97,Climbing (Takeoff),0,0,0,1791364382,1791364382,N/A,OpenSky Network
+2026-10-07 16:21:39,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
