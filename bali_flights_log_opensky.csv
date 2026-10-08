@@ -4634,3 +4634,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 05:14:47,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 05:21:41,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 05:28:43,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 05:35:41,LNI020,Lion Air,8a097b,Indonesia,N/A,-7.0783,111.6237,10668,35000.0,11391.9,37375.0,845.8,456.7,-0.33,-65.0,112.8,Cruising,0,0,0,1791498923,1791498923,N/A,OpenSky Network
