@@ -21075,3 +21075,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 03:21:38,SIA33,Singapore Airlines,76cce4,Singapore,N/A,1.495,105.9603,10629.9,34875.0,11193.78,36725.0,836.7,451.8,-4.23,-832.7,232.83,Descending (Landing/Approach),0,0,0,1791490725,1791490894,N/A,OpenSky Network
 2026-10-09 03:28:35,SIA33,Singapore Airlines,76cce4,Singapore,N/A,1.188,105.4519,7642.86,25075.0,11193.78,36725.0,836.7,451.8,-4.23,-832.7,232.83,Descending (Landing/Approach),0,0,0,1791491005,1791491005,N/A,OpenSky Network
 2026-10-09 03:35:37,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 03:42:37,ANA885,All Nippon Airways (ANA),86da16,Japan,N/A,3.4921,105.7275,12184.38,39975.0,12961.62,42525.0,950.0,512.9,0,0.0,266.54,Cruising,0,0,0,1791492144,1791492144,N/A,OpenSky Network
