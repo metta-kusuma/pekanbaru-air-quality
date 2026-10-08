@@ -4561,3 +4561,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-08 21:28:48,BTK6588,Batik Air,8a09a7,Indonesia,N/A,-6.9877,111.135,7406.64,24300.0,8008.62,26275.0,677.9,366.0,-11.05,-2175.2,90.94,Descending (Landing/Approach),0,0,0,1791469480,1791469480,N/A,OpenSky Network
 2026-10-08 21:35:46,LNI664,Lion Air,8a0458,Indonesia,N/A,-6.7993,111.3455,8694.42,28525.0,9006.84,29550.0,851.7,459.9,4.55,895.7,56.17,Climbing (Takeoff),0,0,0,1791469854,1791469854,N/A,OpenSky Network
 2026-10-08 21:42:43,CTV726,Citilink,8a064e,Indonesia,N/A,-7.0386,111.1013,8031.48,26350.0,8663.94,28425.0,745.7,402.6,-11.05,-2175.2,101.9,Descending (Landing/Approach),0,0,0,1791470554,1791470554,N/A,OpenSky Network
+2026-10-08 21:49:32,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
