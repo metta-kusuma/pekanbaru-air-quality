@@ -3424,3 +3424,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-08 14:14:39,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-08 14:21:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-08 14:28:34,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-08 14:35:35,CES7405,China Eastern Airlines,780de6,China,N/A,3.228,115.3692,10972.8,36000.0,11742.42,38525.0,909.1,490.9,0.33,65.0,190.92,Cruising,0,0,0,1791444726,1791444730,N/A,OpenSky Network
