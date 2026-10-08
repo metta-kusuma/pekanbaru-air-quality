@@ -21071,3 +21071,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 03:07:32,SIA33,Singapore Airlines,76cce4,Singapore,N/A,2.7262,107.5696,13106.4,43000.0,13845.54,45425.0,931.9,503.2,0.0,0.0,232.83,Cruising,0,0,0,1791489859,1791489859,N/A,OpenSky Network
 2026-10-09 03:07:32,SIA35,Singapore Airlines,76cdb7,Singapore,N/A,1.2544,105.6463,9083.04,29800.0,9685.02,31775.0,836.4,451.6,-9.43,-1856.3,232.65,Descending (Landing/Approach),0,0,0,1791489956,1791489958,N/A,OpenSky Network
 2026-10-09 03:07:32,AXM170,AirAsia (Malaysia),7504c4,Malaysia,N/A,3.5093,105.9028,10668.0,35000.0,11376.66,37325.0,842.9,455.1,0.0,0.0,88.74,Cruising,0,0,0,1791489958,1791489958,N/A,OpenSky Network
+2026-10-09 03:14:35,NONE,N/A,N/A,N/A,N/A,-0.1506,109.4042,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
