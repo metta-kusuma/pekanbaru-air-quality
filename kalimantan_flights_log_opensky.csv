@@ -3503,3 +3503,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-08 23:01:00,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-08 23:07:54,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-08 23:15:12,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-08 23:21:43,AAR762,Asiana Airlines,71bd78,Republic of Korea,N/A,3.1542,113.5531,11193.78,36725.0,11986.26,39325.0,873.8,471.8,6.5,1279.5,26.84,Climbing (Takeoff),0,0,0,1791476498,1791476499,N/A,OpenSky Network
