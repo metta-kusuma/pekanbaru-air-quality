@@ -4831,3 +4831,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 18:56:45,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 19:00:48,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 19:07:43,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 19:14:37,CTV785,Citilink,8a061e,Indonesia,N/A,-7.2381,110.7675,7772.4,25500.0,8336.28,27350.0,708.0,382.3,-5.53,-1088.6,211.2,Descending (Landing/Approach),0,0,0,1791548066,1791548066,N/A,OpenSky Network
