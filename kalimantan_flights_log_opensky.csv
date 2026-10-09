@@ -3656,3 +3656,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 16:00:52,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 16:07:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 16:14:39,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 16:21:36,JAL725,Japan Airlines (JAL),861f44,Japan,N/A,3.0282,113.5805,12199.62,40025.0,12931.14,42425.0,878.5,474.4,-0.33,-65.0,219.7,Cruising,0,0,0,1791537419,1791537421,N/A,OpenSky Network
