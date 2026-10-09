@@ -3585,3 +3585,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 08:07:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 08:14:39,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 08:21:39,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 08:28:38,AXM6353,AirAsia (Malaysia),75043c,Malaysia,N/A,3.2314,112.9257,11574.78,37975.0,12367.26,40575.0,850.4,459.2,-0.65,-128.0,226.85,Cruising,0,0,0,1791509230,1791509230,N/A,OpenSky Network
