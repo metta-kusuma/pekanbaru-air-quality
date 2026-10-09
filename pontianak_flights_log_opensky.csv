@@ -22289,3 +22289,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 04:49:42,MAS726,Malaysia Airlines,7505a4,Malaysia,N/A,-2.895,105.0964,11582.4,38000.0,12336.78,40475.0,846.5,457.1,0.0,0.0,339.11,Cruising,0,0,0,1791582568,1791582572,N/A,OpenSky Network
 2026-10-10 04:56:33,SIA252,Singapore Airlines,76b459,Singapore,N/A,0.6208,105.5213,9166.86,30075.0,9784.08,32100.0,830.5,448.4,-5.2,-1023.6,278.08,Descending (Landing/Approach),0,0,0,1791582987,1791582987,N/A,OpenSky Network
 2026-10-10 04:56:33,N1980K,Private / Business Jet / General Aviation,a18845,United States,N/A,4.2191,113.2311,13716.0,45000.0,14432.28,47350.0,989.2,534.1,-0.33,-65.0,250.99,Cruising,0,0,0,1791582772,1791582774,N/A,OpenSky Network
+2026-10-10 05:00:58,SIA252,Singapore Airlines,76b459,Singapore,N/A,0.979,105.2171,6941.82,22775.0,7399.02,24275.0,776.2,419.1,-10.08,-1984.2,330.56,Descending (Landing/Approach),0,0,0,1791583234,1791583234,N/A,OpenSky Network
