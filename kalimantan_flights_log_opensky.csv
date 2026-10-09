@@ -3763,3 +3763,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 03:49:40,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-10 03:56:36,KAL438,Korean Air,71c210,Republic of Korea,N/A,3.1898,113.6707,10668,35000.0,11399.52,37400.0,889.1,480.1,0,0.0,48.04,Cruising,0,0,0,1791579373,1791579373,N/A,OpenSky Network
 2026-10-10 04:00:50,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-10 04:07:40,RBA773,Royal Brunei Airlines,895058,Brunei Darussalam,N/A,2.4598,114.8584,10980.42,36025.0,11734.8,38500.0,872.3,471.0,0,0.0,180.49,Cruising,0,0,0,1791579939,1791579939,N/A,OpenSky Network
