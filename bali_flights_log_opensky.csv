@@ -4862,3 +4862,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 21:42:43,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 21:49:40,SJV200,Sriwijaya Air / Super Air Jet,8a09c3,Indonesia,N/A,-6.9701,111.2167,7399.02,24275.0,7978.14,26175.0,782.8,422.7,-10.4,-2047.2,105.65,Descending (Landing/Approach),0,0,0,1791557156,1791557156,N/A,OpenSky Network
 2026-10-09 21:49:40,TNU5110,TransNusa,8a095b,Indonesia,N/A,-6.9535,111.1241,10058.4,33000.0,10789.92,35400.0,840.8,454.0,0.0,0.0,97.59,Cruising,0,0,0,1791557288,1791557288,N/A,OpenSky Network
+2026-10-09 21:56:36,CTV726,Citilink,8a0301,Indonesia,N/A,-7.0674,111.1217,8023.86,26325.0,8610.6,28250.0,767.8,414.6,-10.73,-2112.2,100.98,Descending (Landing/Approach),0,0,0,1791557550,1791557552,N/A,OpenSky Network
+2026-10-09 21:56:36,GIA324,Garuda Indonesia,8a0ad6,Indonesia,N/A,-6.952,111.1924,7909.56,25950.0,8473.44,27800.0,690.3,372.7,-8.13,-1600.4,100.04,Descending (Landing/Approach),0,0,0,1791557679,1791557683,N/A,OpenSky Network
