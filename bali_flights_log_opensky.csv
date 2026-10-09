@@ -4865,3 +4865,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 21:56:36,CTV726,Citilink,8a0301,Indonesia,N/A,-7.0674,111.1217,8023.86,26325.0,8610.6,28250.0,767.8,414.6,-10.73,-2112.2,100.98,Descending (Landing/Approach),0,0,0,1791557550,1791557552,N/A,OpenSky Network
 2026-10-09 21:56:36,GIA324,Garuda Indonesia,8a0ad6,Indonesia,N/A,-6.952,111.1924,7909.56,25950.0,8473.44,27800.0,690.3,372.7,-8.13,-1600.4,100.04,Descending (Landing/Approach),0,0,0,1791557679,1791557683,N/A,OpenSky Network
 2026-10-09 22:01:00,BTK7521,Batik Air,8a09a0,Indonesia,N/A,-6.9786,111.0041,8503.92,27900.0,9144,30000.0,793.1,428.2,-13.98,-2752.0,91.87,Descending (Landing/Approach),0,0,0,1791558041,1791558042,N/A,OpenSky Network
+2026-10-09 22:07:35,BTK7521,Batik Air,8a09a0,Indonesia,N/A,-7.0008,111.1863,7757.16,25450.0,8328.66,27325.0,761.8,411.3,-6.83,-1344.5,104.07,Descending (Landing/Approach),0,0,0,1791558135,1791558140,N/A,OpenSky Network
