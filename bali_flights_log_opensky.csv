@@ -4782,3 +4782,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 15:21:44,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 15:28:41,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 15:35:42,N/A,Unknown,8a043a,Indonesia,N/A,-6.9893,111.214,11277.6,37000.0,12016.74,39425.0,837.2,452.1,0.33,65.0,90.89,Cruising,0,0,0,1791534626,1791534628,N/A,OpenSky Network
+2026-10-09 15:42:43,CTV833,Citilink,8a03b1,Indonesia,N/A,-6.9846,110.949,8915.4,29250.0,9547.86,31325.0,789.1,426.1,-5.2,-1023.6,91.08,Descending (Landing/Approach),0,0,0,1791535338,1791535338,N/A,OpenSky Network
+2026-10-09 15:42:43,GIA326,Garuda Indonesia,8a023f,Indonesia,N/A,-6.9991,111.1988,7673.34,25175.0,8260.08,27100.0,686.0,370.4,-8.78,-1728.3,104.86,Descending (Landing/Approach),0,0,0,1791535158,1791535158,N/A,OpenSky Network
