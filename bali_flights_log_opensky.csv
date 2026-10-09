@@ -4670,3 +4670,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 08:00:54,SJV762,Sriwijaya Air / Super Air Jet,8a0921,Indonesia,2323,-6.963,111.2275,10668.0,35000.0,11422.38,37475.0,841.6,454.4,0,0.0,98.86,Cruising,0,0,0,1791507611,1791507613,N/A,OpenSky Network
 2026-10-09 08:07:41,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 08:14:39,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 08:21:39,N/A,Unknown,8a09f8,Indonesia,N/A,-6.3931,111.2623,11590.02,38025.0,12390.12,40650.0,819.2,442.3,0,0.0,295.87,Cruising,0,0,0,1791508839,1791508839,N/A,OpenSky Network
