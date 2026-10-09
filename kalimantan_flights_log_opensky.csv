@@ -3664,3 +3664,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 16:56:37,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 17:00:55,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 17:07:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 17:14:37,N/A,Unknown,8880b4,Viet Nam,N/A,2.8355,114.8618,10668,35000.0,11376.66,37325.0,839.0,453.0,0,0.0,0.38,Cruising,0,0,0,1791540555,1791540752,N/A,OpenSky Network
