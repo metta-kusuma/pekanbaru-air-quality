@@ -3624,3 +3624,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-09 12:28:34,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 12:35:38,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-09 12:42:36,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-09 12:49:31,DKH1355,Other Airline,78184c,China,N/A,3.1959,115.4232,10965.18,35975.0,11742.42,38525.0,857.2,462.9,0,0.0,188.32,Cruising,0,0,0,1791524943,1791524944,N/A,OpenSky Network
