@@ -3958,3 +3958,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-11 01:14:39,CPA143,Cathay Pacific,780abd,China,N/A,3.1183,115.4116,12192.0,40000.0,12992.1,42625.0,896.9,484.3,-0.33,-65.0,197.05,Cruising,0,0,0,1791656003,1791656003,N/A,OpenSky Network
 2026-10-11 01:14:39,CES890,China Eastern Airlines,78122f,China,N/A,3.0174,115.1441,11277.6,37000.0,12070.08,39600.0,869.6,469.6,-0.98,-192.9,14.3,Cruising,0,0,0,1791656072,1791656073,N/A,OpenSky Network
 2026-10-11 01:21:32,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-11 01:28:32,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
