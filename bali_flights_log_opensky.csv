@@ -5222,3 +5222,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-11 06:14:36,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-11 06:21:37,GIA975,Garuda Indonesia,8a0a6b,Indonesia,N/A,-7.0438,111.5994,9540.24,31300.0,10317.48,33850.0,885.8,478.3,-14.31,-2816.9,105.9,Descending (Landing/Approach),0,0,0,1791674433,1791674433,N/A,OpenSky Network
 2026-10-11 06:28:35,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-11 06:35:37,LKN280,Lion Air (Alt),8a054f,Indonesia,N/A,-6.9854,110.9825,10668.0,35000.0,11430.0,37500.0,815.0,440.0,0.33,65.0,90.91,Cruising,0,0,0,1791675270,1791675279,N/A,OpenSky Network
+2026-10-11 06:35:37,GIA604,Garuda Indonesia,8a0ad5,Indonesia,N/A,-6.3194,111.4144,11277.6,37000.0,12054.84,39550.0,810.9,437.8,0.0,0.0,82.39,Cruising,0,0,0,1791675224,1791675224,N/A,OpenSky Network
