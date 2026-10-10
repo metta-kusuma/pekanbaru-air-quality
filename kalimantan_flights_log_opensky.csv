@@ -3912,3 +3912,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 20:07:35,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-10 20:14:31,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-10 20:21:41,NONE,N/A,N/A,N/A,N/A,-1.2682,116.8942,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-10 20:28:36,CXA837,XiamenAir,781801,China,N/A,3.1329,113.6289,10972.8,36000.0,11757.66,38575.0,837.9,452.4,0.33,65.0,212.64,Cruising,0,0,0,1791638779,1791638779,N/A,OpenSky Network
