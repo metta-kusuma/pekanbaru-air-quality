@@ -5037,3 +5037,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 12:35:41,BTK7531,Batik Air,8a0493,Indonesia,2352,-7.4741,110.9425,922.02,3025.0,998.22,3275.0,381.6,206.0,-6.5,-1279.5,269.17,Descending (Landing/Approach),0,0,0,1791610401,1791610401,N/A,OpenSky Network
 2026-10-10 12:42:43,CTV736,Citilink,8a074d,Indonesia,N/A,-6.989,111.1869,8267.7,27125.0,8854.44,29050.0,798.3,431.0,-12.35,-2431.1,90.8,Descending (Landing/Approach),0,0,0,1791610819,1791610821,N/A,OpenSky Network
 2026-10-10 12:49:42,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-10 12:56:29,AWQ860,Indonesia AirAsia,8a0419,Indonesia,N/A,-6.9863,111.0253,11285.22,37025.0,12047.22,39525.0,828.0,447.1,-0.33,-65.0,91.03,Cruising,0,0,0,1791611655,1791611745,N/A,OpenSky Network
