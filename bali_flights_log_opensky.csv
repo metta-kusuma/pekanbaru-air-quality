@@ -5190,3 +5190,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-11 02:49:36,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-11 02:56:39,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
 2026-10-11 03:00:51,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-11 03:07:37,CTV602,Citilink,8a03ab,Indonesia,N/A,-6.9881,111.1508,10668,35000.0,11391.9,37375.0,848.3,458.1,0,0.0,91,Cruising,0,0,0,1791662635,1791662635,N/A,OpenSky Network
