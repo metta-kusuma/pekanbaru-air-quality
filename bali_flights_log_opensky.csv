@@ -5098,3 +5098,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 17:28:43,GIA320,Garuda Indonesia,8a0a43,Indonesia,2366,-7.0127,111.1671,7871.46,25825.0,8397.24,27550.0,752.0,406.0,-10.08,-1984.2,103.39,Descending (Landing/Approach),0,0,0,1791628102,1791628109,N/A,OpenSky Network
 2026-10-10 17:35:38,SJV121,Sriwijaya Air / Super Air Jet,8a0918,Indonesia,N/A,-7.1361,111.1574,8702.04,28550.0,9273.54,30425.0,830.5,448.4,3.9,767.7,61.21,Climbing (Takeoff),0,0,0,1791628532,1791628532,N/A,OpenSky Network
 2026-10-10 17:42:37,CTV194,Citilink,8a03b3,Indonesia,N/A,-6.9855,111.0005,11269.98,36975.0,12024.36,39450.0,829.8,448.1,0,0.0,91.02,Cruising,0,0,0,1791628878,1791628887,N/A,OpenSky Network
+2026-10-10 17:49:35,SJV196,Sriwijaya Air / Super Air Jet,8a08c5,Indonesia,2000,-6.9677,111.2151,7680.96,25200.0,8511.54,27925.0,832.0,449.3,-12.68,-2496.1,96.9,Descending (Landing/Approach),0,0,0,1791629321,1791629321,N/A,OpenSky Network
