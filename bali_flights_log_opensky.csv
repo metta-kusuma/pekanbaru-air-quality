@@ -5119,3 +5119,4 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-10 19:28:36,LNI665,Lion Air,8a0486,Indonesia,N/A,-7.5461,110.7126,5867.4,19250.0,6263.64,20550.0,743.4,401.4,-11.05,-2175.2,227.73,Descending (Landing/Approach),0,0,0,1791635314,1791635315,N/A,OpenSky Network
 2026-10-10 19:35:42,GIA426,Garuda Indonesia,8a02d4,Indonesia,N/A,-6.9851,110.9594,9448.8,31000.0,10119.36,33200.0,796.5,430.1,0,0.0,90.93,Cruising,0,0,0,1791635677,1791635692,N/A,OpenSky Network
 2026-10-10 19:42:36,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-10 19:49:44,SJV661,Sriwijaya Air / Super Air Jet,8a0907,Indonesia,N/A,-7.2878,110.7504,6957.06,22825.0,7452.36,24450.0,772.3,417.0,-9.43,-1856.3,180.69,Descending (Landing/Approach),0,0,0,1791636574,1791636574,N/A,OpenSky Network
