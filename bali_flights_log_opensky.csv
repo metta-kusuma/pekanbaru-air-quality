@@ -5243,3 +5243,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-11 07:35:42,PAS1406,Pelita Air Service,8a0a4a,Indonesia,N/A,-7.038,111.7072,10668,35000.0,11437.62,37525.0,841.9,454.6,0,0.0,98.99,Cruising,0,0,0,1791678682,1791678682,N/A,OpenSky Network
 2026-10-11 07:42:39,PKOFM,Private / Business Jet / General Aviation,8a09fb,Indonesia,N/A,-7.2908,110.7035,6926.58,22725.0,7399.02,24275.0,732.2,395.4,5.2,1023.6,27.41,Climbing (Takeoff),0,0,0,1791679357,1791679358,N/A,OpenSky Network
 2026-10-11 07:42:39,GIA304,Garuda Indonesia,8a0290,Indonesia,N/A,-6.989,111.1895,7970.52,26150.0,8534.4,28000.0,796.5,430.1,-12.03,-2368.1,91.07,Descending (Landing/Approach),0,0,0,1791679178,1791679178,N/A,OpenSky Network
+2026-10-11 07:49:40,CTV196,Citilink,8a03b3,Indonesia,N/A,-7.0675,111.597,11277.6,37000.0,12054.84,39550.0,835.1,450.9,0.0,0.0,112.7,Cruising,0,0,0,1791679774,1791679775,N/A,OpenSky Network
+2026-10-11 07:49:40,PKOFM,Private / Business Jet / General Aviation,8a09fb,Indonesia,N/A,-7.0655,111.1111,8138.16,26700.0,8717.28,28600.0,781.6,422.0,4.55,895.7,69.76,Climbing (Takeoff),0,0,0,1791679614,1791679623,N/A,OpenSky Network
