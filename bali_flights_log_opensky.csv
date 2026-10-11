@@ -5246,3 +5246,5 @@ Timestamp_WIB,Callsign,Airline_Inferred,Transponder_Hex,Country_Origin,Squawk_Co
 2026-10-11 07:49:40,CTV196,Citilink,8a03b3,Indonesia,N/A,-7.0675,111.597,11277.6,37000.0,12054.84,39550.0,835.1,450.9,0.0,0.0,112.7,Cruising,0,0,0,1791679774,1791679775,N/A,OpenSky Network
 2026-10-11 07:49:40,PKOFM,Private / Business Jet / General Aviation,8a09fb,Indonesia,N/A,-7.0655,111.1111,8138.16,26700.0,8717.28,28600.0,781.6,422.0,4.55,895.7,69.76,Climbing (Takeoff),0,0,0,1791679614,1791679623,N/A,OpenSky Network
 2026-10-11 07:56:38,NONE,N/A,N/A,N/A,N/A,-8.7482,115.1672,0,0,0,0,0,0,0,0,0,No Flights,0,0,0,0,0,N/A,OpenSky Network
+2026-10-11 08:00:52,SJV316,Sriwijaya Air / Super Air Jet,8a08b7,Indonesia,N/A,-6.993,111.1015,7353.3,24125.0,7932.42,26025.0,782.8,422.7,-13.33,-2624.0,102.29,Descending (Landing/Approach),0,0,0,1791680436,1791680436,N/A,OpenSky Network
+2026-10-11 08:00:52,GIA402,Garuda Indonesia,8a0a9e,Indonesia,N/A,-6.9885,111.1543,11277.6,37000.0,12062.46,39575.0,835.3,451.0,0.0,0.0,90.89,Cruising,0,0,0,1791680436,1791680436,N/A,OpenSky Network
