@@ -592,3 +592,4 @@ Timestamp,City,Weather_Main,Weather_Desc,Temp_C,Feels_Like_C,Humidity_Pct,Pressu
 2026-10-18 04:05:44,Pekanbaru,Rain,moderate rain,26.15,26.15,94,1009,2.57,98,2828
 2026-10-18 05:05:39,Pekanbaru,Rain,moderate rain,25.15,26.33,100,1009,1.54,99,4769
 2026-10-18 06:05:39,Pekanbaru,Rain,moderate rain,25.15,26.18,94,1010,1.54,99,5754
+2026-10-18 07:05:41,Pekanbaru,Rain,moderate rain,25.15,26.18,94,1011,2.06,99,10000
