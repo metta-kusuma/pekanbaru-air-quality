@@ -702,3 +702,4 @@ Timestamp,City,Weather_Main,Weather_Desc,Temp_C,Feels_Like_C,Humidity_Pct,Pressu
 2026-10-22 19:05:44,Pekanbaru,Smoke,smoke,30.15,37.15,79,1008,0,20,3000
 2026-10-22 20:05:46,Pekanbaru,Smoke,smoke,30.15,36.44,74,1010,0,40,3500
 2026-10-22 21:05:37,Pekanbaru,Haze,haze,29.15,36.1,84,1010,1.54,40,3500
+2026-10-22 22:05:57,Pekanbaru,Smoke,smoke,28.15,34.04,89,1010,0,40,3300
