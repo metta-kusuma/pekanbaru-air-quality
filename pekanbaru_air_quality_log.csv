@@ -782,3 +782,4 @@ Timestamp,City,Latitude,Longitude,OW_US_AQI_Calc,OW_AQI_Status,OW_AQI_Index,PM25
 2026-10-26 04:05:42,Pekanbaru,0.5071,101.4478,61,Sedang,2,16.69,23.06,532.91,7.76,0.16,1.35,2.87,1.94,38,Baik,"Pekanbaru, Indonesia",pm25
 2026-10-26 05:05:45,Pekanbaru,0.5071,101.4478,62,Sedang,2,17.2,23.5,526.99,7.24,0.19,1.19,2.42,1.99,59,Sedang,"Pekanbaru, Indonesia",pm25
 2026-10-26 06:05:43,Pekanbaru,0.5071,101.4478,63,Sedang,2,17.76,24.13,529.47,7.3,0.24,1.32,2.88,2.09,80,Sedang,"Pekanbaru, Indonesia",pm25
+2026-10-26 07:05:48,Pekanbaru,0.5071,101.4478,65,Sedang,2,18.87,26.08,566.87,7.88,0.44,1.91,3.86,3.01,88,Sedang,"Pekanbaru, Indonesia",pm25
