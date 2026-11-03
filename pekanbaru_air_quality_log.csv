@@ -972,3 +972,4 @@ Timestamp,City,Latitude,Longitude,OW_US_AQI_Calc,OW_AQI_Status,OW_AQI_Index,PM25
 2026-11-03 05:05:43,Pekanbaru,0.5071,101.4478,69,Sedang,2,20.79,21.98,790.35,9.48,3.86,1.42,3.69,0.4,57,Sedang,"Kototabang, Indonesia",pm25
 2026-11-03 06:05:46,Pekanbaru,0.5071,101.4478,72,Sedang,2,22.07,23.51,796.57,9.77,4.16,1.62,4.28,0.43,58,Sedang,"Kototabang, Indonesia",pm25
 2026-11-03 07:05:50,Pekanbaru,0.5071,101.4478,76,Sedang,2,24.19,26.59,837.86,11.31,5.65,2.28,5.42,0.84,70,Sedang,"Kototabang, Indonesia",pm25
+2026-11-03 08:05:50,Pekanbaru,0.5071,101.4478,76,Sedang,2,24.13,27.7,883.84,11.79,11.48,2.88,5.51,2.09,78,Sedang,"Kototabang, Indonesia",pm25
