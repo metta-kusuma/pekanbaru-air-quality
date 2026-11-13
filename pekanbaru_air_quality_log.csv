@@ -1206,3 +1206,4 @@ Timestamp,City,Latitude,Longitude,OW_US_AQI_Calc,OW_AQI_Status,OW_AQI_Index,PM25
 2026-11-13 07:05:47,Pekanbaru,0.5071,101.4478,89,Sedang,3,30.22,33.41,1126.99,21.04,0.56,3.28,8.24,2.64,103,Tidak Sehat bagi Kelompok Sensitif,"Pekanbaru, Indonesia",pm25
 2026-11-13 08:05:53,Pekanbaru,0.5071,101.4478,87,Sedang,3,29.19,33.55,1178.83,23.44,1.22,4.26,8.97,3.87,121,Tidak Sehat bagi Kelompok Sensitif,"Pekanbaru, Indonesia",pm25
 2026-11-13 09:05:46,Pekanbaru,0.5071,101.4478,79,Sedang,3,25.38,30.2,1120.75,23.87,3.25,4.46,8.24,3.59,151,Tidak Sehat,"Pekanbaru, Indonesia",pm25
+2026-11-13 10:05:50,Pekanbaru,0.5071,101.4478,71,Sedang,2,21.65,25.73,983.38,20.89,8.32,3.53,5.8,1.94,142,Tidak Sehat bagi Kelompok Sensitif,"Pekanbaru, Indonesia",pm25
